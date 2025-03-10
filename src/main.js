@@ -46,8 +46,8 @@ scene.add( sun2);
 
 // --- ORBITCONTROL MAKER
 const controls = new OrbitControls( camera, canvas);
-controls.maxPolarAngle = Math.PI / 2.5;
-controls.screenSpacePanning = false;
+// controls.maxPolarAngle = Math.PI / 2.5;
+// controls.screenSpacePanning = false;
 
 
 // ---HANDLING RE-SIZE OF THE SCREEN

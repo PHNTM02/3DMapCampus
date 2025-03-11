@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { Terrain } from './terrain.js';
+import { setupMouseEvents } from './mouse.js';
 
 
 // --- SCENE MAKER
@@ -24,6 +25,17 @@ camera.position.set(5, 10, 3);
 // ---Import Files Here
 const terrain = new Terrain();
 scene.add(terrain);
+
+// --- Selected Object to Hover
+const selectedObject = new THREE.Mesh(
+    new THREE.BoxGeometry(0.8, 0.8, 0.8),
+    new THREE.MeshStandardMaterial({ color: 0xff0000})
+);
+selectedObject.position.set(0, 0.5, 0);
+scene.add(selectedObject);
+
+// --- Mouse Hover
+setupMouseEvents(scene, camera, terrain.tiles.map(t => t.tile), selectedObject);
 
 // --- GLTF/GLB MAKER
 // const loader = new GLTFLoader();

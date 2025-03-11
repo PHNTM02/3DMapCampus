@@ -26,16 +26,23 @@ camera.position.set(5, 10, 3);
 const terrain = new Terrain();
 scene.add(terrain);
 
+if(!terrain.tiles || terrain.tiles.length === 0){
+    console.error("Error: Terrain tiles is undefined or empty~!");
+}else{
+    console.log("Terrain tiles have loaded successfully");
+};
+
 // --- Selected Object to Hover
-const selectedObject = new THREE.Mesh(
-    new THREE.BoxGeometry(0.8, 0.8, 0.8),
-    new THREE.MeshStandardMaterial({ color: 0xff0000})
-);
-selectedObject.position.set(0, 0.5, 0);
-scene.add(selectedObject);
+// const selectedObject = new THREE.Mesh(
+//     new THREE.BoxGeometry(0.8, 0.8, 0.8),
+//     new THREE.MeshStandardMaterial({ color: 0xff0000})
+// );
+
+// selectedObject.position.set(0, 0.5, 0);
+// scene.add(selectedObject);
 
 // --- Mouse Hover
-setupMouseEvents(scene, camera, terrain.tiles.map(t => t.tile), selectedObject);
+setupMouseEvents(scene, camera, terrain.tiles, null);
 
 // --- GLTF/GLB MAKER
 // const loader = new GLTFLoader();

@@ -120,7 +120,7 @@ export function setupMouseEvents(scene, camera, terrain, selectedObject) {
 
     // Ensure terrain and tiles are properly defined
     if (!terrain || !Array.isArray(terrain.tiles)) {
-        console.error("Error: terrain or terrain.tiles is undefined or not an array!");
+        console.error("Error: terrain tiles is undefined or empty~!");
         return;
     }
 

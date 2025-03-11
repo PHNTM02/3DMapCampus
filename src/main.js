@@ -26,11 +26,13 @@ camera.position.set(5, 10, 3);
 const terrain = new Terrain();
 scene.add(terrain);
 
-if(!terrain.tiles || terrain.tiles.length === 0){
-    console.error("Error: Terrain tiles is undefined or empty~!");
-}else{
-    console.log("Terrain tiles have loaded successfully");
-};
+setTimeout(() => {
+    if(!terrain.tiles || terrain.tiles.length === 0){
+        console.error("Error: Terrain tiles is undefined or empty~!");
+    }else{
+        console.log("Terrain tiles have loaded successfully");
+    };
+}, 500);
 
 // --- Selected Object to Hover
 // const selectedObject = new THREE.Mesh(

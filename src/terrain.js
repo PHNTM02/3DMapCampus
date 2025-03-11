@@ -45,7 +45,7 @@ import * as THREE from 'three';
 import { GetModel } from './assets.js'; // Import assets (tree models)
 
 export class Terrain extends THREE.Group {
-    constructor(width, height) {
+    constructor(width=16, height=16) {
         super();
 
         this.width = width;
@@ -63,7 +63,7 @@ export class Terrain extends THREE.Group {
 
     createTerrain() {
         const tileSize = 1;
-        const gridSize = 16;
+        const gridSize = this.width;
         const terrainGrid = new THREE.Group();
 
         for (let i = 0; i < gridSize; i++) {
@@ -76,7 +76,8 @@ export class Terrain extends THREE.Group {
                 // Center each tile
                 tile.position.set(i - gridSize / 2 + 0.5, 0, j - gridSize / 2 + 0.5);
                 terrainGrid.add(tile);
-                this.tiles.push({ tile, position: { x: i, z: j } });
+                this.tiles.push(tile);
+                // this.tiles.push({ tile, position: { x: i, z: j } });
 
                 // Add grid lines
                 const edges = new THREE.EdgesGeometry(geometry);

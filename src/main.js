@@ -44,7 +44,7 @@ setTimeout(() => {
 // scene.add(selectedObject);
 
 // --- Mouse Hover
-setupMouseEvents(scene, camera, terrain.tiles, null);
+setupMouseEvents(scene, camera, terrain);
 
 // --- GLTF/GLB MAKER
 // const loader = new GLTFLoader();

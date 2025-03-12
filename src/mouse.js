@@ -113,65 +113,103 @@ import * as THREE from 'three';
 // }
 
 
-export function setupMouseEvents(scene, camera, terrain, selectedObject) {
+// export function setupMouseEvents(scene, camera, terrain, selectedObject) {
+//     const raycaster = new THREE.Raycaster();
+//     const mouse = new THREE.Vector2();
+//     let lastHovered = null;
+
+//     // Ensure terrain and tiles are properly defined
+//     if (!terrain || !Array.isArray(terrain.tiles)) {
+//         console.error("Error: terrain tiles is undefined or empty~!");
+//         return;
+//     }
+
+//     function onMouseMove(event) {
+//         mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+//         mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+//         raycaster.setFromCamera(mouse, camera);
+
+//         // Ensure terrain.tiles is valid before mapping
+//         const tileMeshes = terrain.tiles.map(t => t.tile).filter(tile => tile instanceof THREE.Mesh);
+//         if (!tileMeshes.length) return;
+
+//         const intersects = raycaster.intersectObjects(tileMeshes);
+
+//         if (lastHovered) {
+//             lastHovered.material.color.set(0x2ff53c); // Reset to green
+//         }
+
+//         if (intersects.length > 0) {
+//             lastHovered = intersects[0].object;
+//             lastHovered.material.color.set(0x808080); // Grey on hover
+//         }
+//     }
+
+//     function onMouseClick(event) {
+//         mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+//         mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+//         raycaster.setFromCamera(mouse, camera);
+
+//         // Ensure terrain.tiles is valid before mapping
+//         const tileMeshes = terrain.tiles.map(t => t.tile).filter(tile => tile instanceof THREE.Mesh);
+//         if (!tileMeshes.length) return;
+
+//         const intersects = raycaster.intersectObjects(tileMeshes);
+
+//         if (intersects.length > 0) {
+//             const clickedTile = intersects[0].object;
+//             moveObjectToTile(selectedObject, clickedTile.position);
+//         }
+//     }
+
+//     function moveObjectToTile(object, targetPosition) {
+//         if (!object) {
+//             console.warn("Warning: selectedObject is undefined!");
+//             return;
+//         }
+//         object.position.set(targetPosition.x, 0.5, targetPosition.z);
+//     }
+
+//     window.addEventListener('mousemove', onMouseMove);
+//     window.addEventListener('click', onMouseClick);
+// }
+
+
+export function setupMouseEvents(scene, camera, terrain) {
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
-    let lastHovered = null;
-
-    // Ensure terrain and tiles are properly defined
-    if (!terrain || !Array.isArray(terrain.tiles)) {
-        console.error("Error: terrain tiles is undefined or empty~!");
-        return;
-    }
+    let lastHoveredTile = null;
 
     function onMouseMove(event) {
+        // Convert mouse position to normalized device coordinates (-1 to +1)
         mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
         mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
+        // Perform raycasting
         raycaster.setFromCamera(mouse, camera);
-
-        // Ensure terrain.tiles is valid before mapping
-        const tileMeshes = terrain.tiles.map(t => t.tile).filter(tile => tile instanceof THREE.Mesh);
-        if (!tileMeshes.length) return;
-
-        const intersects = raycaster.intersectObjects(tileMeshes);
-
-        if (lastHovered) {
-            lastHovered.material.color.set(0x2ff53c); // Reset to green
-        }
+        const intersects = raycaster.intersectObjects(terrain.tiles);
 
         if (intersects.length > 0) {
-            lastHovered = intersects[0].object;
-            lastHovered.material.color.set(0x808080); // Grey on hover
+            const hoveredTile = intersects[0].object;
+            
+            if (lastHoveredTile !== hoveredTile) {
+                // Reset color of previous tile
+                if (lastHoveredTile) {
+                    lastHoveredTile.material.color.set(0x2ff53c);
+                }
+                
+                // Change color of hovered tile
+                hoveredTile.material.color.set(0xffd700);
+                lastHoveredTile = hoveredTile;
+            }
+        } else if (lastHoveredTile) {
+            // Reset color if no tile is hovered
+            lastHoveredTile.material.color.set(0x2ff53c);
+            lastHoveredTile = null;
         }
-    }
-
-    function onMouseClick(event) {
-        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-
-        raycaster.setFromCamera(mouse, camera);
-
-        // Ensure terrain.tiles is valid before mapping
-        const tileMeshes = terrain.tiles.map(t => t.tile).filter(tile => tile instanceof THREE.Mesh);
-        if (!tileMeshes.length) return;
-
-        const intersects = raycaster.intersectObjects(tileMeshes);
-
-        if (intersects.length > 0) {
-            const clickedTile = intersects[0].object;
-            moveObjectToTile(selectedObject, clickedTile.position);
-        }
-    }
-
-    function moveObjectToTile(object, targetPosition) {
-        if (!object) {
-            console.warn("Warning: selectedObject is undefined!");
-            return;
-        }
-        object.position.set(targetPosition.x, 0.5, targetPosition.z);
     }
 
     window.addEventListener('mousemove', onMouseMove);
-    window.addEventListener('click', onMouseClick);
 }

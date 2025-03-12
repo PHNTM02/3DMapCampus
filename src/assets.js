@@ -58,7 +58,7 @@ export class GetModel extends THREE.Group {
         super();
         this.loader = new GLTFLoader();
         this.tiles = tiles;
-        this.tileSize = tileSize
+        this.tileSize = tileSize;
         this.loadModel();
     }
 
@@ -67,7 +67,7 @@ export class GetModel extends THREE.Group {
             'models/PIONEER.gltf',
             (gltf) => {
                 const model = gltf.scene;
-                model.scale.set(0.5, 0.5, 0.5); // Adjust scale if necessary
+                model.scale.set(0.1, 0.1, 0.1); // Adjust scale if necessary
                 model.position.set(0, 0.2, 0); // Ensure it's slightly above the tile
                 model.traverse((child) => {
                     if (child.isMesh) {
@@ -101,6 +101,7 @@ export class GetModel extends THREE.Group {
 
         if(closerTile) {
             console.log("Model is placed at (x:"+ closerTile.position.x + ", y: "+ closerTile.position.z + ")");
+            closerTile.material.color.set(0xff0000);
         }else {
             console.log("No Tile is placed");
         }

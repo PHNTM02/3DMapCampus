@@ -86,6 +86,8 @@ export class Terrain extends THREE.Group {
                 const line = new THREE.LineSegments(edges, lineMaterial);
                 line.position.copy(tile.position);
                 terrainGrid.add(line);
+                // const gridhelper = new THREE.GridHelper(this.width, this.width / tileSize, 0x000000, 0x000000);
+                // terrainGrid.add(gridhelper);
             }
         }
 

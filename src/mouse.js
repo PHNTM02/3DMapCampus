@@ -197,7 +197,7 @@ export function setupMouseEvents(scene, camera, terrain) {
             if (lastHoveredTile !== hoveredTile) {
                 // Reset color of previous tile
                 if (lastHoveredTile) {
-                    lastHoveredTile.material.color.set(0x2ff53c);
+                    lastHoveredTile.material.color.set(0x5ef77f);
                 }
                 
                 // Change color of hovered tile
@@ -206,7 +206,7 @@ export function setupMouseEvents(scene, camera, terrain) {
             }
         } else if (lastHoveredTile) {
             // Reset color if no tile is hovered
-            lastHoveredTile.material.color.set(0x2ff53c);
+            lastHoveredTile.material.color.set(0x5ef77f);
             lastHoveredTile = null;
         }
     }

@@ -59,6 +59,7 @@ export class Terrain extends THREE.Group {
 
         // Manually place objects
         // this.placeObjects();
+        this.loadModel();
     }
 
     createTerrain() {
@@ -114,4 +115,10 @@ export class Terrain extends THREE.Group {
     //         }
     //     });
     // }
+
+    loadModel() {
+        const model = new GetModel();
+        model.position.set(0, 0.3, 0);
+        this.add(model);
+    }
 }

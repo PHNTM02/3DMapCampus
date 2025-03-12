@@ -193,6 +193,8 @@ export function setupMouseEvents(scene, camera, terrain) {
 
         if (intersects.length > 0) {
             const hoveredTile = intersects[0].object;
+            const tilePosition = hoveredTile.position;
+            console.log("Tile Position: (x:" + tilePosition.x + " y:" + tilePosition.z + ")");
             
             if (lastHoveredTile !== hoveredTile) {
                 // Reset color of previous tile

@@ -52,7 +52,7 @@ export class Terrain extends THREE.Group {
         this.height = height;
         this.tiles = [];
 
-        this.modelLoader = new GetModel(); // Create instance of GetModel
+        // this.modelLoader = new GetModel(); // Create instance of GetModel
 
         // Create the terrain grid
         this.createTerrain();

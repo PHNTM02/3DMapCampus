@@ -70,7 +70,7 @@ export class Terrain extends THREE.Group {
             for (let j = 0; j < gridSize; j++) {
                 // Create green tile
                 const geometry = new THREE.BoxGeometry(tileSize, 0.3, tileSize);
-                const material = new THREE.MeshStandardMaterial({ color: 0x2ff53c });
+                const material = new THREE.MeshStandardMaterial({ color: 0x5ef77f });
                 const tile = new THREE.Mesh(geometry, material);
 
                 // Center each tile

@@ -201,7 +201,7 @@ export function setupMouseEvents(scene, camera, terrain) {
                 }
                 
                 // Change color of hovered tile
-                hoveredTile.material.color.set(0xffd700);
+                hoveredTile.material.color.set(0xd1cbcb);
                 lastHoveredTile = hoveredTile;
             }
         } else if (lastHoveredTile) {

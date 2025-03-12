@@ -54,9 +54,11 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 // }
 
 export class GetModel extends THREE.Group {
-    constructor() {
+    constructor(tiles, tileSize = 1) {
         super();
         this.loader = new GLTFLoader();
+        this.tiles = tiles;
+        this.tileSize = tileSize
         this.loadModel();
     }
 
@@ -74,11 +76,33 @@ export class GetModel extends THREE.Group {
                     }
                 });
                 this.add(model);
+                this.findtile(model);
             },
             undefined,
             (error) => {
                 console.error('Error loading model:', error);
             }
         );
+    }
+
+    findtile(model) {
+        const objPosition = model.position;
+
+        let closerTile = null;
+        let minDistance = Infinity;
+
+        this.tiles.forEach((tile) => {
+            const distance = objPosition.distanceTo(tile.position);
+            if(distance < minDistance){
+                minDistance = distance;
+                closerTile = tile;
+            }
+        });
+
+        if(closerTile) {
+            console.log("Model is placed at (x:"+ closerTile.position.x + ", y: "+ closerTile.position.z + ")");
+        }else {
+            console.log("No Tile is placed");
+        }
     }
 }

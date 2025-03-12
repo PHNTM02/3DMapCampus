@@ -117,7 +117,8 @@ export class Terrain extends THREE.Group {
     // }
 
     loadModel() {
-        const model = new GetModel();
+        const tileSize = 1;
+        const model = new GetModel(this.tiles, tileSize);
         model.position.set(0, 0.3, 0);
         this.add(model);
     }

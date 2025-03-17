@@ -40,15 +40,15 @@ setupMouseEvents(scene, camera, terrain);
 
 // --- LIGHTS/SHADOWS MAKER
 const sun = new THREE.DirectionalLight( 0xFFFFFF );
-const sun2 = new THREE.DirectionalLight( 0xFFFFFF );
+// const sun2 = new THREE.DirectionalLight( 0xFFFFFF );
 sun.intensity = 3; //the intenstity of the light
 sun.position.set(7, 5, 1);
-sun2.position.set(-10, 3, -3);
+// sun2.position.set(-10, 3, -3);
 // const helper = new THREE.DirectionalLightHelper( sun, 5 );
 // const helper2 = new THREE.DirectionalLightHelper( sun2, 5 );
 // const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft background light
 scene.add( sun );
-scene.add( sun2);
+// scene.add( sun2);
 // scene.add(ambientLight);
 // scene.add( helper );
 // scene.add( helper2 );

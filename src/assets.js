@@ -199,7 +199,7 @@ export class GetModel extends THREE.Group {
             modelPath,
             (gltf) => {
                 const model = gltf.scene;
-                model.scale.set(0.05, 0.05, 0.05);
+                model.scale.set(0.08, 0.08, 0.08);
                 model.traverse((child) => {
                     if (child.isMesh) {
                         child.castShadow = true;

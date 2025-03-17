@@ -52,14 +52,13 @@ export class Terrain extends THREE.Group {
         this.height = height;
         this.tiles = [];
 
-        // this.modelLoader = new GetModel(); // Create instance of GetModel
 
         // Create the terrain grid
         this.createTerrain();
 
         // Manually place objects
         // this.placeObjects();
-        // this.loadModel();
+        this.loadModel();
     }
 
     createTerrain() {
@@ -118,10 +117,10 @@ export class Terrain extends THREE.Group {
     //     });
     // }
 
-    // loadModel() {
-    //     const tileSize = 1;
-    //     const model = new GetModel(this.tiles, tileSize);
-    //     model.position.set(0, 0.2, 0);
-    //     this.add(model);
-    // }
+    loadModel() {
+        const tileSize = 1;
+        const model = new GetModel(this.tiles, tileSize);
+        model.position.set(0, 0.2, 0);
+        this.add(model);
+    }
 }

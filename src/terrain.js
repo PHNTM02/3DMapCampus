@@ -80,11 +80,11 @@ export class Terrain extends THREE.Group {
                 // this.tiles.push({ tile, position: { x: i, z: j } });
 
                 // Add grid lines
-                const edges = new THREE.EdgesGeometry(geometry);
-                const lineMaterial = new THREE.LineBasicMaterial({ color: 0x000000 });
-                const line = new THREE.LineSegments(edges, lineMaterial);
-                line.position.copy(tile.position);
-                terrainGrid.add(line);
+                // const edges = new THREE.EdgesGeometry(geometry);
+                // const lineMaterial = new THREE.LineBasicMaterial({ color: 0x000000 });
+                // const line = new THREE.LineSegments(edges, lineMaterial);
+                // line.position.copy(tile.position);
+                // terrainGrid.add(line);
                 // const gridhelper = new THREE.GridHelper(this.width, this.width / tileSize, 0x000000, 0x000000);
                 // terrainGrid.add(gridhelper);
             }

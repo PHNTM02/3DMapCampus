@@ -20,7 +20,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 // --- CAMERA MAKER & POSITION
 const camera = new THREE.PerspectiveCamera(75, size.width / size.height, 0.1, 1000);
-camera.position.set(5, 10, 3);
+camera.position.set(0.08, 7, 11);
 
 // ---Import Files Here
 const terrain = new Terrain();

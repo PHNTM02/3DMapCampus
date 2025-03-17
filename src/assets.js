@@ -1,101 +1,70 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-
-export class AssetLoader extends THREE.Group {
+export class GetModel extends THREE.Group {
     constructor(tiles, tileSize = 1) {
         super();
         this.loader = new GLTFLoader();
-        this.models = {};
-        this.tiles = tiles || [];  // Ensure tiles array is valid
+        this.tiles = tiles;
         this.tileSize = tileSize;
-    }
 
-    loadModels(callback) {
-        const modelPaths = {
-            tree1: 'assets/tree1.gltf',
-            PIONEER: 'assets/PIONEER.gltf',
-            CST1: 'assets/CST1.gltf',
-            CAH: 'assets/CAH.gltf'
+        // Define model positions (supports .gltf & .glb)
+        this.modelPositions = {
+            'models/PIONEER.gltf': { x: 2, z: 2 },
+            'models/CAH.gltf': { x: -3, z: 1 },
+            'models/Tree1.glb': { x: 0, z: -2 } // Example GLB model
         };
 
-        let loadedCount = 0;
-        const totalModels = Object.keys(modelPaths).length;
-
-        Object.entries(modelPaths).forEach(([key, path]) => {
-            this.loader.load(
-                path,
-                (gltf) => {
-                    const model = gltf.scene;
-                    model.scale.set(0.05, 0.05, 0.05);
-
-                    model.traverse((child) => {
-                        if (child.isMesh) {
-                            child.castShadow = true;
-                            child.receiveShadow = true;
-                        }
-                    });
-
-                    this.models[key] = model;
-
-                    if (key !== 'tree1') {
-                        this.add(model);
-                        this.placeOnClosestTile(model);
-                        console.log(`${key} placed at:`, model.position);
-                    }
-
-                    loadedCount++;
-                    if (loadedCount === totalModels) {
-                        callback();
-                    }
-                },
-                undefined,
-                (error) => {
-                    console.error(`Error loading ${key}:`, error);
-                }
-            );
-        });
+        this.loadModels();
     }
 
-    getModel(name) {
-        if (!this.models[name]) {
-            console.warn(`Model '${name}' not found!`);
-            return null;
+    loadModels() {
+        for (const modelPath in this.modelPositions) {
+            this.loadModel(modelPath, this.modelPositions[modelPath]);
         }
-        return this.models[name].clone();
     }
 
-    placeOnClosestTile(model) {
-        if (!this.tiles.length) {
-            console.warn("No tiles available to place the model.");
-            return;
-        }
+    loadModel(modelPath, tileCoords) {
+        this.loader.load(
+            modelPath,
+            (gltf) => {
+                const model = gltf.scene;
+                model.scale.set(0.05, 0.05, 0.05);
+                model.traverse((child) => {
+                    if (child.isMesh) {
+                        child.castShadow = true;
+                        child.receiveShadow = true;
+                    }
+                });
 
-        let closestTile = null;
-        let minDistance = Infinity;
-
-        this.tiles.forEach((tile) => {
-            const distance = model.position.distanceTo(tile.position);
-            if (distance < minDistance) {
-                minDistance = distance;
-                closestTile = tile;
+                this.placeModelOnTile(model, tileCoords);
+                this.add(model);
+            },
+            undefined,
+            (error) => {
+                console.error(`Error loading model ${modelPath}:`, error);
             }
-        });
+        );
+    }
 
-        if (closestTile) {
-            model.position.set(closestTile.position.x, 0.1, closestTile.position.z);
-            closestTile.material.color.set(0xff0000);
-            console.log(`Model placed on tile: (x: ${closestTile.position.x}, z: ${closestTile.position.z})`);
+    placeModelOnTile(model, tileCoords) {
+        let targetTile = this.findTileByCoords(tileCoords);
+        if (targetTile) {
+            model.position.set(
+                targetTile.position.x,  
+                targetTile.position.y + 0.2,  
+                targetTile.position.z   
+            );
+            targetTile.material.color.set(0xff0000); // Highlight the tile
         } else {
-            console.warn("No nearby tile found for placement.");
+            console.warn(`No tile found at (${tileCoords.x}, ${tileCoords.z}) for model placement.`);
         }
     }
 
-    placeModelAtNearestTile(name) {
-        const model = this.getModel(name);
-        if (!model) return;
-
-        this.add(model);
-        this.placeOnClosestTile(model);
+    findTileByCoords(coords) {
+        return this.tiles.find(tile => 
+            Math.round(tile.position.x) === coords.x &&
+            Math.round(tile.position.z) === coords.z
+        );
     }
 }

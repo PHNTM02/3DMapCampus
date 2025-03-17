@@ -67,7 +67,7 @@ export class GetModel extends THREE.Group {
             'models/PIONEER.gltf',
             (gltf) => {
                 const model = gltf.scene;
-                model.scale.set(0.1, 0.1, 0.1); // Adjust scale if necessary
+                model.scale.set(0.05, 0.05, 0.05); // Adjust scale if necessary
                 model.position.set(0, 0.2, 0); // Ensure it's slightly above the tile
                 model.traverse((child) => {
                     if (child.isMesh) {

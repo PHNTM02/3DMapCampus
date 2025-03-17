@@ -34,20 +34,8 @@ setTimeout(() => {
     };
 }, 500);
 
-// --- Selected Object to Hover
-// const selectedObject = new THREE.Mesh(
-//     new THREE.BoxGeometry(0.8, 0.8, 0.8),
-//     new THREE.MeshStandardMaterial({ color: 0xff0000})
-// );
-
-// selectedObject.position.set(0, 0.5, 0);
-// scene.add(selectedObject);
-
 // --- Mouse Hover
 setupMouseEvents(scene, camera, terrain);
-
-// --- GLTF/GLB MAKER
-// const loader = new GLTFLoader();
 
 
 // --- LIGHTS/SHADOWS MAKER
@@ -67,8 +55,8 @@ scene.add( sun2);
 
 // --- ORBITCONTROL MAKER
 const controls = new OrbitControls( camera, canvas);
-// controls.maxPolarAngle = Math.PI / 2.5;
-// controls.screenSpacePanning = false;
+controls.maxPolarAngle = Math.PI / 2.5;
+controls.screenSpacePanning = false;
 
 
 // ---HANDLING RE-SIZE OF THE SCREEN
@@ -83,9 +71,6 @@ function handleResize(){
 
 // --- ADVENT LISTENER
 window.addEventListener("resize", handleResize);
-
-// BOX GOEMETRy
-
 
 
 // --- ANIMATE THE SCENE

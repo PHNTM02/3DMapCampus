@@ -182,7 +182,7 @@ export class GetModel extends THREE.Group {
         this.modelPositions = {
             'models/PIONEER.gltf': { x: 2, z: 2 }, // Example position (tile at 2,2)
             'models/CAH.gltf': { x: -3, z: 1 },   // Example position (tile at -3,1)
-            'models/low_poly_building.glb': { x: 1, z: -3}
+            'models/COD.gltf': { x: 1, z: -3}
         };
 
         this.loadModels();

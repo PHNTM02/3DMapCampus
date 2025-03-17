@@ -10,9 +10,9 @@ export class GetModel extends THREE.Group {
 
         // Define model positions (supports .gltf & .glb)
         this.modelPositions = {
-            'models/PIONEER.gltf': { x: 2, z: 2 },
+            'models/PIONEERNew.gltf': { x: 2, z: 2 },
             'models/CAH.gltf': { x: -3, z: 1 },
-            'models/Tree1.glb': { x: 0, z: -2 } // Example GLB model
+            'models/Tree1.gltf': { x: 0, z: -2 } // Example GLB model
         };
 
         this.loadModels();

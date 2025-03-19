@@ -85,7 +85,7 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 0 5px rgba(195, 147, 147, 0.2);
 }
 
 .sidebar a {

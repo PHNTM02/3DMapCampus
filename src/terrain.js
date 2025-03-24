@@ -1,58 +1,42 @@
 import * as THREE from 'three';
-import { GetModel } from './assets.js'; // Import assets (tree models)
+import { Tile } from './tile.js'; // Import optimized tile class
+// import { GetModel } from './assets.js'; // Import models (trees, buildings)
+
 
 export class Terrain extends THREE.Group {
-    constructor(width=16, height=16) {
+    constructor(width = 100, height = 100) {
         super();
-
         this.width = width;
         this.height = height;
-        this.tiles = [];
-
 
         // Create the terrain grid
         this.createTerrain();
-
-        // Manually place objects
-        this.loadModel();
     }
 
     createTerrain() {
         const tileSize = 1;
-        const gridSize = this.width;
-        const terrainGrid = new THREE.Group();
+        const gridSize = this.width; // Assuming square terrain
+        const geometry = new THREE.BoxGeometry(tileSize, 0.3, tileSize);
+        const material = new THREE.MeshStandardMaterial({ color: 0x5ef77f });
 
+        // Use InstancedMesh to optimize performance (1 draw call instead of thousands)
+        const terrainTiles = new THREE.InstancedMesh(geometry, material, gridSize * gridSize);
+        const matrix = new THREE.Matrix4();
+
+        let index = 0;
         for (let i = 0; i < gridSize; i++) {
             for (let j = 0; j < gridSize; j++) {
-                // Create green tile
-                const geometry = new THREE.BoxGeometry(tileSize, 0.3, tileSize);
-                const material = new THREE.MeshStandardMaterial({ color: 0x5ef77f });
-                const tile = new THREE.Mesh(geometry, material);
-
-                // Center each tile
-                tile.position.set(i - gridSize / 2 + 0.5, 0, j - gridSize / 2 + 0.5);
-                terrainGrid.add(tile);
-                this.tiles.push(tile);
-                // this.tiles.push({ tile, position: { x: i, z: j } });
-
-                // Add grid lines
-                const edges = new THREE.EdgesGeometry(geometry);
-                const lineMaterial = new THREE.LineBasicMaterial({ color: 0x000000 });
-                const line = new THREE.LineSegments(edges, lineMaterial);
-                line.position.copy(tile.position);
-                terrainGrid.add(line);
-                const gridhelper = new THREE.GridHelper(this.width, this.width / tileSize, 0x000000, 0x000000);
-                terrainGrid.add(gridhelper);
+                matrix.setPosition(i - gridSize / 2 + 0.5, 0, j - gridSize / 2 + 0.5);
+                terrainTiles.setMatrixAt(index, matrix);
+                index++;
             }
         }
 
-        this.add(terrainGrid);
-    }
+        terrainTiles.instanceMatrix.needsUpdate = true;
+        this.add(terrainTiles);
 
-    loadModel() {
-        const tileSize = 1;
-        const model = new GetModel(this.tiles, tileSize);
-        model.position.set(0, 0.2, 0);
-        this.add(model);
+        // Add Grid Helper (optional, only added once)
+        const gridHelper = new THREE.GridHelper(this.width, this.width, 0x000000, 0x000000);
+        this.add(gridHelper);
     }
 }

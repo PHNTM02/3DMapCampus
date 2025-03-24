@@ -15,7 +15,7 @@ const size = {
 // --- RENDERER MAKER
 const renderer = new THREE.WebGLRenderer({canvas: canvas});
 renderer.setSize(size.width, size.height);
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+// renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.setAnimationLoop(animate);
 
 // --- CAMERA MAKER & POSITION
@@ -50,11 +50,13 @@ controls.screenSpacePanning = false;
 // ---HANDLING RE-SIZE OF THE SCREEN
 function handleResize(){
     size.width = window.innerWidth;
-    size.Height = window.innerHeight;
+    size.height = window.innerHeight;
+
     camera.aspect = size.width / size.height;
     camera.updateProjectionMatrix();
 
-    renderer.setSize( size.width, size.height);
+    renderer.setSize(size.width, size.height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 }
 
 // --- ADVENT LISTENER

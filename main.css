@@ -29,36 +29,6 @@ body, html {
     width: 100vh; /*Former 100%*/
 }
 
-/* .bottom-nav {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #333;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 5px 0;
-    z-index: 100;
-}
-
-.nav-item {
-    text-align: center;
-    color: white;
-    cursor: pointer;
-    flex: 1;
-}
-
-.nav-item img {
-    width: 24px;
-    height: 24px;
-    display: block;
-    margin: 0 auto 5px;
-}
-
-.nav-item span {
-    font-size: 14px;
-} */
-
 /* This is the Search Bar */
 .search-container {
     z-index: 100;
@@ -72,11 +42,19 @@ body, html {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+.search-container input {
+    width: 35%;
+    padding: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+}
+
 
 /* This is the Navigation Bar */
 .sidebar {
     z-index: 50;
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 60px;
     background: url("icons/aup-gate.jpg") no-repeat center center/cover;
@@ -100,18 +78,5 @@ body, html {
 
 .sidebar a:hover {
     background-color: #fdfdfd;
-}
-
-
-
-/*This is for search container */
-.search-container input {
-    width: 35%;
-    padding: 8px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    display: flex;
-    justify-content: flex-start;
 }
 

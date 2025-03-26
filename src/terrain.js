@@ -53,29 +53,85 @@ export class Terrain extends THREE.Group {
     }
 
 
+    // createTerrain() {
+    //     const grid = 50; // Grid size (50x50)
+    //     const tileSize = 1; // Size of each tile
+    
+    //     const terrainMaterial = new THREE.MeshStandardMaterial({ color: 0x5ef77f });
+    //     const terrainGroup = new THREE.Group(); // Group to hold all terrain tiles
+    
+    //     for (let i = 0; i < grid; i++) {
+    //         for (let j = 0; j < grid; j++) {
+    //             const terrainGeometry = new THREE.BoxGeometry(tileSize, 0.3, tileSize);
+    //             const terrain = new THREE.Mesh(terrainGeometry, terrainMaterial);
+    
+    //             // Set the position for each tile based on its row and column
+    //             terrain.position.set(i * tileSize - (grid * tileSize) / 2, -0.05, j * tileSize - (grid * tileSize) / 2);
+    
+    //             // Add the terrain tile to the group
+    //             terrainGroup.add(terrain);
+    //         }
+    //     }
+    
+    //     terrainGroup.name = 'Terrain'; // Set name for the entire terrain group
+    //     this.add(terrainGroup); // Add the whole terrain group to the scene
+    // }
+    
     createTerrain() {
         const grid = 50; // Grid size (50x50)
         const tileSize = 1; // Size of each tile
-    
+        
         const terrainMaterial = new THREE.MeshStandardMaterial({ color: 0x5ef77f });
-        const terrainGroup = new THREE.Group(); // Group to hold all terrain tiles
-    
+        const lineMaterial = new THREE.LineBasicMaterial({ color: 0x000000 }); // Material for grid lines
+        
+        const terrainGroup = new THREE.Group(); // Group to hold all terrain tiles and borders
+        
         for (let i = 0; i < grid; i++) {
             for (let j = 0; j < grid; j++) {
-                const terrainGeometry = new THREE.BoxGeometry(tileSize, 0.1, tileSize);
+                // Create terrain tile
+                const terrainGeometry = new THREE.BoxGeometry(tileSize, 0.3, tileSize);
                 const terrain = new THREE.Mesh(terrainGeometry, terrainMaterial);
-    
+        
                 // Set the position for each tile based on its row and column
                 terrain.position.set(i * tileSize - (grid * tileSize) / 2, -0.05, j * tileSize - (grid * tileSize) / 2);
-    
+        
                 // Add the terrain tile to the group
                 terrainGroup.add(terrain);
+        
+                // Add border lines around each tile
+                this.addTileBorder(i, j, tileSize, lineMaterial, terrainGroup);
             }
         }
     
         terrainGroup.name = 'Terrain'; // Set name for the entire terrain group
         this.add(terrainGroup); // Add the whole terrain group to the scene
     }
+    
+    // Function to add borders around each tile
+    addTileBorder(i, j, tileSize, material, group) {
+        const borderVertices = [
+            // Bottom border
+            new THREE.Vector3(i * tileSize - (50 * tileSize) / 2, 0.15, j * tileSize - (50 * tileSize) / 2),
+            new THREE.Vector3(i * tileSize - (50 * tileSize) / 2 + tileSize, 0.15, j * tileSize - (50 * tileSize) / 2),
+            
+            // Right border
+            new THREE.Vector3(i * tileSize - (50 * tileSize) / 2 + tileSize, 0.15, j * tileSize - (50 * tileSize) / 2),
+            new THREE.Vector3(i * tileSize - (50 * tileSize) / 2 + tileSize, 0.15, j * tileSize - (50 * tileSize) / 2 + tileSize),
+            
+            // Top border
+            new THREE.Vector3(i * tileSize - (50 * tileSize) / 2 + tileSize, 0.15, j * tileSize - (50 * tileSize) / 2 + tileSize),
+            new THREE.Vector3(i * tileSize - (50 * tileSize) / 2, 0.15, j * tileSize - (50 * tileSize) / 2 + tileSize),
+            
+            // Left border
+            new THREE.Vector3(i * tileSize - (50 * tileSize) / 2, 0.15, j * tileSize - (50 * tileSize) / 2 + tileSize),
+            new THREE.Vector3(i * tileSize - (50 * tileSize) / 2, 0.15, j * tileSize - (50 * tileSize) / 2)
+        ];
+    
+        const borderGeometry = new THREE.BufferGeometry().setFromPoints(borderVertices);
+        const border = new THREE.LineSegments(borderGeometry, material);
+        group.add(border);
+    }
+    
     
 
     // terrain() {

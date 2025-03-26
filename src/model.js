@@ -7,32 +7,32 @@ export const models = [
     
     {
         name: "cah",
-        path: "./models/CAH.gltf",
+        path: "./models/Model/CAH.gltf",
         scale: 3
     },
     {
         name: "tree1",
-        path: "./models/Tree1.gltf",
+        path: "./models/Model/Tree1.gltf",
         scale: 1
     },
     {
         name: "cod",
-        path: "./models/CODNew.gltf",
+        path: "./models/Model/CODNew.gltf",
         scale: 4
     },
     {
         name: "com",
-        path: "./models/COMNew.gltf",
+        path: "./models/Model/COMNew.gltf",
         scale: 5
     },
     {
         name: "cst",
-        path: "./models/CSTNew.gltf",
+        path: "./models/Model/CSTNew.gltf",
         scale: 6,
     },
     {
         name: "aupgate",
-        path: "./models/AUP Gate.gltf",
+        path: "./models/Model/AUP Gate.gltf",
         scale: 7
     },
     {

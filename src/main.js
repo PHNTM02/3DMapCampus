@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { Terrain } from '/terrain.js';
+import { Terrain } from './terrain.js';
 
 // --- SCENE MAKER
 const scene = new THREE.Scene();

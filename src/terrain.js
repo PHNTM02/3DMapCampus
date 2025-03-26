@@ -42,7 +42,7 @@
 // }
 
 import * as THREE from 'three';
-import { AssetManager } from './asset.js';
+import { AssetManager } from './assets.js';
 
 export class Terrain extends THREE.Group {
     constructor() {

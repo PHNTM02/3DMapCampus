@@ -81,9 +81,9 @@ export class AssetManager extends THREE.Group {
 
         // Define positions for each model
         this.modelData = {
-            'pioneer': { x: 2, z: 2 },
-            'cah': { x: -3, z: 1 },
-            'tree1': { x: 0, z: -2 }
+            'PIONEERNew': { x: 2, z: 2 },
+            'CAH': { x: -3, z: 1 },
+            'Tree1': { x: 0, z: -2 }
         };
 
         this.loadModels();

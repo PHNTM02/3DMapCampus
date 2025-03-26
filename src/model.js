@@ -16,22 +16,27 @@ export const models = [
     },
     {
         name: "cod",
-        path: "./models/COD.gltf",
+        path: "./models/CODNew.gltf",
         scale: 4
     },
     {
         name: "com",
-        path: "./models/COM.gltf",
+        path: "./models/COMNew.gltf",
         scale: 5
     },
     {
         name: "cst",
-        path: "./models/CST.gltf",
+        path: "./models/CSTNew.gltf",
         scale: 6,
     },
     {
         name: "aupgate",
-        path: "./models/AUPGATE.gltf",
-        scale: 1
+        path: "./models/AUP Gate.gltf",
+        scale: 7
+    },
+    {
+        name: "CAHcoeCOT",
+        path: "./models/CaHCotCoE.gltf",
+        scale: 8
     },
 ];

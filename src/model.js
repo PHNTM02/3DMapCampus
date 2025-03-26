@@ -1,9 +1,10 @@
 export const models = [
     {
         name: "pioneer",
-        path: "./models/PIONEERNew.gltf",
+        path: "./models/Model/PIONEERNew.gltf",
         scale: 2
     },
+    
     {
         name: "cah",
         path: "./models/CAH.gltf",

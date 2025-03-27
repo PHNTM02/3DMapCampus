@@ -42,34 +42,27 @@
 // }
 
 import * as THREE from 'three';
-import { AssetManager } from './assets.js';
+import { Asset } from './assets.js';
 
 export class Terrain extends THREE.Group {
     constructor() {
-        super(); // Call the constructor of THREE.Group
+        super();
         
         this.generate();
-        // this.loadAssets();
     }
 
     generate() {
         this.terrain();
+        this.loadAssets();
     }
 
-    // clear() {
-    //     if(this.terrain){
-    //         this.terrain.geometry.dispose();
-    //         this.terrain.material.dispose();
-    //         this.remove(this.terrain);
-    //     }
-    // }
     terrain() {
-        const tileSize = 1;  // Size of each tile (box)
-        const gridSize = 70; 
+        const tileSize = 1;
+        const gridSize = 500; 
         
         // Create a box geometry for the tiles
-        const geometry = new THREE.BoxGeometry(tileSize, 0.3, tileSize);  // Flat tiles (thin height)
-        const material = new THREE.MeshBasicMaterial({ color: 0x76e895 });  // Tile color (green)
+        const geometry = new THREE.BoxGeometry(tileSize, 0.3, tileSize);
+        const material = new THREE.MeshBasicMaterial({ color: 0x76e895 });
 
         // Number of instances (100x100)
         const count = gridSize * gridSize;
@@ -81,20 +74,18 @@ export class Terrain extends THREE.Group {
         const matrix = new THREE.Matrix4();
         for (let x = 0; x < gridSize; x++) {
             for (let z = 0; z < gridSize; z++) {
-                const posX = x * tileSize; // Set X position for each tile
-                const posZ = z * tileSize; // Set Z position for each tile
+                const posX = x * tileSize;
+                const posZ = z * tileSize;
 
-                matrix.setPosition(posX, 0, posZ);  // Set each tile's position (Y = 0 for flat terrain)
-                instancedMesh.setMatrixAt(x * gridSize + z, matrix);  // Set the matrix for each tile
+                matrix.setPosition(posX, 0, posZ);
+                instancedMesh.setMatrixAt(x * gridSize + z, matrix);
             }
         }
-
-        // Add the instanced mesh to this group
         this.add(instancedMesh);
     }
 
     loadAssets() {
-        const assets = new AssetManager();
+        const assets = new Asset();
         this.add(assets);
     }
 }

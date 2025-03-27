@@ -15,7 +15,7 @@ export class Terrain extends THREE.Group {
 
     terrain() {
         const tileSize = 1;
-        const gridSize = 500; 
+        const gridSize = 100; 
         
         // Create a box geometry for the tiles
         const geometry = new THREE.BoxGeometry(tileSize, 0.3, tileSize);

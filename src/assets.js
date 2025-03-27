@@ -187,7 +187,8 @@ export class Asset {
                     return;
                 }
                 const model = gltf.scene;
-                model.position.set(0, 0, 0);
+                model.position.set(0, 5, 0);
+                model.scale.set(5, 5, 5);
                 this.scene.add(model);
                 console.log("COMNew.gltf loaded successfully!");
             },
@@ -205,7 +206,8 @@ export class Asset {
                     return;
                 }
                 const model = gltf.scene;
-                model.position.set(5, 0, 0);
+                model.position.set(5, 10, 0);
+                model.scale.set(5, 5, 5);
                 this.scene.add(model);
                 console.log("PIONEERNew.gltf loaded successfully!");
             },

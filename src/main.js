@@ -30,8 +30,8 @@ scene.add(sun, ambientLight);
 
 // --- ORBITCONTROL MAKER
 const controls = new OrbitControls( camera, canvas);
-controls.maxPolarAngle = Math.PI / 2.5;
-controls.screenSpacePanning = false;
+// controls.maxPolarAngle = Math.PI / 2.5;
+// controls.screenSpacePanning = false;
 
 // ADD TERRAIN
 const terrain = new Terrain();

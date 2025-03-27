@@ -48,17 +48,28 @@ export class Terrain extends THREE.Group {
     constructor() {
         super(); // Call the constructor of THREE.Group
         
-        this.terrain();
+        this.generate();
         // this.loadAssets();
     }
 
+    generate() {
+        this.terrain();
+    }
+
+    // clear() {
+    //     if(this.terrain){
+    //         this.terrain.geometry.dispose();
+    //         this.terrain.material.dispose();
+    //         this.remove(this.terrain);
+    //     }
+    // }
     terrain() {
         const tileSize = 1;  // Size of each tile (box)
-        const gridSize = 50; // 100x100 grid
+        const gridSize = 70; 
         
         // Create a box geometry for the tiles
         const geometry = new THREE.BoxGeometry(tileSize, 0.3, tileSize);  // Flat tiles (thin height)
-        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });  // Tile color (green)
+        const material = new THREE.MeshBasicMaterial({ color: 0x76e895 });  // Tile color (green)
 
         // Number of instances (100x100)
         const count = gridSize * gridSize;

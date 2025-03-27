@@ -1,6 +1,6 @@
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-export class com {
+export class pioneer {
     constructor(scene) {
         this.scene = scene;
         this.loader = new GLTFLoader();
@@ -8,7 +8,7 @@ export class com {
 
     loadModel() {
         this.loader.load(
-            'model/COMNew.gltf', 
+            'model/PIONEEWNew.gltf', 
             (gltf) => {
                 this.scene.add(gltf.scene);
 

@@ -100,6 +100,7 @@ export class Asset {
         this.scene = scene;
         this.loader = new GLTFLoader();
 <<<<<<< HEAD
+<<<<<<< HEAD
         this.tileSize = tileSize; // Tile size for reference
 
         // Define positions for each model
@@ -119,12 +120,17 @@ export class Asset {
 
         this.loadModels();
 =======
+=======
+>>>>>>> 497d8711a4962eade10ca07ed4324f93701a1448
         this.generate();
     }
     
     generate() {
         this.com();
         this.pioneer();
+<<<<<<< HEAD
+>>>>>>> 497d8711a4962eade10ca07ed4324f93701a1448
+=======
 >>>>>>> 497d8711a4962eade10ca07ed4324f93701a1448
     }
 

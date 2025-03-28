@@ -18,7 +18,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 // --- CAMERA MAKER & POSITION
 const camera = new THREE.PerspectiveCamera(75, size.width / size.height, 0.1, 1000);
-camera.position.set(50, 50, 150);
+camera.position.set(26, 23, 79);
 scene.add(camera)
 
 // --- LIGHTS/SHADOWS MAKER
@@ -30,8 +30,8 @@ scene.add(sun, ambientLight);
 
 // --- ORBITCONTROL MAKER
 const controls = new OrbitControls( camera, canvas);
-// controls.maxPolarAngle = Math.PI / 2.5;
-// controls.screenSpacePanning = false;
+controls.maxPolarAngle = Math.PI / 2.5;
+controls.screenSpacePanning = false;
 
 // ADD TERRAIN
 const terrain = new Terrain();
@@ -55,6 +55,7 @@ window.addEventListener("resize", handleResize);
 
 function animate() {
 
+    // console.log(camera.position);
     controls.update();
 	renderer.render( scene, camera );
 

@@ -1,0 +1,1 @@
+{"asset":{"version":"2.0","generator":"Blockbench 4.12.3 glTF exporter"},"scenes":[{"nodes":[1],"name":"blockbench_export"}],"scene":0,"nodes":[{"translation":[4.918749999999999,0,-0.0625],"name":"hallway"},{"children":[0]}]}

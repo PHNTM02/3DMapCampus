@@ -10,13 +10,13 @@
 
 //         // Define positions for each model
 //         this.modelData = {
-//             'PIONEERNew': { x: 2, z: 2 },
+//             'PIONEER': { x: 2, z: 2 },
 //             'CAH': { x: -3, z: 1 },
 //             'Tree1': { x: 0, z: -2 },
-//             'CODNew': { x: 4, z: 4},
-//             'COMNew': { x: 7, z: 7},
+//             'COD': { x: 4, z: 4},
+//             'COM': { x: 7, z: 7},
 //             'CaHCoTCoE': { x: 9, z: 9},
-//             'CODNew': { x: 1, z: 2},
+//             'COD': { x: 1, z: 2},
 
 
 //         };
@@ -99,39 +99,38 @@ export class Asset {
 
         this.scene = scene;
         this.loader = new GLTFLoader();
-<<<<<<< HEAD
-<<<<<<< HEAD
+         HEAD
+         HEAD
         this.tileSize = tileSize; // Tile size for reference
 
         // Define positions for each model
         this.modelData = {
-            'PIONEERNew': { x: 2, z: 2 },
+            'PIONEER': { x: 2, z: 2 },
             'CAH': { x: -3, z: 1 },
             'Tree1': { x: 0, z: -2 },
-            'CODNew': { x: 4, z: 4},
-            'COMNew': { x: 7, z: 7},
+            'COD': { x: 4, z: 4},
+            'COM': { x: 7, z: 7},
             'CaHCoTCoE': { x: 9, z: 9},
             'AUP Gate': { x: 1, z: 2}, // Added AUP Gate model
-            'CODNew': { x: 1, z: 2},
+            'COD': { x: 1, z: 2},
 
 
 
         };
 
         this.loadModels();
-=======
-=======
->>>>>>> 497d8711a4962eade10ca07ed4324f93701a1448
+
+     //497d8711a4962eade10ca07ed4324f93701a1448
         this.generate();
     }
     
     generate() {
         this.com();
         this.pioneer();
-<<<<<<< HEAD
->>>>>>> 497d8711a4962eade10ca07ed4324f93701a1448
-=======
->>>>>>> 497d8711a4962eade10ca07ed4324f93701a1448
+     HEAD
+     //497d8711a4962eade10ca07ed4324f93701a1448
+
+    // 497d8711a4962eade10ca07ed4324f93701a1448
     }
 
     com() {

@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { models } from './model.js';
+// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 export class AssetManager extends THREE.Group {
     constructor(tileSize = 1) {
@@ -50,38 +51,38 @@ export class AssetManager extends THREE.Group {
     }
 }
 
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+// import * as THREE from 'three';
+// import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-export class Asset {
-    constructor(scene) {
-        this.scene = scene;
-        this.loader = new GLTFLoader();
+// export class Asset {
+//     constructor(scene) {
+//         this.scene = scene;
+//         this.loader = new GLTFLoader();
 
-        this.generate();
-    }
+//         this.generate();
+//     }
     
-    generate() {
-        this.com();
-        this.pioneer();
-    }
+//     generate() {
+//         this.com();
+//         this.pioneer();
+//     }
 
-    com() {
-        this.loader.load('../models/model/COMNew.gltf', (gltf) => {
-            const model = gltf.scene;
-            model.position.set(0, 0, 0); // Adjust position as needed
-            this.scene.add(model);
-        });
-    }
+//     com() {
+//         this.loader.load('../models/model/COMNew.gltf', (gltf) => {
+//             const model = gltf.scene;
+//             model.position.set(0, 0, 0); // Adjust position as needed
+//             this.scene.add(model);
+//         });
+//     }
 
-    pioneer() {
-        this.loader.load('../models/model/PIONEERNew.gltf', (gltf) => {
-            const model = gltf.scene;
-            model.position.set(5, 0, 0); // Adjust position as needed
-            this.scene.add(model);
-        });
-    }
-}
+//     pioneer() {
+//         this.loader.load('../models/model/PIONEERNew.gltf', (gltf) => {
+//             const model = gltf.scene;
+//             model.position.set(5, 0, 0); // Adjust position as needed
+//             this.scene.add(model);
+//         });
+//     }
+// }
 
 // import * as THREE from 'three';
 // import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';

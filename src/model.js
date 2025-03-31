@@ -43,18 +43,18 @@ export const models = [
 
     {
         name: "CAHcoeCOT",
-        path: "./models/CaHCotCoE.gltf",
+        path: "./models/Model/CaHCotCoE.gltf",
         scale: 8
     },
     
     {
         name: "COE",
-        path: "./models/COE.gltf",
+        path: "./models/Model/COE.gltf",
         scale: 9
     },
 
     {
         name: "COT",
-        path: "./models/COT.gltf",
+        path: "./models/Model/COT.gltf",
     },
 ];

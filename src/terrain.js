@@ -25,24 +25,24 @@ export class Terrain extends THREE.Group {
 
 
 
-        // // Number of instances (100x100)
-        // const count = gridSize * gridSize;
+        // Number of instances (100x100)
+        const count = gridSize * gridSize;
 
-        // // Create an InstancedMesh (100x100 instances of the box)
-        // const instancedMesh = new THREE.InstancedMesh(geometry, material, count);
+        // Create an InstancedMesh (100x100 instances of the box)
+        const instancedMesh = new THREE.InstancedMesh(geometry, material, count);
 
-        // // Set the positions for each tile in the grid
-        // const matrix = new THREE.Matrix4();
-        // for (let x = 0; x < gridSize; x++) {
-        //     for (let z = 0; z < gridSize; z++) {
-        //         const posX = x * tileSize;
-        //         const posZ = z * tileSize;
+        // Set the positions for each tile in the grid
+        const matrix = new THREE.Matrix4();
+        for (let x = 0; x < gridSize; x++) {
+            for (let z = 0; z < gridSize; z++) {
+                const posX = x * tileSize;
+                const posZ = z * tileSize;
 
-        //         matrix.setPosition(posX, 0, posZ);
-        //         instancedMesh.setMatrixAt(x * gridSize + z, matrix);
-        //     }
-        // }
-        // this.add(instancedMesh);
+                matrix.setPosition(posX, 0, posZ);
+                instancedMesh.setMatrixAt(x * gridSize + z, matrix);
+            }
+        }
+        this.add(instancedMesh);
     }
 
     loadAssets() {

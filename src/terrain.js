@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { Asset } from './assets.js';
+import { AssetManager } from './assets.js';
 
 export class Terrain extends THREE.Group {
     constructor() {
@@ -15,7 +15,7 @@ export class Terrain extends THREE.Group {
 
     terrain() {
         const tileSize = 100;
-        // const gridSize = 100; 
+        const gridSize = 100; 
         
         // Create a box geometry for the tiles
         const geometry = new THREE.BoxGeometry(tileSize, 0.3, tileSize);
@@ -50,7 +50,7 @@ export class Terrain extends THREE.Group {
             this.scene = new THREE.Scene(); // Create the scene if missing
         }
         
-        const assets = new Asset(this.scene); // ✅ Pass the scene
+        const assets = new AssetManager(this.scene); // ✅ Pass the scene
     }
     
 }

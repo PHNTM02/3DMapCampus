@@ -12,6 +12,8 @@
     <div id="experience">
         <canvas id="experience-canvas"></canvas>
     </div>
+
+    <!-- Button to add a road or action -->
     <button id="addRoadButton">Add Road</button>
 
     <script type="importmap">
@@ -22,6 +24,71 @@
         }
       }
     </script>
-		<script type="module" src="main.js"></script>
+
+    <script type="module">
+        import * as THREE from 'https://cdn.jsdelivr.net/npm/three@v0.173.0/build/three.module.js';
+        import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@v0.173.0/examples/jsm/loaders/GLTFLoader.js';
+
+        // Create the scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('experience-canvas') });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // GLTFLoader to load models
+        const loader = new GLTFLoader();
+
+        // Models array to hold the GLTF models
+        const models = [];
+
+        // Load the first GLTF model
+        loader.load('model/poly-apartment.gltf', (gltf) => {
+            const model1 = gltf.scene;
+            model1.position.set(-3, 0, 0);  // Position of Model 1
+            scene.add(model1);
+            models.push(model1);
+        });
+
+        // Load the second GLTF model
+        loader.load('model2.gltf', (gltf) => {
+            const model2 = gltf.scene;
+            model2.position.set(0, 0, 0);   // Position of Model 2
+            scene.add(model2);
+            models.push(model2);
+        });
+
+        // Load the third GLTF model
+        loader.load('model3.gltf', (gltf) => {
+            const model3 = gltf.scene;
+            model3.position.set(3, 0, 0);   // Position of Model 3
+            scene.add(model3);
+            models.push(model3);
+        });
+
+        // Camera position
+        camera.position.z = 5;
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Function to animate the scene
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        // Button functionality to add a road or additional action
+        document.getElementById('addRoadButton').addEventListener('click', () => {
+            console.log("Adding road or another action...");
+            // Add additional functionality here
+        });
+    </script>
 </body>
 </html>

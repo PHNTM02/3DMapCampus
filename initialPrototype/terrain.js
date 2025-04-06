@@ -15,7 +15,7 @@ export class Terrain extends THREE.Group {
         const material = new THREE.MeshBasicMaterial({ color: 0x89f5a8, wireframe: true });
         const terrain = new THREE.Mesh( geometry, material );
         this.rotation.x = -Math.PI / 2;
-        this.add(terrain);
+        this.add(CAH.gltf);
     }
 
     straightRoad() {

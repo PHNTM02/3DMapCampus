@@ -18,7 +18,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 // --- CAMERA MAKER & POSITION
 const camera = new THREE.PerspectiveCamera(75, size.width / size.height, 0.1, 1000);
-camera.position.set(26, 23, 79);
+camera.position.set(0.045, 26.665, 82.066);
 scene.add(camera)
 
 // --- LIGHTS/SHADOWS MAKER
@@ -55,55 +55,9 @@ window.addEventListener("resize", handleResize);
 
 function animate() {
 
-    // console.log(camera.position);
+    console.log(camera.position);
     controls.update();
 	renderer.render( scene, camera );
 
 }
 renderer.setAnimationLoop( animate );
-
-// import * as THREE from 'three';
-// import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-// import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-
-// // Scene, Camera, Renderer
-// const scene = new THREE.Scene();
-// const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-// const renderer = new THREE.WebGLRenderer({ antialias: true });
-// renderer.setSize(window.innerWidth, window.innerHeight);
-// document.body.appendChild(renderer.domElement);
-
-// // OrbitControls for Camera
-// const controls = new OrbitControls(camera, renderer.domElement);
-// controls.enableDamping = true;
-// controls.dampingFactor = 0.05;
-// controls.screenSpacePanning = false;
-// controls.minDistance = 1;
-// controls.maxDistance = 500;
-
-// // Load GLTF Model
-// const loader = new GLTFLoader();
-// loader.load(
-//   './models/Model/yourModel.gltf', // Make sure the path is correct
-//   function (gltf) {
-//     scene.add(gltf.scene);
-//     console.log("Model loaded successfully!");
-//   },
-//   function (xhr) {
-//     console.log(`Model loading: ${Math.round((xhr.loaded / xhr.total) * 100)}% loaded`);
-//   },
-//   function (error) {
-//     console.error("Error loading GLTF model:", error);
-//   }
-// );
-
-// // Set Camera Position
-// camera.position.set(0, 5, 10);
-
-// // Animation Loop
-// function animate() {
-//   requestAnimationFrame(animate);
-//   controls.update();
-//   renderer.render(scene, camera);
-// }
-// animate();

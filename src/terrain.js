@@ -1,16 +1,14 @@
 import * as THREE from 'three';
-// import { Asset } from './assets.js';
+import { Asset } from './assets.js';
+import { Road } from './tile.js';
 
 export class Terrain extends THREE.Group {
     constructor() {
         super();
         
-        this.generate();
-    }
-
-    generate() {
         this.terrain();
-        // this.loadAssets();
+        this.loadAssets();
+        this.loadRoad();
     }
 
     terrain() {
@@ -19,13 +17,18 @@ export class Terrain extends THREE.Group {
         const geometry = new THREE.PlaneGeometry(tileSize, tileSize, tileSize, tileSize);
         const material = new THREE.MeshBasicMaterial({ color: 0x89f5a8, wireframe: true });
         const terrain = new THREE.Mesh( geometry, material );
+        terrain.position.set(0, 50, 0);
         this.rotation.x = -Math.PI / 2;
         this.add(terrain);
     }
 
-    // loadAssets() {
-    //     const asset = new Asset();
-    //     this.add(asset);
-    // }
-    
+    loadAssets() {
+        const asset = new Asset();
+        this.add(asset);
+    }
+
+    loadRoad(){
+        const road = new Road();
+        this.add(road);
+    }
 }

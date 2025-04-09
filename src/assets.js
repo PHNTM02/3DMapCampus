@@ -2,9 +2,11 @@ import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 export class Asset extends THREE.Group {
-    constructor(tileSize = 1) {
+    constructor(scene) {
         super();
+
         this.loader = new GLTFLoader();
+        this.loadAll();
     }
 
     loadGLTFModel(path, position, rotation, scale) {
@@ -25,16 +27,14 @@ export class Asset extends THREE.Group {
     }
 
     loadAll() {
-        this.loadApartment();
-        this.loadHotel();
-        this.loadStore();
+        this.loadGate();
     }
 
-    loadApartment() {
-        const apartmentPath = '/poly-apartment.gltf';
-        const apartmentPosition = new THREE.Vector3(0, 0, 0);
-        const apartmentRotation = new THREE.Euler(0, Math.PI / 2, 0);
-        const apartmentScale = 2;
-        this.loadGLTFModel(apartmentPath, apartmentPosition, apartmentRotation, apartmentScale);
+    loadGate() {
+        const gatePath = '../models/model/AUPGate.gltf';
+        const gatePosition = new THREE.Vector3(0.5, 5.5, 0);
+        const gateRotation = new THREE.Euler(0, Math.PI / 2, 0);
+        const gateScale = 0.18;
+        this.loadGLTFModel(gatePath, gatePosition, gateRotation, gateScale);
     }
 }

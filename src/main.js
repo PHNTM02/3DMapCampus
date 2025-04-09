@@ -19,7 +19,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 // --- CAMERA MAKER & POSITION
 const camera = new THREE.PerspectiveCamera(75, size.width / size.height, 0.1, 1000);
 // camera.position.set(0.045, 26.665, 82.066);
-camera.position.set(0, 10, 0);
+camera.position.set(0, 20, 0);
 scene.add(camera)
 
 // --- LIGHTS/SHADOWS MAKER

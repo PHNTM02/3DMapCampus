@@ -32,7 +32,7 @@ export class Asset extends THREE.Group {
     }
 
     loadGate() {
-        const gatePath = '../models/model/AUPGate.gltf';
+        const gatePath = '../models/model/modell/Gate.glb';
         const gatePosition = new THREE.Vector3(0.5, 5.5, 0);
         const gateRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, 0);
         const gateScale = 0.18;
@@ -40,7 +40,7 @@ export class Asset extends THREE.Group {
     }
 
     loadCOD() {
-        const codPath = '../models/model/COD.gltf';
+        const codPath = '../models/model/modell/CAET.glb';
         const codPosition = new THREE.Vector3(-1.5, 10.5, 0);
         const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, Math.PI / 2);
         const codScale = 0.18;

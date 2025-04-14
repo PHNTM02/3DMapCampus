@@ -69,7 +69,7 @@ export class Asset extends THREE.Group {
         const codPath = '../models/model/modell/COD (1).glb';
         const codPosition = new THREE.Vector3(-12.5, 40.5, 0);
         const codRotation = new THREE.Euler(Math.PI / 2, Math.PI, 0);
-        const codScale = 0.18;
+        const codScale = 0.36;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
 

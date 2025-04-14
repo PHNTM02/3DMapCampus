@@ -44,6 +44,8 @@ export class Asset extends THREE.Group {
         // this.loadCafeteria();
         // this.loadKubo();
         // this.loadTheater();
+        // this.loadAdminOffice();
+        // this.loadAlumni();
     }
 
     loadGate() {
@@ -80,7 +82,7 @@ export class Asset extends THREE.Group {
 
     loadCOE() {
         const codPath = '../models/model/modell/COE 1.glb';
-        const codPosition = new THREE.Vector3(-47.5, 34.5, 0);
+        const codPosition = new THREE.Vector3(-47.5, 33.5, 0);
         // const codPosition = new THREE.Vector3(-5, 6, -0.32);
         const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, 0);
         const codScale = 0.25;

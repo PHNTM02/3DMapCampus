@@ -39,7 +39,71 @@ export class Asset extends THREE.Group {
         this.loadGLTFModel(gatePath, gatePosition, gateRotation, gateScale);
     }
 
+    loadCAH() {
+        const codPath = '../models/model/modell/CAH 1.glb';
+        const codPosition = new THREE.Vector3(-1.5, 10.5, 0);
+        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, Math.PI / 2);
+        const codScale = 0.18;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+
+    loadCOB() {
+        const codPath = '../models/model/modell/CAH 1.glb';
+        const codPosition = new THREE.Vector3(-1.5, 10.5, 0);
+        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, Math.PI / 2);
+        const codScale = 0.18;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+
     loadCOD() {
+        const codPath = '../models/model/modell/CAH 1.glb';
+        const codPosition = new THREE.Vector3(-1.5, 10.5, 0);
+        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, Math.PI / 2);
+        const codScale = 0.18;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+
+    loadCOE() {
+        const codPath = '../models/model/modell/CAH 1.glb';
+        const codPosition = new THREE.Vector3(-1.5, 10.5, 0);
+        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, Math.PI / 2);
+        const codScale = 0.18;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+
+    loadCOM() {
+        const codPath = '../models/model/modell/CAH 1.glb';
+        const codPosition = new THREE.Vector3(-1.5, 10.5, 0);
+        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, Math.PI / 2);
+        const codScale = 0.18;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+
+    loadCON() {
+        const codPath = '../models/model/modell/CAH 1.glb';
+        const codPosition = new THREE.Vector3(-1.5, 10.5, 0);
+        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, Math.PI / 2);
+        const codScale = 0.18;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+
+    loadCOT() {
+        const codPath = '../models/model/modell/CAH 1.glb';
+        const codPosition = new THREE.Vector3(-1.5, 10.5, 0);
+        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, Math.PI / 2);
+        const codScale = 0.18;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+
+    loadCST() {
+        const codPath = '../models/model/modell/CAH 1.glb';
+        const codPosition = new THREE.Vector3(-1.5, 10.5, 0);
+        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, Math.PI / 2);
+        const codScale = 0.18;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+
+    loadPioneer() {
         const codPath = '../models/model/modell/CAH 1.glb';
         const codPosition = new THREE.Vector3(-1.5, 10.5, 0);
         const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, Math.PI / 2);

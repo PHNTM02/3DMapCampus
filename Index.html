@@ -14,7 +14,19 @@
 
     <!-- This is the Search Bar -->
     <div class="search-container">
-      <input type="text" placeholder="Search...">
+      <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+      <ul id="myMenu" class="hidden">
+        <li><a href="#">College of Business</a></li>
+        <li><a href="#">College of Nursing</a></li>
+        <li><a href="#">College of Arts and Humanities</a></li>
+        <li><a href="#">College of Dentistry</a></li>
+        <li><a href="#">College of Health</a></li>
+        <li><a href="#">College of Medicine</a></li>
+        <li><a href="#">College of Science and Technology</a></li>
+        <li><a href="#">College of Theology</a></li>
+        <li><a href="#">College of Education</a></li>
+        <li><a href="#">College of Pshycology</a></li>
+      </ul>
   </div>
 
 
@@ -25,6 +37,33 @@
     <a href="#">🏢Deparmentt</a>
     <a href="#">🏫College Buildings</a>
 </div>
+
+<script>
+  function myFunction() {
+    const input = document.getElementById("mySearch");
+    const filter = input.value.toUpperCase();
+    const ul = document.getElementById("myMenu");
+    const li = ul.getElementsByTagName("li");
+    let hasVisibleItem = false;
+  
+    for (let i = 0; i < li.length; i++) {
+      const a = li[i].getElementsByTagName("a")[0];
+      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+        hasVisibleItem = true;
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  
+    // Show or hide the list based on whether anything matches
+    if (filter === "" || !hasVisibleItem) {
+      ul.classList.add("hidden");
+    } else {
+      ul.classList.remove("hidden");
+    }
+  }
+</script>
 
     <script type="importmap">
       {

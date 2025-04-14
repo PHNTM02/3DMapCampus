@@ -50,6 +50,10 @@ body, html {
     border-radius: 5px;
 }
 
+.hidden {
+    display: none;
+}
+
 
 /* This is the Navigation Bar */
 .sidebar {

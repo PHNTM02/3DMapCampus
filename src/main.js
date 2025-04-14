@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { Terrain } from './terrain.js';
 
+
 // --- SCENE MAKER
 const scene = new THREE.Scene();
 const canvas = document.getElementById("experience-canvas");
@@ -19,8 +20,13 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 // --- CAMERA MAKER & POSITION
 const camera = new THREE.PerspectiveCamera(75, size.width / size.height, 0.1, 1000);
 // camera.position.set(0.045, 26.665, 82.066);
-camera.position.set(0, 20, 0);
-scene.add(camera)
+camera.position.set(0, 10, 10);
+scene.add(camera);
+
+// --- ORBITCONTROL MAKER
+const controls = new OrbitControls( camera, canvas);
+controls.maxPolarAngle = Math.PI / 2.5;
+controls.screenSpacePanning = false;
 
 // --- LIGHTS/SHADOWS MAKER
 const sun = new THREE.DirectionalLight( 0xFFFFFF );
@@ -29,10 +35,7 @@ sun.intensity = 3; //the intenstity of the light
 sun.position.set(7, 5, 1);
 scene.add(sun, ambientLight);
 
-// --- ORBITCONTROL MAKER
-const controls = new OrbitControls( camera, canvas);
-controls.maxPolarAngle = Math.PI / 2.5;
-controls.screenSpacePanning = false;
+
 
 // ADD TERRAIN
 const terrain = new Terrain();

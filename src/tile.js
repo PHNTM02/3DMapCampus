@@ -65,7 +65,7 @@ export class Road extends THREE.Group {
             console.error("Error loading straightRoad.gltf:", error);
         });
 // Above Rotonda Left and Right
-        for(let a = 1; a < 10; a++) {
+        for(let a = 1; a < 40; a++) {
             this.loader.load(
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {

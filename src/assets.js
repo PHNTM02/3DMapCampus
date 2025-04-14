@@ -123,11 +123,20 @@ export class Asset extends THREE.Group {
 
     loadCST() {
         const codPath = '../models/model/modell/CAH 1.glb';
-        const codPosition = new THREE.Vector3(-1.5, 10.5, 0);
+        const codPosition = new THREE.Vector3(-1.5, 18.5, -1);
         const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, Math.PI / 2);
         const codScale = 0.18;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
+
+    loadGym() {
+        const codPath = '../models/model/modell/Gym.gltf';
+        const codPosition = new THREE.Vector3(3.5, 15.5, 0);
+        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, 0);
+        const codScale = 0.5;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+
 
     loadLibrary() {
         const codPath = '../models/model/modell/Library.glb';

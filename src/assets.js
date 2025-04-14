@@ -28,13 +28,15 @@ export class Asset extends THREE.Group {
 
     loadAll() {
         this.loadGate();
+        // this.loadCOB();
         this.loadCOD();
         this.loadCAH();
-        // this.loadCON();
+        this.loadCON();
         this.loadCOE();
         // this.loadCOM();
         this.loadCOT();
         // this.loadPioneer();
+        // this.loadMusicDept();
 
     }
 
@@ -57,7 +59,7 @@ export class Asset extends THREE.Group {
     loadCOB() {
         const codPath = '../models/model/modell/CAH 1.glb';
         const codPosition = new THREE.Vector3(11.5, 10.5, 0);
-        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, Math.PI / 2);
+        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, 0);
         const codScale = 0.18;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
@@ -89,9 +91,9 @@ export class Asset extends THREE.Group {
 
     loadCON() {
         const codPath = '../models/model/modell/_CON.glb';
-        const codPosition = new THREE.Vector3(-1.5, 15.5, 0);
-        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, Math.PI / 2);
-        const codScale = 0.18;
+        const codPosition = new THREE.Vector3(-30.5, 30.5, 0);
+        const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI / 2, 0);
+        const codScale = 0.4;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
 
@@ -113,6 +115,14 @@ export class Asset extends THREE.Group {
     }
 
     loadPioneer() {
+        const codPath = '../models/model/modell/PIONEER 1.glb';
+        const codPosition = new THREE.Vector3(1.5, 25.5, 0);
+        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, Math.PI / 2);
+        const codScale = 0.18;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+
+    loadMusicDept() {
         const codPath = '../models/model/modell/PIONEER 1.glb';
         const codPosition = new THREE.Vector3(1.5, 25.5, 0);
         const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, Math.PI / 2);

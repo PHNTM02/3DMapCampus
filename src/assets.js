@@ -50,6 +50,9 @@ export class Asset extends THREE.Group {
         // this.loadDormB();
         // this.loadDormC();
         // this.loadDormD();
+        // this.loadDormMolave();
+        // this.loadDormWaling();
+        // this.loadDormSampa();
     }
 
     loadGate() {

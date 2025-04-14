@@ -35,10 +35,15 @@ export class Asset extends THREE.Group {
         this.loadCOE();
         this.loadCOM();
         this.loadCOT();
+        // this.loadGym();
         // this.loadPioneer();
         this.loadLibrary();
         // this.loadMusicDept();
-
+        // this.loadPIC();
+        // this.loadPool();
+        // this.loadCafeteria();
+        // this.loadKubo();
+        // this.loadTheater();
     }
 
     loadGate() {

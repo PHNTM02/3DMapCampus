@@ -17,7 +17,7 @@ export class Road extends THREE.Group {
         // Outside Road
         for(let a = 1; a < 100; a++) {
             this.loader.load(
-                "../models/model/straightRoad.gltf",
+                "../models/model/modell/straightRoad.gltf",
                 (gltf) => {
                     const model = gltf.scene;
                     model.scale.set(0.33, 0.3, 0.335);
@@ -35,7 +35,7 @@ export class Road extends THREE.Group {
         // After Gate
         for(let i = 0; i < 20; i++) {
             this.loader.load(
-                "../models/model/straightRoad.gltf",
+                "../models/model/modell/straightRoad.gltf",
                 (gltf) => {
                     const model = gltf.scene;
                     model.scale.set(0.33, 0.3, 0.335);
@@ -51,7 +51,7 @@ export class Road extends THREE.Group {
         }
 
         this.loader.load(
-            "../models/model/straightRoad.gltf", 
+            "../models/model/modell/straightRoad.gltf", 
             (gltf) => {
             const model = gltf.scene;
 

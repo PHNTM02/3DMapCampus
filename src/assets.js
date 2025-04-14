@@ -33,9 +33,10 @@ export class Asset extends THREE.Group {
         this.loadCAH();
         this.loadCON();
         this.loadCOE();
-        // this.loadCOM();
+        this.loadCOM();
         this.loadCOT();
         // this.loadPioneer();
+        this.loadLibrary();
         // this.loadMusicDept();
 
     }
@@ -83,8 +84,8 @@ export class Asset extends THREE.Group {
 
     loadCOM() {
         const codPath = '../models/model/modell/COM 1.glb';
-        const codPosition = new THREE.Vector3(-20.5, 10.5, 0);
-        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, Math.PI / 2);
+        const codPosition = new THREE.Vector3(-20.5, 40.5, 0);
+        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, 0);
         const codScale = 0.18;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
@@ -111,6 +112,14 @@ export class Asset extends THREE.Group {
         const codPosition = new THREE.Vector3(-1.5, 10.5, 0);
         const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, Math.PI / 2);
         const codScale = 0.18;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+
+    loadLibrary() {
+        const codPath = '../models/model/modell/Library.glb';
+        const codPosition = new THREE.Vector3(-16.5, 30.5, 0.1);
+        const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI / 2, 0);
+        const codScale = 0.1;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
 

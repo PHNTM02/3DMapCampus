@@ -46,6 +46,10 @@ export class Asset extends THREE.Group {
         // this.loadTheater();
         // this.loadAdminOffice();
         // this.loadAlumni();
+        // this.loadDormA();
+        // this.loadDormB();
+        // this.loadDormC();
+        // this.loadDormD();
     }
 
     loadGate() {

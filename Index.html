@@ -14,7 +14,8 @@
 
     <!-- This is the Search Bar -->
     <div class="search-container">
-      <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
+      <!-- <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category"> -->
+      <input type="text" id="mySearch" placeholder="Search.." title="Type in a category">
       <ul id="myMenu" class="hidden">
         <li><a href="#">College of Business</a></li>
         <li><a href="#">College of Nursing</a></li>
@@ -48,32 +49,7 @@
     <a href="#">🏫College Buildings</a>
   </div>
 
-<script>
-  function myFunction() {
-    const input = document.getElementById("mySearch");
-    const filter = input.value.toUpperCase();
-    const ul = document.getElementById("myMenu");
-    const li = ul.getElementsByTagName("li");
-    let hasVisibleItem = false;
-  
-    for (let i = 0; i < li.length; i++) {
-      const a = li[i].getElementsByTagName("a")[0];
-      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        li[i].style.display = "";
-        hasVisibleItem = true;
-      } else {
-        li[i].style.display = "none";
-      }
-    }
-  
-    // Show or hide the list based on whether anything matches
-    if (filter === "" || !hasVisibleItem) {
-      ul.classList.add("hidden");
-    } else {
-      ul.classList.remove("hidden");
-    }
-  }
-</script>
+<script type="module" src="./src/nav/search.js"></script>
 
     <script type="importmap">
       {

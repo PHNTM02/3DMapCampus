@@ -26,9 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
   
       // Toggle visibility of the whole list
       if (filter === "" || !hasVisibleItem) {
-        ul.classList.add("hidden"); // Hide list if nothing to show
+        ul.idList.add("hidden"); // Hide list if nothing to show
       } else {
-        ul.classList.remove("hidden"); // Show list
+        ul.idList.remove("hidden"); // Show list
       }
     });
 });
@@ -38,20 +38,44 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const collegeBtn = document.getElementById("collegebar");
   const dormBtn = document.getElementById("dormbar");
-  const facilityBtn = document.getElementById("facilitybar");
+  const facilityBtn = document.getElementById("facollegebacilitybar");
   const collegeList = document.getElementById("collegelist");
 
   // Store original college content
   const originalCollegeHTML = `
-    <div class="cahli">College of Arts and Humanities</div>
-    <div class="cobli">College of Business</div>
-    <div class="codli">College of Dentistry</div>
-    <div class="coeli">College of Education</div>
-    <div class="cohli">College of Health</div>
-    <div class="comli">College of Medicine</div>
-    <div class="conli">College of Nursing</div>
-    <div class="cstli">College of Science and Technology</div>
-    <div class="cotli">College of Theology</div>
+    <div id="cahli" class="cdfList">College of Arts and Humanities</div>
+    <div id="cobli" class="cdfList">College of Business</div>
+    <div id="codli" class="cdfList">College of Dentistry</div>
+    <div id="coeli" class="cdfList">College of Education</div>
+    <div id="cohli" class="cdfList">College of Health</div>
+    <div id="comli" class="cdfList">College of Medicine</div>
+    <div id="conli" class="cdfList">College of Nursing</div>
+    <div id="cstli" class="cdfList">College of Science and Technology</div>
+    <div id="cotli" class="cdfList">College of Theology</div>
+  `;
+
+  const dormList = `
+      <h3>Men's Dorm</h3>
+      <div id="mahogayli" class="cdfList">Mahogany</div>
+      <div id="acaciali" class="cdfList">Acacia Residence Hall</div>
+      <div id="aptfli" class="cdfList">Apartment F</div>
+      <div id="easternli" class="cdfList">Eastern Residence Hall</div>
+      <div id="molaveli" class="cdfList">Molave</div>
+      <div id="aptali" class="cdfList">Apartment A</div>
+
+      <h3>Ladies's Dorm</h3>
+      <a href="https://www.google.com/" class="cdfList"><div id="sampali" class="cdfList">Sampaguita Hall</div></a>
+      <div id="cadenali" class="cdfList">Cadena De Amor Hall</div>
+      <div id="damali" class="cdfList">Dama De Noche</div>
+      <div id="catli" class="cdfList">Cattleya</div>
+      <div id="walingli" class="cdfList">Waling-Waling Residence Hall</div>
+      <div id="ilangli" class="cdfList">Ilang-Ilang</div>
+
+      <h3>Family / Graduate</h3>
+      <div id="aptbli" class="cdfList">Apartment B</div>
+      <div id="aptgli" class="cdfList">Apartment G</div>
+      <div id="apthli" class="cdfList">Apartment H</div>
+      <div id="apteli" class="cdfList">Apartment E</div>
   `;
 
   // College Buildings button
@@ -65,29 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Dormitories button
   dormBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    collegeList.innerHTML = `
-      <h3>Men's Dorm</h3>
-      <div class="mahogayli">Mahogany</div>
-      <div class="acaciali">Acacia Residence Hall</div>
-      <div class="aptfli">Apartment F</div>
-      <div class="easternli">Eastern Residence Hall</div>
-      <div class="molaveli">Molave</div>
-      <div class="aptali">Apartment A</div>
-
-      <h3>Ladies's Dorm</h3>
-      <a href="https://www.google.com/"><div class="sampali">Sampaguita Hall</div></a>
-      <div class="cadenali">Cadena De Amor Hall</div>
-      <div class="damali">Dama De Noche</div>
-      <div class="catli">Cattleya</div>
-      <div class="walingli">Waling-Waling Residence Hall</div>
-      <div class="ilangli">Ilang-Ilang</div>
-
-      <h3>Family / Graduate</h3>
-      <div class="aptbli">Apartment B</div>
-      <div class="aptgli">Apartment G</div>
-      <div class="apthli">Apartment H</div>
-      <div class="apteli">Apartment E</div>
-    `;
+    collegeList.innerHTML = dormList;
     collegeList.style.display = "block";
     console.log("Switched to: Dormitories view");
   });
@@ -114,26 +116,26 @@ document.addEventListener("DOMContentLoaded", () => {
 //     // Replace the college list content with dorm content
 //     collegeList.innerHTML = `
 //       <h3>Men's Dorm</h3>
-//       <div class="mahogayli">Mahogany</div>
-//       <div class="acaciali">Acacia Residence Hall</div>
-//       <div class="aptfli">Apartment F</div>
-//       <div class="easternli">Eastern Residence Hall</div>
-//       <div class="molaveli">Molave</div>
-//       <div class="aptali">Apartment A</div>
+//       <div id="mahogayli" class="cdfList">Mahogany</div>
+//       <div id="acaciali" class="cdfList">Acacia Residence Hall</div>
+//       <div id="aptfli" class="cdfList">Apartment F</div>
+//       <div id="easternli" class="cdfList">Eastern Residence Hall</div>
+//       <div id="molaveli" class="cdfList">Molave</div>
+//       <div id="aptali" class="cdfList">Apartment A</div>
 
 //       <h3>Ladies's Dorm</h3>
-//       <a href="https://www.google.com/"><div class="sampali">Sampaguita Hall</div></a>
-//       <div class="cadenali">Cadena De Amor Hall</div>
-//       <div class="damali">Dama De Noche</div>
-//       <div class="catli">Cattleya</div>
-//       <div class="walingli">Waling-Waling Residence Hall</div>
-//       <div class="ilangli">Ilang-Ilang</div>
+//       <a href="https://www.google.com/" class="cdfList"><div id="sampali" class="cdfList">Sampaguita Hall</div></a>
+//       <div id="cadenali" class="cdfList">Cadena De Amor Hall</div>
+//       <div id="damali" class="cdfList">Dama De Noche</div>
+//       <div id="catli" class="cdfList">Cattleya</div>
+//       <div id="walingli" class="cdfList">Waling-Waling Residence Hall</div>
+//       <div id="ilangli" class="cdfList">Ilang-Ilang</div>
 
 //       <h3>Family / Graduate</h3>
-//       <div class="aptbli">Apartment B</div>
-//       <div class="aptgli">Apartment G</div>
-//       <div class="apthli">Apartment H</div>
-//       <div class="apteli">Apartment E</div>
+//       <div id="aptbli" class="cdfList">Apartment B</div>
+//       <div id="aptgli" class="cdfList">Apartment G</div>
+//       <div id="apthli" class="cdfList">Apartment H</div>
+//       <div id="apteli" class="cdfList">Apartment E</div>
 //     `;
 
 //     // Make sure it's visible in case it was hidden
@@ -175,26 +177,26 @@ document.addEventListener("DOMContentLoaded", () => {
 //     // Replace the college list content with dorm content
 //     collegeList.innerHTML = `
 //       <h3>Men's Dorm</h3>
-//       <div class="mahogayli">Mahogany</div>
-//       <div class="acaciali">Acacia Residence Hall</div>
-//       <div class="aptfli">Apartment F</div>
-//       <div class="easternli">Eastern Residence Hall</div>
-//       <div class="molaveli">Molave</div>
-//       <div class="aptali">Apartment A</div>
+//       <div id="mahogayli" class="cdfList">Mahogany</div>
+//       <div id="acaciali" class="cdfList">Acacia Residence Hall</div>
+//       <div id="aptfli" class="cdfList">Apartment F</div>
+//       <div id="easternli" class="cdfList">Eastern Residence Hall</div>
+//       <div id="molaveli" class="cdfList">Molave</div>
+//       <div id="aptali" class="cdfList">Apartment A</div>
 
 //       <h3>Ladies's Dorm</h3>
-//       <a href="https://www.google.com/"><div class="sampali">Sampaguita Hall</div></a>
-//       <div class="cadenali">Cadena De Amor Hall</div>
-//       <div class="damali">Dama De Noche</div>
-//       <div class="catli">Cattleya</div>
-//       <div class="walingli">Waling-Waling Residence Hall</div>
-//       <div class="ilangli">Ilang-Ilang</div>
+//       <a href="https://www.google.com/" class="cdfList"><div id="sampali" class="cdfList">Sampaguita Hall</div></a>
+//       <div id="cadenali" class="cdfList">Cadena De Amor Hall</div>
+//       <div id="damali" class="cdfList">Dama De Noche</div>
+//       <div id="catli" class="cdfList">Cattleya</div>
+//       <div id="walingli" class="cdfList">Waling-Waling Residence Hall</div>
+//       <div id="ilangli" class="cdfList">Ilang-Ilang</div>
 
 //       <h3>Family / Graduate</h3>
-//       <div class="aptbli">Apartment B</div>
-//       <div class="aptgli">Apartment G</div>
-//       <div class="apthli">Apartment H</div>
-//       <div class="apteli">Apartment E</div>
+//       <div id="aptbli" class="cdfList">Apartment B</div>
+//       <div id="aptgli" class="cdfList">Apartment G</div>
+//       <div id="apthli" class="cdfList">Apartment H</div>
+//       <div id="apteli" class="cdfList">Apartment E</div>
 //     `;
 
 //     collegeList.style.display = "block";

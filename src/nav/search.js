@@ -40,28 +40,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const dormBtn = document.getElementById("dormbar");
   const facilityBtn = document.getElementById("facilitybar");
   const collegeList = document.getElementById("collegelist");
-  
-  collegeBtn.addEventListener("click", (e) => {
-    e.preventDefault(); // Prevent default link behavior
 
-    // Toggle display of collegeList
-    // if (collegeList.style.display === "none" || collegeList.style.display === "") {
-    //   collegeList.style.display = "block";
-    // } else {
-    //   collegeList.style.display = "none";
-    // }
+  // Store original college content
+  const originalCollegeHTML = `
+    <div class="cahli">College of Arts and Humanities</div>
+    <div class="cobli">College of Business</div>
+    <div class="codli">College of Dentistry</div>
+    <div class="coeli">College of Education</div>
+    <div class="cohli">College of Health</div>
+    <div class="comli">College of Medicine</div>
+    <div class="conli">College of Nursing</div>
+    <div class="cstli">College of Science and Technology</div>
+    <div class="cotli">College of Theology</div>
+  `;
+
+  // College Buildings button
+  collegeBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    collegeList.innerHTML = originalCollegeHTML;  // Restore college content
     collegeList.style.display = "block";
+    console.log("Restored: College Buildings view");
   });
 
-  dormBtn.addEventListener("click", (e) =>{
+  // Dormitories button
+  dormBtn.addEventListener("click", (e) => {
     e.preventDefault();
-
-    // if (collegeList.style.display === "none" || collegeList.style.display === "") {
-    //   collegeList.style.display = "block";
-    // } else {
-    //   collegeList.style.display = "none";
-    // }
-
     collegeList.innerHTML = `
       <h3>Men's Dorm</h3>
       <div class="mahogayli">Mahogany</div>
@@ -86,9 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="apteli">Apartment E</div>
     `;
     collegeList.style.display = "block";
+    console.log("Switched to: Dormitories view");
   });
-
 });
+
   
 
 
@@ -198,3 +202,9 @@ document.addEventListener("DOMContentLoaded", () => {
 // });
 
 
+    // Toggle display of collegeList
+    // if (collegeList.style.display === "none" || collegeList.style.display === "") {
+    //   collegeList.style.display = "block";
+    // } else {
+    //   collegeList.style.display = "none";
+    // }

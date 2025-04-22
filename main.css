@@ -84,3 +84,23 @@ body, html {
     background-color: #fdfdfd;
 }
 
+#collegelist {
+    z-index: 50;
+    width: 100%;
+    position: relative;
+    border-style: solid;
+    border-color: chocolate;
+    top: 729px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    height: 5%;
+}
+
+#collegelist div {
+    border-style: solid;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}

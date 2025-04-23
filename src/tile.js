@@ -33,13 +33,13 @@ export class Road extends THREE.Group {
         // }
 
 // After Gate
-        for(let i = 0; i < 20; i++) {
+        for(let i = 0; i < 21; i++) {
             this.loader.load(
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {
                     const model = gltf.scene;
-                    model.scale.set(0.33, 0.3, 0.335);
-                    model.position.set(1.5, i + 6.5, 0); // 0.5 on x to center, i - 0.5 on y
+                    model.scale.set(0.7, 0.3, 0.335);
+                    model.position.set(1, i + (-2.5), 0); // 0.5 on x to center, i - 0.5 on y
                     model.rotation.x = Math.PI / 2;
                     this.add(model);
                 },
@@ -49,29 +49,27 @@ export class Road extends THREE.Group {
                 }
             );
         }
-
 // First cross Road
-        this.loader.load(
-            "../models/model/modell/roadT-section.gltf", 
-            (gltf) => {
-            const model = gltf.scene;
+        // this.loader.load(
+        //     "../models/model/modell/roadT-section.gltf", 
+        //     (gltf) => {
+        //     const model = gltf.scene;
 
-            model.scale.set(0.33, 0.3, 0.335);
+        //     model.scale.set(1, 0.7, 0.335);
             
-            model.position.set(1.5, 26.5, 0);
-            model.rotation.set(Math.PI / 2, Math.PI + 1.568, 0);
-            this.add(model);
-        }, undefined, (error) => {
-            console.error("Error loading straightRoad.gltf:", error);
-        });
-// Above Rotonda Left and Right
-        for(let a = 1; a < 40; a++) {
+        //     model.position.set(1, 21.5, 0);
+        //     model.rotation.set(Math.PI / 2, Math.PI + 1.568, 0);
+        //     this.add(model);
+        // }, undefined, (error) => {
+        //     console.error("Error loading straightRoad.gltf:", error);
+        // });
+        for(let a = 1; a < 13; a++) {
             this.loader.load(
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {
                     const model = gltf.scene;
-                    model.scale.set(0.33, 0.3, 0.335);
-                    model.position.set( a + (2.5), 26.5, 0);
+                    model.scale.set(0.7, 0.3, 0.335);
+                    model.position.set( a + (1.5), 19, 0);
                     model.rotation.set(0, Math.PI / 2, Math.PI / 2);
                     this.add(model);
                 },
@@ -81,60 +79,32 @@ export class Road extends THREE.Group {
                 }
             );
         }
-        for(let a = 1; a < 10; a++) {
-            this.loader.load(
-                "../models/model/modell/straightRoad.gltf",
-                (gltf) => {
-                    const model = gltf.scene;
-                    model.scale.set(0.33, 0.3, 0.335);
-                    model.position.set( -a + (0.5), 26.5, 0);
-                    model.rotation.set(0, Math.PI / 2, Math.PI / 2);
-                    this.add(model);
-                },
-                undefined,
-                (error) => {
-                    console.error("Error loading straight.gltf:", error);
-                }
-            );
-        }
-        for(let a = 1; a < 39; a++) {
-            this.loader.load(
-                "../models/model/modell/straightRoad.gltf",
-                (gltf) => {
-                    const model = gltf.scene;
-                    model.scale.set(0.33, 0.3, 0.335);
-                    model.position.set( -a + (-11.5), 26.5, 0);
-                    model.rotation.set(0, Math.PI / 2, Math.PI / 2);
-                    this.add(model);
-                },
-                undefined,
-                (error) => {
-                    console.error("Error loading straight.gltf:", error);
-                }
-            );
-        }
-// Left side T-section
-        this.loader.load(
-            "../models/model/modell/roadT-section.gltf", 
-            (gltf) => {
-            const model = gltf.scene;
 
-            model.scale.set(0.33, 0.3, 0.335);
-            
-            model.position.set(-10.5, 26.5, 0);
-            model.rotation.set(Math.PI / 2, Math.PI - 1.568, 0);
-            this.add(model);
-        }, undefined, (error) => {
-            console.error("Error loading straightRoad.gltf:", error);
-        });
-// Above Left side T-section
-        for(let i = 0; i < 5; i++) {
+// TO MUSIC DEPT
+        for(let a = 1; a < 25; a++) {
             this.loader.load(
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {
                     const model = gltf.scene;
-                    model.scale.set(0.33, 0.3, 0.335);
-                    model.position.set(-10.5, i + 28.5, 0);
+                    model.scale.set(0.7, 0.3, 0.335);
+                    model.position.set( -a + 0.5, 19, 0);
+                    model.rotation.set(0, Math.PI / 2, Math.PI / 2);
+                    this.add(model);
+                },
+                undefined,
+                (error) => {
+                    console.error("Error loading straight.gltf:", error);
+                }
+            );
+        }
+
+        for(let i = 0; i < 15; i++) {
+            this.loader.load(
+                "../models/model/modell/straightRoad.gltf",
+                (gltf) => {
+                    const model = gltf.scene;
+                    model.scale.set(0.7, 0.3, 0.335);
+                    model.position.set(-25, -i + 17.5, 0); // 0.5 on x to center, i - 0.5 on y
                     model.rotation.x = Math.PI / 2;
                     this.add(model);
                 },
@@ -144,28 +114,14 @@ export class Road extends THREE.Group {
                 }
             );
         }
-// Left above side T-section Library
-        this.loader.load(
-            "../models/model/modell/roadT-section.gltf", 
-            (gltf) => {
-            const model = gltf.scene;
 
-            model.scale.set(0.33, 0.3, 0.335);
-            
-            model.position.set(-10.5, 34.5, 0);
-            model.rotation.set(Math.PI / 2, Math.PI, 0);
-            this.add(model);
-        }, undefined, (error) => {
-            console.error("Error loading straightRoad.gltf:", error);
-        });
-// straigh to COB & CST
-        for(let a = 1; a < 20; a++) {
+        for(let a = 1; a < 15; a++) {
             this.loader.load(
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {
                     const model = gltf.scene;
-                    model.scale.set(0.33, 0.3, 0.335);
-                    model.position.set( -a + (-11.5), 34.5, 0);
+                    model.scale.set(0.7, 0.3, 0.335);
+                    model.position.set( -a + (-25.5), 12, 0);
                     model.rotation.set(0, Math.PI / 2, Math.PI / 2);
                     this.add(model);
                 },
@@ -175,6 +131,7 @@ export class Road extends THREE.Group {
                 }
             );
         }
+
 
 
 

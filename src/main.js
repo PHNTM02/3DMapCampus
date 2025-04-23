@@ -19,20 +19,19 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 // --- CAMERA MAKER & POSITION
 const camera = new THREE.PerspectiveCamera(75, size.width / size.height, 0.1, 1000);
-// camera.position.set(0, 1, 5);
-camera.position.set(0, 5, 5);
-// camera.lookAt(5, 10, 20);
+camera.position.set(1, 20, 10);
+// camera.position.set(1, 5, 5);
 scene.add(camera);
 
 // --- ORBITCONTROL MAKER
 const controls = new OrbitControls( camera, canvas);
 controls.maxPolarAngle = Math.PI / 2.5;
-// controls.screenSpacePanning = false;
+controls.screenSpacePanning = false;
 
 // --- LIGHTS/SHADOWS MAKER
 const sun = new THREE.DirectionalLight( 0xFFFFFF );
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft background light
-sun.intensity = 3; //the intenstity of the light
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+sun.intensity = 3;
 sun.position.set(7, 5, 1);
 scene.add(sun, ambientLight);
 

@@ -50,19 +50,6 @@ export class Road extends THREE.Group {
             );
         }
 // First cross Road
-        // this.loader.load(
-        //     "../models/model/modell/roadT-section.gltf", 
-        //     (gltf) => {
-        //     const model = gltf.scene;
-
-        //     model.scale.set(1, 0.7, 0.335);
-            
-        //     model.position.set(1, 21.5, 0);
-        //     model.rotation.set(Math.PI / 2, Math.PI + 1.568, 0);
-        //     this.add(model);
-        // }, undefined, (error) => {
-        //     console.error("Error loading straightRoad.gltf:", error);
-        // });
         for(let a = 1; a < 13; a++) {
             this.loader.load(
                 "../models/model/modell/straightRoad.gltf",
@@ -123,6 +110,142 @@ export class Road extends THREE.Group {
                     model.scale.set(0.7, 0.3, 0.335);
                     model.position.set( -a + (-25.5), 12, 0);
                     model.rotation.set(0, Math.PI / 2, Math.PI / 2);
+                    this.add(model);
+                },
+                undefined,
+                (error) => {
+                    console.error("Error loading straight.gltf:", error);
+                }
+            );
+        }
+
+// CROSSROAD ABOVE IN GYM & PIC
+        for(let i = 0; i < 18; i++) {
+            this.loader.load(
+                "../models/model/modell/straightRoad.gltf",
+                (gltf) => {
+                    const model = gltf.scene;
+                    model.scale.set(0.7, 0.3, 0.335);
+                    model.position.set(1, i + 20.5, 0); // 0.5 on x to center, i - 0.5 on y
+                    model.rotation.x = Math.PI / 2;
+                    this.add(model);
+                },
+                undefined,
+                (error) => {
+                    console.error("Error loading straight.gltf:", error);
+                }
+            );
+        }
+// PSD TO THE LEFT
+        for(let a = 1; a < 22; a++) {
+            this.loader.load(
+                "../models/model/modell/straightRoad.gltf",
+                (gltf) => {
+                    const model = gltf.scene;
+                    model.scale.set(0.7, 0.3, 0.335);
+                    model.position.set( -a + 0.5, 39, 0);
+                    model.rotation.set(0, Math.PI / 2, Math.PI / 2);
+                    this.add(model);
+                },
+                undefined,
+                (error) => {
+                    console.error("Error loading straight.gltf:", error);
+                }
+            );
+        }
+        for(let a = 1; a < 100; a++) {
+            this.loader.load(
+                "../models/model/modell/straightRoad.gltf",
+                (gltf) => {
+                    const model = gltf.scene;
+                    model.scale.set(0.7, 0.3, 0.335);
+                    model.position.set( -a + (-22.5), 39, 0);
+                    model.rotation.set(0, Math.PI / 2, Math.PI / 2);
+                    this.add(model);
+                },
+                undefined,
+                (error) => {
+                    console.error("Error loading straight.gltf:", error);
+                }
+            );
+        }
+// PSD TO THE RIGHT
+        for(let a = 1; a < 50; a++) {
+            this.loader.load(
+                "../models/model/modell/straightRoad.gltf",
+                (gltf) => {
+                    const model = gltf.scene;
+                    model.scale.set(0.7, 0.3, 0.335);
+                    model.position.set( a + (1.5), 39, 0);
+                    model.rotation.set(0, Math.PI / 2, Math.PI / 2);
+                    this.add(model);
+                },
+                undefined,
+                (error) => {
+                    console.error("Error loading straight.gltf:", error);
+                }
+            );
+        }
+// BESIDE THE LIBRARY
+        for(let i = 0; i < 13; i++) {
+            this.loader.load(
+                "../models/model/modell/straightRoad.gltf",
+                (gltf) => {
+                    const model = gltf.scene;
+                    model.scale.set(0.7, 0.3, 0.335);
+                    model.position.set(-22, i + 37.5, 0); // 0.5 on x to center, i - 0.5 on y
+                    model.rotation.x = Math.PI / 2;
+                    this.add(model);
+                },
+                undefined,
+                (error) => {
+                    console.error("Error loading straight.gltf:", error);
+                }
+            );
+        }
+        for(let a = 1; a < 18; a++) {
+            this.loader.load(
+                "../models/model/modell/straightRoad.gltf",
+                (gltf) => {
+                    const model = gltf.scene;
+                    model.scale.set(0.7, 0.3, 0.335);
+                    model.position.set( -a + (-22.5), 51, 0);
+                    model.rotation.set(0, Math.PI / 2, Math.PI / 2);
+                    this.add(model);
+                },
+                undefined,
+                (error) => {
+                    console.error("Error loading straight.gltf:", error);
+                }
+            );
+        }
+        for(let i = 0; i < 13; i++) {
+            this.loader.load(
+                "../models/model/modell/straightRoad.gltf",
+                (gltf) => {
+                    const model = gltf.scene;
+                    model.scale.set(0.7, 0.3, 0.335);
+                    model.position.set(-22, i + 52.5, 0); // 0.5 on x to center, i - 0.5 on y
+                    model.rotation.x = Math.PI / 2;
+                    this.add(model);
+                },
+                undefined,
+                (error) => {
+                    console.error("Error loading straight.gltf:", error);
+                }
+            );
+        }
+
+
+// TO THE CAFETERIA
+        for(let i = 0; i < 34; i++) {
+            this.loader.load(
+                "../models/model/modell/straightRoad.gltf",
+                (gltf) => {
+                    const model = gltf.scene;
+                    model.scale.set(0.7, 0.3, 0.335);
+                    model.position.set(10, i + 40.5, 0);
+                    model.rotation.x = Math.PI / 2;
                     this.add(model);
                 },
                 undefined,

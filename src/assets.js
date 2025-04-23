@@ -57,9 +57,9 @@ export class Asset extends THREE.Group {
 
     loadGate() {
         const gatePath = '../models/model/modell/Gate 1.glb';
-        const gatePosition = new THREE.Vector3(1, 4.5, 0);
+        const gatePosition = new THREE.Vector3(-1.5, -3.5, 0);
         const gateRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2 - 0.05, 0);
-        const gateScale = 0.18;
+        const gateScale = 0.3;
         this.loadGLTFModel(gatePath, gatePosition, gateRotation, gateScale);
     }
 

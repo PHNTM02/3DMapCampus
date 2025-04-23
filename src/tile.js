@@ -15,22 +15,22 @@ export class Road extends THREE.Group {
 
     straightRoad2() {
 // Outside Road
-        for(let a = 1; a < 100; a++) {
-            this.loader.load(
-                "../models/model/modell/straightRoad.gltf",
-                (gltf) => {
-                    const model = gltf.scene;
-                    model.scale.set(0.33, 0.3, 0.335);
-                    model.position.set( a + (-49.5), 2.5, 0); // 0.5 on x to center, a + (-49.5) on x
-                    model.rotation.set(0, Math.PI / 2, Math.PI / 2);
-                    this.add(model);
-                },
-                undefined,
-                (error) => {
-                    console.error("Error loading straight.gltf:", error);
-                }
-            );
-        }
+        // for(let a = 1; a < 100; a++) {
+        //     this.loader.load(
+        //         "../models/model/modell/straightRoad.gltf",
+        //         (gltf) => {
+        //             const model = gltf.scene;
+        //             model.scale.set(0.33, 0.3, 0.335);
+        //             model.position.set( a + (-49.5), 2.5, 0); // 0.5 on x to center, a + (-49.5) on x
+        //             model.rotation.set(0, Math.PI / 2, Math.PI / 2);
+        //             this.add(model);
+        //         },
+        //         undefined,
+        //         (error) => {
+        //             console.error("Error loading straight.gltf:", error);
+        //         }
+        //     );
+        // }
 
 // After Gate
         for(let i = 0; i < 20; i++) {

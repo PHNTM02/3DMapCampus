@@ -19,14 +19,14 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 // --- CAMERA MAKER & POSITION
 const camera = new THREE.PerspectiveCamera(75, size.width / size.height, 0.1, 1000);
-camera.position.set(1.5, 1, 1);
-// camera.lookAt(1, 4.5, 0);
+camera.position.set(0, 1, 5);
+// camera.lookAt(1, 2.5, 0);
 scene.add(camera);
 
 // --- ORBITCONTROL MAKER
 const controls = new OrbitControls( camera, canvas);
 controls.maxPolarAngle = Math.PI / 2.5;
-controls.screenSpacePanning = false;
+// controls.screenSpacePanning = false;
 
 // --- LIGHTS/SHADOWS MAKER
 const sun = new THREE.DirectionalLight( 0xFFFFFF );
@@ -58,6 +58,7 @@ window.addEventListener("resize", handleResize);
 
 
 function animate() {
+    // console.log(camera.position)
     controls.update();
 	renderer.render( scene, camera );
 }

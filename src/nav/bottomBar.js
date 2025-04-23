@@ -85,160 +85,69 @@ document.addEventListener("DOMContentLoaded", () => {
     <div id="apteli" class="cdfList">Apartment E</div>
   `;
 
-  const collegelist = `
+  const dormlist = `
     #collegelist {
-      z-index: 50;
-      width: 95%;
       position: relative;
-      border-style: solid;
-      border-color: chocolate;
-      top: 100px;
-      left: 40px;
+      top: 140px;
+      background-color: rgb(0, 255, 255, 0.9);
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-      gap: 10px;
-      height: 5%;
+      grid-template-columns: repeat(3, 1fr);  
+      gap: 20px;
+      padding: 20px;
+      border: 2px solid chocolate;
+      height: 445px;
+      overflow-y: auto;
+      width: 100%;
+      margin: 100px auto;
+      box-sizing: border-box;
+
+      scrollbar-width: none;
+      -ms-overflow-style: none;
     }
 
-    #collegelist div {
+    #collegelist .cdfList{
+      background-size: cover;
+      background-position: center;
       border-radius: 10px;
       position: relative;
+      display: flex;
       height: 150px;
       gap: 5px;
-      justify-content: center;
+      justify-content: left;
       align-items: center;
     }
-    .cahli {
-        background-image: url("img/college_img/cah.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    .cobli {
-        background-image: url("img/college_img/cob.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    .codli {
-        background-image: url("img/college_img/cod.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    .coeli {
-        background-image: url("img/college_img/coe.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    .cohli {
-        background-image: url("img/college_img/coh.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    .comli {
-        background-image: url("img/college_img/com.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    .conli {
-        background-image: url("img/college_img/_con.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    .cstli {
-        background-image: url("img/college_img/cst.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    .cotli {
-        background-image: url("img/college_img/cot.jpg");
-        background-size: cover;
-        background-position: center center;
+
+    #collegelist h3 {
+      grid-column: 1 / -1;
+      margin: 10px 0;
+      font-size: 1.5em;
+      text-align: left;
+      color: chocolate;
     }
   `;
 
-  const dormlist = `
+  const collegelist = `
+    #collegelist {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 per row */
+    gap: 20px;
+    padding: 20px;
+    border: 2px solid chocolate;
+    width: 100%;
+    margin: 100px auto;
+    box-sizing: border-box;
+    }
 
-
-  
-    #aptali {
-      background-image: url("img/aupDorm/apt_a.jpg");
-      background-size: cover;
-      background-position: center center;
-    }
-    #aptbli {
-        background-image: url("img/aupDorm/apt_b.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    #apteli {
-        background-image: url("img/aupDorm/apt_e.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    #aptfli {
-        background-image: url("img/aupDorm/apt_f.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    #aptgli {
-        background-image: url("img/aupDorm/apt_g.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    #apthli {
-        background-image: url("img/aupDorm/apt_h.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    #mahoganyli {
-        background-image: url("img/aupDorm/mahogany.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    #acaciali {
-        background-image: url("img/aupDorm/acacia.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    #easternli {
-        background-image: url("img/aupDorm/eastern.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    #molaveli {
-        background-image: url("img/aupDorm/molave.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    #cadenali {
-        background-image: url("img/aupDorm/cadena.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    #damali {
-        background-image: url("img/aupDorm/dama.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    #catli {
-        background-image: url("img/aupDorm/cattleya.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    #walingli {
-        background-image: url("img/aupDorm/waling.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    #ilangli {
-        background-image: url("img/aupDorm/ilang.jpg");
-        background-size: cover;
-        background-position: center center;
-    }
-    #sampali {
-        background-image: url("img/aupDorm/sampa.jpg");
-        background-size: cover;
-        background-position: center center;
+    #collegelist div {
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    height: 150px;
+    gap: 5px;
+    justify-content: center;
+    align-items: left;
     }
   `;
 
@@ -256,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     collegeList.innerHTML = dormList;
     collegeList.style.display = "block";
-    collegeList.style = list;
+    collegeList.style = dormlist;
     console.log("Switched to: Dormitories view");
   });
 });

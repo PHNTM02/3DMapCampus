@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { Terrain } from './terrain.js';
-// import { DragControl } from './drag.js';
 
 
 // --- SCENE MAKER
@@ -41,8 +40,6 @@ scene.add(sun, ambientLight);
 // ADD TERRAIN
 const terrain = new Terrain();
 scene.add(terrain);
-
-// const dragControl = new DragControl(camera, canvas, terrain);
 
 // ---HANDLING RE-SIZE OF THE SCREEN
 function handleResize(){

@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { Terrain } from './terrain.js';
+import { DragControl } from './drag.js';
 
 
 // --- SCENE MAKER
@@ -19,8 +20,9 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 // --- CAMERA MAKER & POSITION
 const camera = new THREE.PerspectiveCamera(75, size.width / size.height, 0.1, 1000);
-camera.position.set(0, 1, 5);
-// camera.lookAt(1, 2.5, 0);
+// camera.position.set(0, 1, 5);
+camera.position.set(0, 5, 5);
+// camera.lookAt(5, 10, 20);
 scene.add(camera);
 
 // --- ORBITCONTROL MAKER
@@ -36,10 +38,11 @@ sun.position.set(7, 5, 1);
 scene.add(sun, ambientLight);
 
 
-
 // ADD TERRAIN
 const terrain = new Terrain();
 scene.add(terrain);
+
+const dragControl = new DragControl(camera, canvas, terrain);
 
 // ---HANDLING RE-SIZE OF THE SCREEN
 function handleResize(){

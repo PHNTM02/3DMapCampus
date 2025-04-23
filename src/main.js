@@ -42,25 +42,6 @@ scene.add(sun, ambientLight);
 const terrain = new Terrain();
 scene.add(terrain);
 
-const raycaster = new THREE.Raycaster();
-const mouse = new THREE.Vector2();
-
-// --- HANDLE MOUSE MOVE (RAYCASTING TERRAIN) ---
-window.addEventListener('mousemove', event => {
-    mouse.x = (event.clientX / size.width) * 2 - 1;
-    mouse.y = -(event.clientY / size.height) * 2 + 1; // flip Y axis
-
-    raycaster.setFromCamera(mouse, camera);
-
-    const intersects = raycaster.intersectObject(terrain, true); // true = recursive for children
-
-    if (intersects.length > 0) {
-        const point = intersects[0].point;
-        console.log("Mouse over terrain at:", point);
-        // You can store this for dragging or highlighting logic
-    }
-});
-
 // const dragControl = new DragControl(camera, canvas, terrain);
 
 // ---HANDLING RE-SIZE OF THE SCREEN

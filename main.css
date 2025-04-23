@@ -259,3 +259,15 @@ body, html {
 }
 
 /* ATE MARIAN DITO PO */
+#modelBuilding {
+    border-style: solid;
+}
+#modelSummary {
+    border-style: solid;
+}
+.buildingImage {
+    border-style: solid;
+}
+#building-canva {
+    border-style: solid;
+}

@@ -19,8 +19,8 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 // --- CAMERA MAKER & POSITION
 const camera = new THREE.PerspectiveCamera(75, size.width / size.height, 0.1, 1000);
-// camera.position.set(0.045, 26.665, 82.066);
-camera.position.set(0, 20, 10);
+camera.position.set(1.5, 1, 1);
+// camera.lookAt(1, 4.5, 0);
 scene.add(camera);
 
 // --- ORBITCONTROL MAKER
@@ -58,10 +58,7 @@ window.addEventListener("resize", handleResize);
 
 
 function animate() {
-
-    // console.log(camera.position);
     controls.update();
 	renderer.render( scene, camera );
-
 }
 renderer.setAnimationLoop( animate );

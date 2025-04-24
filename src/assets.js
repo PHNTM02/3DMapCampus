@@ -58,8 +58,6 @@ export class Asset extends THREE.Group {
         this.loadWaterLaundry();
         this.loadMahogany();
         // this.loadAcacia();
-
-
         // this.loadPioneer();
         // this.loadPIC();
         // this.loadAdminOffice();

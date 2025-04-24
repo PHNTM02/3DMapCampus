@@ -262,11 +262,26 @@ body, html {
 /* ATE MARIAN DITO PO */
 #modelBuilding {
     z-index: 150;
-    border-style: solid;
     position: absolute;
     background-color: coral;
-    height: 900px;
+    height: 682px;
     width: 500px;
-
+}
+#backbtn {
+    border-style: solid;
+}
+#modelBuilding h1 {
+    border-style: solid;
+    position: relative;
+    top: 5%;
+    font-size: 40px;
+}
+.buildingSummary {
+    border-style: solid;
+    position: relative;
+    top: 245px;
+    left: 10px;
+    height: 400px;
+    width: 475px;
 }
 

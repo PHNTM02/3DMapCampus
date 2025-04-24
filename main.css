@@ -296,6 +296,7 @@ body, html {
     scrollbar-width: none
 }
 .buidlingImage {
+    background: url("img/college_img/cob.jpg");
     border-style: solid;
     height: 35%;
     width: auto;

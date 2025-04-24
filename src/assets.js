@@ -131,7 +131,7 @@ export class Asset extends THREE.Group {
     }
     loadStudentService() {
         const codPath = '../models/model/modell/StudentService.glb';
-        const codPosition = new THREE.Vector3(-17, 34.5, 0.2);
+        const codPosition = new THREE.Vector3(-17, 34.5, 0.7);
         const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI * 2, 0);
         const codScale = 2.5;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);

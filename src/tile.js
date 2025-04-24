@@ -102,7 +102,7 @@ export class Road extends THREE.Group {
             );
         }
 
-        for(let a = 1; a < 15; a++) {
+        for(let a = 1; a < 14; a++) {
             this.loader.load(
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {
@@ -219,13 +219,13 @@ export class Road extends THREE.Group {
                 }
             );
         }
-        for(let i = 0; i < 13; i++) {
+        for(let i = 0; i < 24; i++) {
             this.loader.load(
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {
                     const model = gltf.scene;
                     model.scale.set(0.7, 0.3, 0.335);
-                    model.position.set(-22, i + 52.5, 0); // 0.5 on x to center, i - 0.5 on y
+                    model.position.set(-22, i + 52.5, 0);
                     model.rotation.x = Math.PI / 2;
                     this.add(model);
                 },
@@ -238,7 +238,7 @@ export class Road extends THREE.Group {
 
 
 // TO THE CAFETERIA
-        for(let i = 0; i < 34; i++) {
+        for(let i = 0; i < 31; i++) {
             this.loader.load(
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {

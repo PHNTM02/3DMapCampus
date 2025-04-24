@@ -116,5 +116,14 @@
       }
     </script>
 		<script type="module" src="./src/main.js"></script>
+    <script>
+      const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    
+      if (isMobile) {
+        // Optional redirect:
+        window.location.href = "noWeb.html";
+      }
+    </script>
+    
 	</body>
 </html>

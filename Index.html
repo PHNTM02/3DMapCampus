@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<title>Final Map</title>
 		<link rel="stylesheet" href="src/nav/main.css">
-    <link rel="stylesheet" href="src/nav/sidebar.css">
+    <!-- <link rel="stylesheet" href="src/nav/sidebar.css"> -->
 	</head>
 	<body>
 
@@ -41,7 +41,7 @@
     </div> -->
 
 
-    <div id="modelBuilding" >
+    <div id="modelBuilding" style="display: none;" >
       <div id="backbtn">Back</div>
       <h1>COLLEGE OF MDEICINE</h1>
       <div class="buildingSummary">
@@ -59,7 +59,7 @@
       <canvas id="building-canva"></canvas>
     </div>
 
-    <div id="collegelist" style="display: none;">
+    <div id="dorm" class="collegelist" style="display: none;">
       <h3>Men's Dorm</h3>
         <div id="mahoganyli" class="cdfList">Mahogany</div>
         <div id="acaciali" class="cdfList">Acacia Residence Hall</div>
@@ -83,22 +83,33 @@
         <div id="apteli" class="cdfList">Apartment E</div>
 
     </div>
+    <div id="college" class="collegelist"  >
+      <div class="cahli">College of Arts and Humanities</div>
+    <div class="cobli">College of Business</div>
+    <div id="codli" class="codli">College of Dentistry</div>
+    <div class="coeli">College of Education</div>
+    <div class="cohli">College of Health</div>
+    <div class="comli">College of Medicine</div>
+    <div class="conli">College of Nursing</div>
+    <div class="cstli">College of Science and Technology</div>
+    <div class="cotli">College of Theology</div>
+    </div>
 
  
   <!-- This is the Navigation -->
   <div id="sidebar" class="sidebar">
     <a href="#" id="collegebar">🏫College Buildings</a>
     <a href="#" id="dormbar">🏢Dormitories</a>
-    <a href="#" id="facilitybar">🏠College Facilities</a>
+    <a href="#" id="facilitybar">🏠Facilities</a>
   </div>
 
-<script type="module" src="./src/nav/bottomBar.js"></script>
+<!-- <script type="module" src="./src/nav/bottomBar.js"></script> -->
 
     <!-- <script type="importmap">
       {
         "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@v0.173.0/build/three.module.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.173.0/examples/jsm/"
+          "three": "https://cdn.jsdelivr.net/npm/three@v0.175.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.175.0/examples/jsm/"
         }
       }
     </script>

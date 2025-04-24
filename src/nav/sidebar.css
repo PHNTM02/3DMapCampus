@@ -1,8 +1,6 @@
 
 #modelBuilding {
     z-index: 150;
-    border-style: solid;
-    border-color: lightpink;
     position: absolute;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
@@ -13,8 +11,6 @@
 }
 #backbtn {
     position: absolute;
-    border-style: solid;
-    background-color: chartreuse;
     border-radius: 5px;
     top: 5px;
     left: 5px;
@@ -23,7 +19,6 @@
     text-align: center;
 }
 #modelBuilding h1 {
-    border-style: solid;
     position: relative;
     top: 56px;
     left: 2%;
@@ -31,8 +26,6 @@
     width: 95%;
 }
 .buildingSummary {
-    border-style: solid;
-    border-color: gold;
     position: absolute;
     top: 180px;
     left: 10px;
@@ -47,7 +40,6 @@
 }
 .buidlingImage {
     /* background: url("img/college_img/cob.jpg"); */
-    border-style: solid;
     height: 35%;
     width: auto;
     border-radius: 5px;
@@ -57,7 +49,6 @@
     height: 100%;
 }
 .buildingSummary p {
-    border-style: solid;
     position: relative;
     top: 3%;
     left: 2%;
@@ -65,12 +56,9 @@
     width: 95%;
 }
 #building{
-    border-style: solid;
-    border-color: fuchsia;
     position: absolute;
     top: 0;
     bottom: 60px;
     left: 475px;
     right: 0;
-    
 }

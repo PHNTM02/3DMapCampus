@@ -225,13 +225,73 @@ export class Road extends THREE.Group {
                 }
             );
         }
-        for(let a = 1; a < 100; a++) {
+        for(let a = 1; a < 75; a++) {
             this.loader.load(
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {
                     const model = gltf.scene;
                     model.scale.set(0.7, 0.3, 0.335);
                     model.position.set( -a + (-22.5), 39, 0);
+                    model.rotation.set(0, Math.PI / 2, Math.PI / 2);
+                    this.add(model);
+                },
+                undefined,
+                (error) => {
+                    console.error("Error loading straight.gltf:", error);
+                }
+            );
+        }
+        this.loader.load(
+            "../models/model/modell/road/upperrigthcorner.gltf",
+            (gltf) => {
+                const model = gltf.scene;
+                model.scale.set(0.7, 0.3, 0.7);
+                model.position.set(-98, 39, 0);
+                model.rotation.set(Math.PI * 2, Math.PI / 2, Math.PI / 2);
+                this.add(model);
+            },
+            undefined,
+            (error) => {
+                console.error("Error loading straight.gltf:", error);
+            }
+        );
+        for(let i = 0; i < 13; i++) {
+            this.loader.load(
+                "../models/model/modell/straightRoad.gltf",
+                (gltf) => {
+                    const model = gltf.scene;
+                    model.scale.set(0.7, 0.3, 0.335);
+                    model.position.set(-98, i + 40.5, 0);
+                    model.rotation.x = Math.PI / 2;
+                    this.add(model);
+                },
+                undefined,
+                (error) => {
+                    console.error("Error loading straight.gltf:", error);
+                }
+            );
+        }
+        this.loader.load(
+            "../models/model/modell/road/lowerleftcorner.gltf",
+            (gltf) => {
+                const model = gltf.scene;
+                model.scale.set(0.7, 0.3, 0.7);
+                model.position.set(-98, 54, 0);
+                model.rotation.set(Math.PI * 2, Math.PI / 2, Math.PI / 2);
+                this.add(model);
+            },
+            undefined,
+            (error) => {
+                console.error("Error loading straight.gltf:", error);
+            }
+        );
+        for(let a = 1; a < 20; a++) {
+            this.loader.load(
+                "../models/model/modell/straightRoad.gltf",
+                (gltf) => {
+                    const model = gltf.scene;
+                    model.scale.set(0.7, 0.3, 0.335);
+                    model.position.set( -a + (-98.5), 54, 0);
                     model.rotation.set(0, Math.PI / 2, Math.PI / 2);
                     this.add(model);
                 },
@@ -335,7 +395,7 @@ export class Road extends THREE.Group {
                 }
             );
         }
-        for(let a = 1; a < 18; a++) {
+        for(let a = 1; a < 20; a++) {
             this.loader.load(
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {
@@ -351,6 +411,37 @@ export class Road extends THREE.Group {
                 }
             );
         }
+        this.loader.load(
+            "../models/model/modell/road/noHutter.gltf",
+            (gltf) => {
+                const model = gltf.scene;
+                model.scale.set(0.7, 0.3, 0.7);
+                model.position.set(-43, 51, 0);
+                model.rotation.set(Math.PI * 2, Math.PI / 2, Math.PI / 2);
+                this.add(model);
+            },
+            undefined,
+            (error) => {
+                console.error("Error loading straight.gltf:", error);
+            }
+        );
+        for(let i = 0; i < 15; i++) {
+            this.loader.load(
+                "../models/model/modell/straightRoad.gltf",
+                (gltf) => {
+                    const model = gltf.scene;
+                    model.scale.set(0.7, 0.3, 0.335);
+                    model.position.set(-43, i + 52.5, 0);
+                    model.rotation.x = Math.PI / 2;
+                    this.add(model);
+                },
+                undefined,
+                (error) => {
+                    console.error("Error loading straight.gltf:", error);
+                }
+            );
+        }
+
         for(let i = 0; i < 24; i++) {
             this.loader.load(
                 "../models/model/modell/straightRoad.gltf",
@@ -358,6 +449,22 @@ export class Road extends THREE.Group {
                     const model = gltf.scene;
                     model.scale.set(0.7, 0.3, 0.335);
                     model.position.set(-22, i + 52.5, 0);
+                    model.rotation.x = Math.PI / 2;
+                    this.add(model);
+                },
+                undefined,
+                (error) => {
+                    console.error("Error loading straight.gltf:", error);
+                }
+            );
+        }
+        for(let i = 0; i < 2; i++) {
+            this.loader.load(
+                "../models/model/modell/road/dirt.gltf",
+                (gltf) => {
+                    const model = gltf.scene;
+                    model.scale.set(0.7, 0.3, 0.335);
+                    model.position.set(-22, i + 76.5, 0);
                     model.rotation.x = Math.PI / 2;
                     this.add(model);
                 },
@@ -386,7 +493,39 @@ export class Road extends THREE.Group {
                 }
             );
         }
-
+        for(let i = 0; i < 7; i++) {
+            this.loader.load(
+                "../models/model/modell/road/dirt.gltf",
+                (gltf) => {
+                    const model = gltf.scene;
+                    model.scale.set(0.7, 0.3, 0.335);
+                    model.position.set(10, i + 71.5, 0);
+                    model.rotation.x = Math.PI / 2;
+                    this.add(model);
+                },
+                undefined,
+                (error) => {
+                    console.error("Error loading straight.gltf:", error);
+                }
+            );
+        }
+// LADIES DORM
+        for(let i = 0; i < 33; i++) {
+            this.loader.load(
+                "../models/model/modell/road/dirt.gltf",
+                (gltf) => {
+                    const model = gltf.scene;
+                    model.scale.set(0.7, 0.3, 0.335);
+                    model.position.set(i + (-22), 78.5, 0);
+                    model.rotation.x = Math.PI / 2;
+                    this.add(model);
+                },
+                undefined,
+                (error) => {
+                    console.error("Error loading straight.gltf:", error);
+                }
+            );
+        }
 
 
 

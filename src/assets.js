@@ -56,6 +56,10 @@ export class Asset extends THREE.Group {
         this.loadstore();
         this.loadCaff();
         this.loadWaterLaundry();
+        this.loadMahogany();
+        // this.loadAcacia();
+
+
         // this.loadPioneer();
         // this.loadPIC();
         // this.loadAdminOffice();
@@ -200,14 +204,6 @@ export class Asset extends THREE.Group {
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
 
-
-    loadstore() {
-        const codPath = '../models/model/modell/Stores.glb';
-        const codPosition = new THREE.Vector3(22, 43.5, 0.2);
-        const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI * 2, 0);
-        const codScale = 1.3;
-        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
-    }
     loadCaff() {
         const codPath = '../models/model/modell/CAff.glb';
         const codPosition = new THREE.Vector3(17, 60.5, 0.2);
@@ -222,6 +218,28 @@ export class Asset extends THREE.Group {
         const codScale = 1.3;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
+    loadstore() {
+        const codPath = '../models/model/modell/Stores.glb';
+        const codPosition = new THREE.Vector3(22, 43.5, 0.2);
+        const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI * 2, 0);
+        const codScale = 1.3;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+    loadMahogany() {
+        const codPath = '../models/model/modell/Mahugany.glb';
+        const codPosition = new THREE.Vector3(40, 40.5, 1.5);
+        const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI / 2, 0);
+        const codScale = 0.6;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+    loadAcacia() {
+        const codPath = '../models/model/modell/Stores.glb';
+        const codPosition = new THREE.Vector3(22, 43.5, 0.2);
+        const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI * 2, 0);
+        const codScale = 1.3;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+    
 
 
 

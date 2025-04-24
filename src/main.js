@@ -19,9 +19,9 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
 // --- CAMERA MAKER & POSITION
 const camera = new THREE.PerspectiveCamera(75, size.width / size.height, 0.1, 1000);
-camera.position.set(1, 20, 10);
+// camera.position.set(1, 20, 10);
 // camera.position.set(1, 1, 6); //for intial view
-// camera.position.set(1, 9, 9); //final view for dragging
+camera.position.set(1, 9, 9); //final view for dragging
 scene.add(camera);
 
 // --- ORBITCONTROL MAKER

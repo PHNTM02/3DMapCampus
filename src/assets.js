@@ -99,10 +99,10 @@ export class Asset extends THREE.Group {
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
     loadMusicDept() {
-        const codPath = '../models/model/modell/Gym.gltf';
-        const codPosition = new THREE.Vector3(-35, 15.5, 0);
-        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, 0);
-        const codScale = 1.5;
+        const codPath = '../FinalModel/DepartmentOfMusic.glb';
+        const codPosition = new THREE.Vector3(-32, 16, 0);
+        const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI / 2, 0);
+        const codScale = 0.6;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
     loadPool() {

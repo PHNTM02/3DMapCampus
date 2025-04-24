@@ -35,309 +35,247 @@
   
 
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const collegeBtn = document.getElementById("collegebar");
-//   const dormBtn = document.getElementById("dormbar");
-//   const facilityBtn = document.getElementById("facilitybar");
-//   const collegeList = document.getElementById("collegelist");
-//   const cod = document.getElementById("codli");
+document.addEventListener("DOMContentLoaded", () => {
+  const collegeBtn = document.getElementById("collegebar");
+  const dormBtn = document.getElementById("dormbar");
+  const facilityBtn = document.getElementById("facilitybar");
+  const collegeList = document.getElementById("dorm");
+  const cod = document.getElementById("codli");
 
-//   const link = document.createElement("link");
-//   link.rel = "stylesheet";
-//   link.href = "src/nav/main.css";
-//   document.head.appendChild(link);
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = "src/nav/main.css";
+  document.head.appendChild(link);
 
-//   // Store original college content
-//   const originalCollegeHTML = `
-//     <div class="cahli">College of Arts and Humanities</div>
-//     <div class="cobli">College of Business</div>
-//     <div id="codli" class="codli">College of Dentistry</div>
-//     <div class="coeli">College of Education</div>
-//     <div class="cohli">College of Health</div>
-//     <div class="comli">College of Medicine</div>
-//     <div class="conli">College of Nursing</div>
-//     <div class="cstli">College of Science and Technology</div>
-//     <div class="cotli">College of Theology</div>
-//   `;
+  // Store original college content
+  const originalCollegeHTML = `
+    <div class="cahli">College of Arts and Humanities</div>
+    <div class="cobli">College of Business</div>
+    <div id="codli" class="codli">College of Dentistry</div>
+    <div class="coeli">College of Education</div>
+    <div class="cohli">College of Health</div>
+    <div class="comli">College of Medicine</div>
+    <div class="conli">College of Nursing</div>
+    <div class="cstli">College of Science and Technology</div>
+    <div class="cotli">College of Theology</div>
+  `;
 
-//   const dormList = `
-//     <h3>Men's Dorm</h3>
-//     <div id="mahoganyli" class="cdfList">Mahogany</div>
-//     <div id="acaciali" class="cdfList">Acacia Residence Hall</div>
-//     <div id="aptfli" class="cdfList">Apartment F</div>
-//     <div id="easternli" class="cdfList">Eastern Residence Hall</div>
-//     <div id="molaveli" class="cdfList">Molave</div>
-//     <div id="aptali" class="cdfList">Apartment A</div>
+  const dormList = `
+    <h3>Men's Dorm</h3>
+    <div id="mahoganyli" class="cdfList">Mahogany</div>
+    <div id="acaciali" class="cdfList">Acacia Residence Hall</div>
+    <div id="aptfli" class="cdfList">Apartment F</div>
+    <div id="easternli" class="cdfList">Eastern Residence Hall</div>
+    <div id="molaveli" class="cdfList">Molave</div>
+    <div id="aptali" class="cdfList">Apartment A</div>
 
-//     <h3>Ladies's Dorm</h3>
-//     <div id="sampali" class="cdfList">Sampaguita Hall</div>
-//     <div id="cadenali" class="cdfList">Cadena De Amor Hall</div>
-//     <div id="damali" class="cdfList">Dama De Noche</div>
-//     <div id="catli" class="cdfList">Cattleya</div>
-//     <div id="walingli" class="cdfList">Waling-Waling Residence Hall</div>
-//     <div id="ilangli" class="cdfList">Ilang-Ilang</div>
+    <h3>Ladies's Dorm</h3>
+    <div id="sampali" class="cdfList">Sampaguita Hall</div>
+    <div id="cadenali" class="cdfList">Cadena De Amor Hall</div>
+    <div id="damali" class="cdfList">Dama De Noche</div>
+    <div id="catli" class="cdfList">Cattleya</div>
+    <div id="walingli" class="cdfList">Waling-Waling Residence Hall</div>
+    <div id="ilangli" class="cdfList">Ilang-Ilang</div>
 
-//     <h3>Family / Graduate</h3>
-//     <div id="aptbli" class="cdfList">Apartment B</div>
-//     <div id="aptgli" class="cdfList">Apartment G</div>
-//     <div id="apthli" class="cdfList">Apartment H</div>
-//     <div id="apteli" class="cdfList">Apartment E</div>
-//   `;
+    <h3>Family / Graduate</h3>
+    <div id="aptbli" class="cdfList">Apartment B</div>
+    <div id="aptgli" class="cdfList">Apartment G</div>
+    <div id="apthli" class="cdfList">Apartment H</div>
+    <div id="apteli" class="cdfList">Apartment E</div>
+  `;
 
-//   const codsum = `
-//     <div id="backbtn">Back</div>
-//       <h1>COLLEGE OF DENTSITRY</h1>
-//       <div class="buildingSummary">
-//         <div class="buidlingImage"><img src="img/college_img/cod.jpg"></div>
-//         <p>
-//           The College of Dentistry of the Adventist University of the Philippines prepares and train students for excellent dental service providing them with Bible-based education and training to become missionary dentists in all parts of the world. They are trained to be highly skilled, selfless, and compassionate dental professionals who has the excellent ability to alleviate ills, restore dental health and improve the quality of life of fellowmen.  Its learning and training synchronously take place in a multicultural environment with a diverse learning atmosphere.<br><br>
+  const codsum = `
+    <div id="backbtn">Back</div>
+      <h1>COLLEGE OF DENTSITRY</h1>
+      <div class="buildingSummary">
+        <div class="buidlingImage"><img src="img/college_img/cod.jpg"></div>
+        <p>
+          The College of Dentistry of the Adventist University of the Philippines prepares and train students for excellent dental service providing them with Bible-based education and training to become missionary dentists in all parts of the world. They are trained to be highly skilled, selfless, and compassionate dental professionals who has the excellent ability to alleviate ills, restore dental health and improve the quality of life of fellowmen.  Its learning and training synchronously take place in a multicultural environment with a diverse learning atmosphere.<br><br>
 
-//           Teachers at the College have outstanding communication skill, have an engaging classroom and clinical presence, educate with empathy, and advocate lifelong love of learning and love of Jesus.<br><br>
+          Teachers at the College have outstanding communication skill, have an engaging classroom and clinical presence, educate with empathy, and advocate lifelong love of learning and love of Jesus.<br><br>
 
-//           The College administration continues to innovate and adapt to the everchanging landscape of education and continuous learning , creating linkages with other institutions, local and international, creating strong affiliation with Adventist Universities around the world with the objective of delivering a diversity of learning opportunities to students.<br><br>
+          The College administration continues to innovate and adapt to the everchanging landscape of education and continuous learning , creating linkages with other institutions, local and international, creating strong affiliation with Adventist Universities around the world with the objective of delivering a diversity of learning opportunities to students.<br><br>
 
-//           AUP College of Dentistry offers the program DOCTOR OF DENTAL MEDICINE and envisions to be a leading Adventist Dental Institution in the Asia Pacific Region.
-//         </p>
-//       </div>
-//   `;
+          AUP College of Dentistry offers the program DOCTOR OF DENTAL MEDICINE and envisions to be a leading Adventist Dental Institution in the Asia Pacific Region.
+        </p>
+      </div>
+  `;
 
-//   const collegeSum = `
-//     #modelBuilding {
-//         z-index: 150;
-//         position: absolute;
-//         border-top-right-radius: 10px;
-//         border-bottom-left-radius: 10px;
-//         background-color: rgb(88, 222, 216);
-//         top: 0;
-//         bottom: 60px;
-//         width: 500px;
-//     }
-//     #backbtn {
-//         position: absolute;
-//         border-radius: 5px;
-//         top: 5px;
-//         left: 5px;
-//         width: 80px;
-//         font-size: 30px;
-//         text-align: center;
-//     }
-//     #modelBuilding h1 {
-//         position: relative;
-//         top: 56px;
-//         left: 2%;
-//         font-size: 40px;
-//         width: 95%;
-//     }
-//     .buildingSummary {
-//         position: absolute;
-//         top: 180px;
-//         left: 10px;
-//         bottom: 10px;
-//         width: 475px;
-//         border-radius: 5px;
-//         overflow-y:auto;
-//         scrollbar-width: none
-//     }
-//     .buildingSummary p {
-//         font-size: 20px;
-//     }
-//     .buidlingImage {
-//         height: 35%;
-//         width: auto;
-//         border-radius: 5px;
-//     }
-//     .buidlingImage img {
-//         width: 100%;
-//         height: 100%;
-//     }
-//     .buildingSummary p {
-//         position: relative;
-//         top: 3%;
-//         left: 2%;
-//         height: 60%;
-//         width: 95%;
-//     }
-//     #building{
-//         position: absolute;
-//         top: 0;
-//         bottom: 60px;
-//         left: 475px;
-//         right: 0;
-//     }
-//   `;
+  const collegeSum = `
+    #modelBuilding {
+        z-index: 150;
+        position: absolute;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        background-color: rgb(88, 222, 216);
+        top: 0;
+        bottom: 60px;
+        width: 500px;
+    }
+    #backbtn {
+        position: absolute;
+        border-radius: 5px;
+        top: 5px;
+        left: 5px;
+        width: 80px;
+        font-size: 30px;
+        text-align: center;
+    }
+    #modelBuilding h1 {
+        position: relative;
+        top: 56px;
+        left: 2%;
+        font-size: 40px;
+        width: 95%;
+    }
+    .buildingSummary {
+        position: absolute;
+        top: 180px;
+        left: 10px;
+        bottom: 10px;
+        width: 475px;
+        border-radius: 5px;
+        overflow-y:auto;
+        scrollbar-width: none
+    }
+    .buildingSummary p {
+        font-size: 20px;
+    }
+    .buidlingImage {
+        height: 35%;
+        width: auto;
+        border-radius: 5px;
+    }
+    .buidlingImage img {
+        width: 100%;
+        height: 100%;
+    }
+    .buildingSummary p {
+        position: relative;
+        top: 3%;
+        left: 2%;
+        height: 60%;
+        width: 95%;
+    }
+    #building{
+        position: absolute;
+        top: 0;
+        bottom: 60px;
+        left: 475px;
+        right: 0;
+    }
+  `;
 
-//   const dormlist = `
-    // #collegelist {
-    //   z-index: 100;
-    //   position: absolute;
-    //   top: 190px;
-    //   background-color: rgb(0, 255, 255, 0.9);
-    //   display: grid;
-    //   grid-template-columns: repeat(3, 1fr);  
-    //   gap: 20px;
-    //   padding: 20px;
-    //   border: 2px solid chocolate;
-    //   height: 445px;
-    //   overflow-y: auto;
-    //   width: 100%;
-    //   margin: 100px auto;
-    //   box-sizing: border-box;
+  const dormlist = `
+    #collegelist {
+      z-index: 100;
+      position: absolute;
+      top: 190px;
+      background-color: rgb(0, 255, 255, 0.9);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);  
+      gap: 20px;
+      padding: 20px;
+      border: 2px solid chocolate;
+      height: 445px;
+      overflow-y: auto;
+      width: 100%;
+      margin: 100px auto;
+      box-sizing: border-box;
 
-    //   scrollbar-width: none;
-    //   -ms-overflow-style: none;
-    // }
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
 
-    // #collegelist .cdfList{
-    //   background-size: cover;
-    //   background-position: center;
-    //   border-radius: 10px;
-    //   position: relative;
-    //   display: flex;
-    //   height: 150px;
-    //   gap: 5px;
-    //   justify-content: left;
-    //   align-items: center;
-    // }
+    #collegelist .cdfList{
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      position: relative;
+      display: flex;
+      height: 150px;
+      gap: 5px;
+      justify-content: left;
+      align-items: center;
+    }
 
-    // #collegelist h3 {
-    //   grid-column: 1 / -1;
-    //   margin: 10px 0;
-    //   font-size: 1.5em;
-    //   text-align: left;
-    //   color: chocolate;
-    // }
-//   `;
+    #collegelist h3 {
+      grid-column: 1 / -1;
+      margin: 10px 0;
+      font-size: 1.5em;
+      text-align: left;
+      color: chocolate;
+    }
+  `;
 
-//   const collegelist = `
-//     #collegelist {
-//       z-index: 100;
-//       top: 190px;
-//       display: grid;
-//       grid-template-columns: repeat(3, 1fr); /* 3 per row */
-//       gap: 20px;
-      // padding: 20px;
-//       border: 2px solid chocolate;
-//       width: 100%;
-//       margin: 100px auto;
-//       box-sizing: border-box;
-//       }
+  const collegelist = `
+    #collegelist {
+      z-index: 100;
+      top: 190px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 per row */
+      gap: 20px;
+      padding: 20px;
+      border: 2px solid chocolate;
+      width: 100%;
+      margin: 100px auto;
+      box-sizing: border-box;
+      }
 
-//       #collegelist div {
-//       background-size: cover;
-//       background-position: center;
-//       border-radius: 10px;
-//       position: relative;
-//       display: flex;
-//       height: 150px;
-//       gap: 5px;
-//       justify-content: center;
-//       align-items: left;
-//     }
-//   `;
+      #collegelist div {
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      position: relative;
+      display: flex;
+      height: 150px;
+      gap: 5px;
+      justify-content: center;
+      align-items: left;
+    }
+  `;
 
-//   let lastClicked = null;
+  let lastClicked = null;
+  const collegeist = document.getElementById("college");
 
-//   function handleToggle(button, contentHTML, styleCSS) {
-//     // If the same button is clicked again, hide the list
-//     if (lastClicked === button) {
-//       collegelist.style.display = "none";
-//       lastClicked = null; // Reset the lastClicked
-//       console.log("Hiding collegelist");
-//     } else {
-//       // Show the content, update display and CSS
-//       collegeList.innerHTML = contentHTML;
-//       collegeList.style.display = "block";
-//       collegeList.style = styleCSS;
-//       lastClicked = button; // Set current button as lastClicked
-//       console.log("Showing collegelist from:", button.id);
-//     }
-//   }
+  function handleToggle(button, contentHTML, styleCSS) {
+    // If the same button is clicked again, hide the list
+    if (lastClicked === button) {
+      collegelist.style.display = "none";
+      lastClicked = null; // Reset the lastClicked
+      console.log("Hiding collegelist");
+    } else {
+      // Show the content, update display and CSS
+      collegeList.innerHTML = contentHTML;
+      collegeList.style.display = "block";
+      collegeList.style = styleCSS;
+      lastClicked = button; // Set current button as lastClicked
+      console.log("Showing collegelist from:", button.id);
+    }
+  }
 
-//   // College Buildings button
-//   collegeBtn.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     handleToggle(collegeBtn, originalCollegeHTML, collegelist);
-//   });
+  // College Buildings button
+  collegeBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    handleToggle(collegeBtn, originalCollegeHTML, collegelist);
+  });
 
-//   // Dormitories button
-//   dormBtn.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     handleToggle(dormBtn, dormList, dormlist);
-//   });
-//   cod.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     handleToggle(cod, codsum, collegeSum);
-//   });
+  // Dormitories button
+  dormBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    handleToggle(dormBtn, dormList, dormlist);
+  });
+  // cod.addEventListener("click", (e) => {
+  //   e.preventDefault();
+  //   handleToggle(cod, codsum, collegeSum);
+  // });
 
-// });
-
-
-
-// const codsum = `
-//     <div id="backbtn">Back</div>
-//       <h1>COLLEGE OF DENTSITRY</h1>
-//       <div class="buildingSummary">
-//         <div class="buidlingImage"><img src="img/college_img/cod.jpg"></div>
-//         <p>
-//           The College of Dentistry of the Adventist University of the Philippines prepares and train students for excellent dental service providing them with Bible-based education and training to become missionary dentists in all parts of the world. They are trained to be highly skilled, selfless, and compassionate dental professionals who has the excellent ability to alleviate ills, restore dental health and improve the quality of life of fellowmen.  Its learning and training synchronously take place in a multicultural environment with a diverse learning atmosphere.<br><br>
-
-//           Teachers at the College have outstanding communication skill, have an engaging classroom and clinical presence, educate with empathy, and advocate lifelong love of learning and love of Jesus.<br><br>
-
-//           The College administration continues to innovate and adapt to the everchanging landscape of education and continuous learning , creating linkages with other institutions, local and international, creating strong affiliation with Adventist Universities around the world with the objective of delivering a diversity of learning opportunities to students.<br><br>
-
-//           AUP College of Dentistry offers the program DOCTOR OF DENTAL MEDICINE and envisions to be a leading Adventist Dental Institution in the Asia Pacific Region.
-//         </p>
-//       </div>
-//   `;
+});
 
 
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const codli = document.querySelector(".codli");
-//   const modelBuilding = document.getElementById("modelBuilding");
 
-//   if (codli && modelBuilding) {
-//     codli.addEventListener("click", () => {
-//       modelBuilding.innerHTML = codsum;
-//     });
-//   }
-// });
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const collegelist = document.getElementById("collegelist");
-//   const buildingbtn = document.getElementById("modelBuilding");
-//   const backbtn = document.getElementById("btckbtn");
-//   const cah = document.getElementsByClassName("cahli");
-//   const cob = document.getElementsByClassName("cobli");
-//   const cod = document.getElementsByClassName("codli");
-//   const coe = document.getElementsByClassName("coeli");
-//   const coh = document.getElementsByClassName("cohli");
-//   const com = document.getElementsByClassName("comli");
-//   const con = document.getElementsByClassName("conli");
-//   const cst = document.getElementsByClassName("cstli");
-//   const cot = document.getElementsByClassName("cotli");
-
-//   const mahogany = document.getElementById("mahoganyli");
-//   const acaia = document.getElementById("acaiali");
-//   const aptf = document.getElementById("aptfli");
-//   const eastern = document.getElementById("easternli");
-//   const molave = document.getElementById("molaveli");
-//   const aptali = document.getElementById("aptali");
-//   const sampa = document.getElementById("sampali");
-//   const cadena = document.getElementById("cadenali");
-//   const dama = document.getElementById("damali");
-//   const catt = document.getElementById("catli");
-//   const waling = document.getElementById("ilangli");
-//   const ilang = document.getElementById("btckbtn");
-//   const aptb = document.getElementById("aptbli");
-//   const aptg = document.getElementById("aptgli");
-//   const apth = document.getElementById("apthli");
-//   const apte = document.getElementById("apteli");
-
-//   const link = document.createElement("link");
-//   link.rel = "stylesheet";
-//   link.href = "src/nav/sidebar.css";
-//   document.head.appendChild(link);
 
 //   const cahsum = `
 //     <div id="backbtn">Back</div>
@@ -449,102 +387,20 @@
 //       </div>
 //   `;
 
-//   const style = `
-        
-//     #modelBuilding {
-//         z-index: 150;
-//         position: absolute;
-//         border-top-right-radius: 10px;
-//         border-bottom-left-radius: 10px;
-//         background-color: rgb(88, 222, 216);
-//         top: 0;
-//         bottom: 60px;
-//         width: 500px;
-//     }
-//     #backbtn {
-//         position: absolute;
-//         border-radius: 5px;
-//         top: 5px;
-//         left: 5px;
-//         width: 80px;
-//         font-size: 30px;
-//         text-align: center;
-//     }
-//     #modelBuilding h1 {
-//         position: relative;
-//         top: 56px;
-//         left: 2%;
-//         font-size: 40px;
-//         width: 95%;
-//     }
-//     .buildingSummary {
-//         position: absolute;
-//         top: 180px;
-//         left: 10px;
-//         bottom: 10px;
-//         width: 475px;
-//         border-radius: 5px;
-//         overflow-y:auto;
-//         scrollbar-width: none
-//     }
-//     .buildingSummary p {
-//         font-size: 20px;
-//     }
-//     .buidlingImage {
-//         /* background: url("img/college_img/cob.jpg"); */
-//         height: 35%;
-//         width: auto;
-//         border-radius: 5px;
-//     }
-//     .buidlingImage img {
-//         width: 100%;
-//         height: 100%;
-//     }
-//     .buildingSummary p {
-//         position: relative;
-//         top: 3%;
-//         left: 2%;
-//         height: 60%;
-//         width: 95%;
-//     }
-//     #building{
-//         position: absolute;
-//         top: 0;
-//         bottom: 60px;
-//         left: 475px;
-//         right: 0;
-        
-//     }
-//   `;
 
-//   let lastClicked = null;
+// const dormbtn = document.getElementById('dormbar');
+// const collegebtn = document.getElementById('collegebar');
+// const dorm = document.getElementById('dorm');
+// const college = document.getElementById('college');
 
-//   function handleToggle(button, contentHTML, styleCSS) {
-//     if (lastClicked === button) {
-//       buildingbtn.style.display = "none";
-//       lastClicked = null; // Reset the lastClicked
-//       console.log("Hiding collegelist");
-//     } else {
-//       // Show the content, update display and CSS
-//       buildingbtn.innerHTML = contentHTML;
-//       buildingbtn.style.display = "block";
-//       buildingbtn.style = styleCSS;
-//       lastClicked = button; // Set current button as lastClicked
-//       console.log("Showing collegelist from:", button.id);
-//     }
-//   }
-
-//   cod.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     handleToggle(cod, codsum, style);
-//   });
-
-//   document.addEventListener("click", e => {
-//     if (e.target && e.target.id === "backbtn") {
-//       modelBuilding.style.display = "none";
-//       modelBuilding.innerHTML = ""; // Optional: Clear content
-//     }
-//   });
-
-
+// dormbtn.addEventListener('click', () => {
+//   dorm.style.display = 'block';
+//   college.style.display = 'none';
 // });
+
+// collegebtn.addEventListener('click', () => {
+//   college.style.display = 'block';
+//   dorm.style.display = 'none';
+// });
+
+

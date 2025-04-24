@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const collegeBtn = document.getElementById("collegebar");
   const dormBtn = document.getElementById("dormbar");
-  const facilityBtn = document.getElementById("facollegebacilitybar");
+  const facilityBtn = document.getElementById("facilitybar");
   const collegeList = document.getElementById("collegelist");
 
   // const styleTag = document.createElement("style");
@@ -87,8 +87,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const dormlist = `
     #collegelist {
-      position: relative;
-      top: 140px;
+      z-index: 100;
+      position: absolute;
+      top: 190px;
       background-color: rgb(0, 255, 255, 0.9);
       display: grid;
       grid-template-columns: repeat(3, 1fr);  
@@ -128,44 +129,78 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const collegelist = `
     #collegelist {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 per row */
-    gap: 20px;
-    padding: 20px;
-    border: 2px solid chocolate;
-    width: 100%;
-    margin: 100px auto;
-    box-sizing: border-box;
-    }
+      z-index: 100;
+      top: 190px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 per row */
+      gap: 20px;
+      padding: 20px;
+      border: 2px solid chocolate;
+      width: 100%;
+      margin: 100px auto;
+      box-sizing: border-box;
+      }
 
-    #collegelist div {
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    position: relative;
-    display: flex;
-    height: 150px;
-    gap: 5px;
-    justify-content: center;
-    align-items: left;
+      #collegelist div {
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      position: relative;
+      display: flex;
+      height: 150px;
+      gap: 5px;
+      justify-content: center;
+      align-items: left;
     }
   `;
+
+  // // College Buildings button
+  // collegeBtn.addEventListener("click", (e) => {
+  //   e.preventDefault();
+  //   collegeList.innerHTML = originalCollegeHTML;
+  //   collegeList.style.display = "block";
+  //   collegeList.style = collegelist;
+  //   console.log("Restored: College Buildings view");
+  // });
+
+  // // Dormitories button
+  // dormBtn.addEventListener("click", (e) => {
+  //   e.preventDefault();
+  //   collegeList.innerHTML = dormList;
+  //   collegeList.style.display = "block";
+  //   collegeList.style = dormlist;
+  //   console.log("Switched to: Dormitories view");
+  // });
+
+  let lastClicked = null;
+
+  function handleToggle(button, contentHTML, styleCSS) {
+    // If the same button is clicked again, hide the list
+    if (lastClicked === button) {
+      collegeList.style.display = "none";
+      lastClicked = null; // Reset the lastClicked
+      console.log("Hiding collegelist");
+    } else {
+      // Show the content, update display and CSS
+      collegeList.innerHTML = contentHTML;
+      collegeList.style.display = "block";
+      collegeList.style = styleCSS;
+      lastClicked = button; // Set current button as lastClicked
+      console.log("Showing collegelist from:", button.id);
+    }
+  }
 
   // College Buildings button
   collegeBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    collegeList.innerHTML = originalCollegeHTML;
-    collegeList.style.display = "block";
-    collegeList.style = collegelist;
-    console.log("Restored: College Buildings view");
+    handleToggle(collegeBtn, originalCollegeHTML, collegelist);
   });
 
   // Dormitories button
   dormBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    collegeList.innerHTML = dormList;
-    collegeList.style.display = "block";
-    collegeList.style = dormlist;
-    console.log("Switched to: Dormitories view");
+    handleToggle(dormBtn, dormList, dormlist);
   });
+
+
 });

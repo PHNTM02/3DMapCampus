@@ -58,6 +58,9 @@ export class Asset extends THREE.Group {
         this.loadMahogany();
         this.loadAcacia();
         this.dormA();
+        this.dormB();
+        this.dormC();
+        this.dormD();
 
 
 
@@ -252,6 +255,27 @@ export class Asset extends THREE.Group {
     dormA() {
         const codPath = '../models/model/modell/ApartmentD.glb';
         const codPosition = new THREE.Vector3(53, 34.5, 0.2);
+        const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI * 2, 0);
+        const codScale = 0.7;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+    dormB() {
+        const codPath = '../models/model/modell/ApartmentD.glb';
+        const codPosition = new THREE.Vector3(65, 34.5, 0.2);
+        const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI * 2, 0);
+        const codScale = 0.7;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+    dormC() {
+        const codPath = '../models/model/modell/ApartmentD.glb';
+        const codPosition = new THREE.Vector3(75, 34.5, 0.2);
+        const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI * 2, 0);
+        const codScale = 0.7;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+    dormD() {
+        const codPath = '../models/model/modell/ApartmentD.glb';
+        const codPosition = new THREE.Vector3(85, 34.5, 0.2);
         const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI * 2, 0);
         const codScale = 0.7;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);

@@ -274,7 +274,7 @@ export class Road extends THREE.Group {
                 }
             );
         }
-        for(let a = 1; a < 50; a++) {
+        for(let a = 1; a < 80; a++) {
             this.loader.load(
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {

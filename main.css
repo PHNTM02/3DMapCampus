@@ -259,12 +259,17 @@ body, html {
     background-position: center center;
 }
 
-/* ATE MARIAN DITO PO */
+
+
 #modelBuilding {
     z-index: 150;
+    border-style: solid;
+    border-color: lightpink;
     position: absolute;
-    background-color: coral;
-    height: 682px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: rgb(88, 222, 216);
+    height: 900px;
     width: 500px;
 }
 #backbtn {
@@ -274,14 +279,61 @@ body, html {
     border-style: solid;
     position: relative;
     top: 5%;
+    left: 2%;
     font-size: 40px;
+    width: 95%;
 }
 .buildingSummary {
     border-style: solid;
+    border-color: gold;
     position: relative;
-    top: 245px;
+    top: 10%;
     left: 10px;
-    height: 400px;
+    height: 520px;
     width: 475px;
+    border-radius: 5px;
+    overflow-y:auto;
+    scrollbar-width: none
+}
+.buidlingImage {
+    border-style: solid;
+    height: 35%;
+    width: auto;
+    border-radius: 5px;
+}
+.buildingSummary p {
+    border-style: solid;
+    position: relative;
+    top: 3%;
+    left: 2%;
+    height: 60%;
+    width: 95%;
+}
+#building{
+    border-style: solid;
+    border-color: fuchsia;
 }
 
+@media(max-width: 768px) {
+
+    .sidebar {
+        z-index: 50;
+        position: relative;
+        background: none;
+        background-color: lightsalmon;
+        /* width: 100%; */
+        flex-direction: column;
+        gap: 10px;
+        width: fit-content;
+    }
+    .Sidebar a {
+        display: block;
+        padding: 10px 20px;
+        text-decoration: none;
+        background-color: #55f7ff;
+        color: black;
+        font-weight: bold;
+        border-radius: 10px;
+        text-align: center;
+      }
+}

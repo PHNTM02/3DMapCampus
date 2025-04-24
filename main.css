@@ -269,7 +269,7 @@ body, html {
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
     background-color: rgb(88, 222, 216);
-    height: 900px;
+    height: 90%;
     width: 500px;
 }
 #backbtn {
@@ -314,7 +314,7 @@ body, html {
     border-color: fuchsia;
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
 
     .sidebar {
         z-index: 50;

@@ -17,7 +17,8 @@ export class Terrain extends THREE.Group {
         const geometry = new THREE.PlaneGeometry(tileSize, tileSize, tileSize, tileSize);
         const material = new THREE.MeshBasicMaterial({ color: 0x7cca92, wireframe: true });
         const terrain = new THREE.Mesh( geometry, material );
-        terrain.position.set(0, 50, 0);
+        // terrain.position.set(0, 50, 0);
+        terrain.position.set(0, 0, 0);
         this.rotation.x = -Math.PI / 2;
         this.add(terrain);
     }

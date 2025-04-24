@@ -29,11 +29,9 @@ export class Asset extends THREE.Group {
     loadAll() {
         this.loadGate();
         this.loadClinic();
-        
-        // this.loadCAH();
-        // this.loadCOE();
+
         // this.loadCOM();
-        // this.loadCOT();
+
         this.loadGym();
         this.loadPIC();
         this.loadMusicDept();
@@ -45,6 +43,7 @@ export class Asset extends THREE.Group {
         this.loadLibrary();
         this.loadCON();
         this.loadCOB();
+        this.loadCST();
 
         this.loadfinster();
         this.loadgraduates();
@@ -57,9 +56,12 @@ export class Asset extends THREE.Group {
         this.loadCaff();
         this.loadWaterLaundry();
         this.loadMahogany();
-        // this.loadAcacia();
+        this.loadAcacia();
+        this.dormA();
+
+
+
         // this.loadPioneer();
-        // this.loadPIC();
         // this.loadAdminOffice();
         // this.loadAlumni();
         // this.loadDormA();
@@ -159,9 +161,19 @@ export class Asset extends THREE.Group {
         const codScale = 1.5;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
+    loadCST() {
+        const codPath = '../FinalModel/CST.glb';
+        const codPosition = new THREE.Vector3(-50.5, 55.5, 0.5);
+        const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI, 0);
+        const codScale = 0.5;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+
+
+
 
     loadfinster() {
-        const codPath = '../models/model/modell/Finster.glb';
+        const codPath = '../FinalModel/Finster.glb';
         const codPosition = new THREE.Vector3(-65.5, 43.5, 0);
         const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI / 2, 0);
         const codScale = 0.7;
@@ -231,10 +243,17 @@ export class Asset extends THREE.Group {
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
     loadAcacia() {
-        const codPath = '../models/model/modell/Stores.glb';
-        const codPosition = new THREE.Vector3(22, 43.5, 0.2);
+        const codPath = '../FinalModel/AcaciaHall.glb';
+        const codPosition = new THREE.Vector3(50, 46.5, 0.2);
         const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI * 2, 0);
         const codScale = 1.3;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+    dormA() {
+        const codPath = '../models/model/modell/ApartmentD.glb';
+        const codPosition = new THREE.Vector3(53, 34.5, 0.2);
+        const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI * 2, 0);
+        const codScale = 0.7;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
     
@@ -244,47 +263,11 @@ export class Asset extends THREE.Group {
 
 
 
-
-    loadCAH() {
-        const codPath = '../models/model/modell/CAH 1.glb';
-        const codPosition = new THREE.Vector3(-49.5, 31.5, 0.1);
-        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI * 2, 0);
-        const codScale = 0.18;
-        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
-    }
-
-    loadCOE() {
-        const codPath = '../models/model/modell/COE 1.glb';
-        const codPosition = new THREE.Vector3(-47.5, 33.5, 0);
-        // const codPosition = new THREE.Vector3(-5, 6, -0.32);
-        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, 0);
-        const codScale = 0.25;
-        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
-    }
 
     loadCOM() {
         const codPath = '../models/model/modell/COM 1.glb';
         const codPosition = new THREE.Vector3(-20.5, 40.5, 0);
         const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, 0);
-        const codScale = 0.18;
-        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
-    }
-
-    
-
-    loadCOT() {
-        const codPath = '../models/model/modell/COT 1.glb';
-        const codPosition = new THREE.Vector3(-43.5, 29.5, 0.7);
-        // const codPosition = new THREE.Vector3(-5, 6, 0.5);
-        const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI, 0);
-        const codScale = 0.25;
-        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
-    }
-
-    loadCST() {
-        const codPath = '../models/model/modell/CAH 1.glb';
-        const codPosition = new THREE.Vector3(-1.5, 18.5, -1);
-        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, Math.PI / 2);
         const codScale = 0.18;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }

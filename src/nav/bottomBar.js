@@ -236,19 +236,19 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
 
   let lastClicked = null;
-  const collegeist = document.getElementById("college");
+  const collegeList = document.getElementById("college");
 
   function handleToggle(button, contentHTML, styleCSS) {
     // If the same button is clicked again, hide the list
     if (lastClicked === button) {
-      collegelist.style.display = "none";
+      collegeList.style.display = "none";
       lastClicked = null; // Reset the lastClicked
       console.log("Hiding collegelist");
     } else {
       // Show the content, update display and CSS
       collegeList.innerHTML = contentHTML;
       collegeList.style.display = "block";
-      collegeList.style = styleCSS;
+      collegeList.style.cssText = styleCSS;
       lastClicked = button; // Set current button as lastClicked
       console.log("Showing collegelist from:", button.id);
     }

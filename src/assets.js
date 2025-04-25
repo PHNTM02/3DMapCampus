@@ -272,13 +272,6 @@ export class Asset extends THREE.Group {
         const codScale = 0.7;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
-    // loadstore() {
-    //     const codPath = '../models/model/modell/Stores.glb';
-    //     const codPosition = new THREE.Vector3(22, 43.5, 0.2);
-    //     const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI * 2, 0);
-    //     const codScale = 1.3;
-    //     this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
-    // }
 
     loadPioneer() {
         const codPath = '../models/model/modell/PIONEER 1.glb';

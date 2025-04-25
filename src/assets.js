@@ -29,7 +29,6 @@ export class Asset extends THREE.Group {
     loadAll() {
         this.loadGate();
         this.loadClinic();
-
         this.loadGym();
         this.loadPIC();
         this.loadMusicDept();
@@ -48,7 +47,6 @@ export class Asset extends THREE.Group {
         this.loadcaet();
         this.loadfactory();
         this.loadCOD();
-        this.loadCSC();
         this.loadstore();
         this.loadCaff();
         this.loadWaterLaundry();
@@ -209,13 +207,6 @@ export class Asset extends THREE.Group {
         const codPosition = new THREE.Vector3(-26.5, 65.5, -0.1);
         const codRotation = new THREE.Euler(Math.PI / 2, Math.PI, 0);
         const codScale = 0.7;
-        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
-    }
-    loadCSC() {
-        const codPath = '../models/model/modell/Stores.glb';
-        const codPosition = new THREE.Vector3(-2, 60.5, 0.2);
-        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI, 0);
-        const codScale = 1.3;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
     loadCaff() {

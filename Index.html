@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<title>Final Map</title>
 		<link rel="stylesheet" href="src/nav/main.css">
-    <!-- <link rel="stylesheet" href="src/nav/sidebar.css"> -->
+     <link rel="stylesheet" href="src/nav/sidebar.css"> 
 	</head>
 	<body>
 
@@ -14,7 +14,7 @@
     </div>
 
     <!-- This is the Search Bar -->
-    <!-- <div class="search-container">
+    <div class="search-container">
       <input type="text" id="mySearch" placeholder="Search.." title="Type in a category">
       <ul id="myMenu" class="hidden">
         <li><a href="#">College of Business</a></li>
@@ -38,12 +38,12 @@
         <li><a href="#">Apartment B</a></li>
         <li><a href="#">Apartment C</a></li>
       </ul>
-    </div> -->
+    </div> 
 
 
     <div id="modelBuilding" style="display: none;" >
       <div id="backbtn">Back</div>
-      <h1>COLLEGE OF MDEICINE</h1>
+      <h1>COLLEGE OF MEDICINE</h1>
       <div class="buildingSummary">
         <div class="buidlingImage"><img src="img/college_img/com.jpg"></div>
         <p>
@@ -83,7 +83,7 @@
         <div id="apteli" class="cdfList">Apartment E</div>
 
     </div>
-    <!-- <div id="college" class="collegelist"  style="display: none;">
+     <div id="college" class="collegelist"  style="display: none;">
       <div class="cahli">College of Arts and Humanities</div>
     <div class="cobli">College of Business</div>
     <div id="codli" class="codli">College of Dentistry</div>
@@ -93,7 +93,7 @@
     <div class="conli">College of Nursing</div>
     <div class="cstli">College of Science and Technology</div>
     <div class="cotli">College of Theology</div>
-    </div> -->
+    </div> 
 
  
   <!-- This is the Navigation -->
@@ -122,5 +122,110 @@
       }
     </script>
     
+    <script>
+    
+      // Show college panel
+      collegeBar.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        togglePanel(collegePanel);
+      });
+    
+      // Show dorm panel
+      dormBar.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        togglePanel(dormPanel);
+      });
+    
+      // Close panels when clicking outside
+      document.addEventListener("click", (event) => {
+        const clickedInsideCollege = collegePanel.contains(event.target);
+        const clickedInsideDorm = dormPanel.contains(event.target);
+        const clickedCollegeBar = collegeBar.contains(event.target);
+        const clickedDormBar = dormBar.contains(event.target);
+    
+        if (!clickedInsideCollege && !clickedCollegeBar) {
+          collegePanel.style.display = "none";
+        }
+    
+        if (!clickedInsideDorm && !clickedDormBar) {
+          dormPanel.style.display = "none";
+        }
+      });
+    </script>
+    
+    <script>
+      const collegeBar = document.getElementById("collegebar");
+      const dormBar = document.getElementById("dormbar");
+    
+      
+      
+    
+      // Toggle College Panel
+      collegeBar.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const isCollegeVisible = collegePanel.style.display === "block";
+    
+        collegePanel.style.display = isCollegeVisible ? "none" : "block";
+        dormPanel.style.display = "none";
+      });
+    
+      // Toggle Dorm Panel
+      dormBar.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const isDormVisible = dormPanel.style.display;
+    
+        dormPanel.style.display = isDormVisible;
+        collegePanel.style.display = "none";
+      });
+    
+      // Hide panels when clicking outside
+      document.addEventListener("click", (event) => {
+        const clickedInsideCollege = collegePanel.contains(event.target);
+        const clickedInsideDorm = dormPanel.contains(event.target);
+        const clickedCollegeBar = collegeBar.contains(event.target);
+        const clickedDormBar = dormBar.contains(event.target);
+    
+        if (!clickedInsideCollege && !clickedCollegeBar) {
+          collegePanel.style.display = "none";
+        }
+    
+        if (!clickedInsideDorm && !clickedDormBar) {
+          dormPanel.style.display = "none";
+        }
+      });
+    </script>
+    
+    <script>
+      const comli = document.querySelector(".comli");
+      const modelBuilding = document.getElementById("modelBuilding");
+      const collegePanel = document.getElementById("college");
+      const dormPanel = document.getElementById("dorm");
+    
+      // Show the College of Medicine panel when comli is clicked
+      comli.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+    
+        // Hide other panels
+        collegePanel.style.display = "none";
+        dormPanel.style.display = "none";
+    
+        // Show the College of Medicine panel
+        modelBuilding.style.display = "block";
+      });
+    
+      // Hide the College of Medicine panel when clicking the back button
+      const backbtn = document.getElementById("backbtn");
+      backbtn.addEventListener("click", () => {
+        modelBuilding.style.display = "none";
+    
+        // Optionally, show the college panel again
+        collegePanel.style.display = "block";
+      });
+    </script>
 	</body>
 </html>

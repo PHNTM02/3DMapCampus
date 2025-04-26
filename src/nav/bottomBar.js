@@ -240,8 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function handleToggle(button, contentHTML, styleCSS) {
     // If the same button is clicked again, hide the list
-    if (lastClicked === button) {
-      collegelist.style.display = "none";
+    if (lastClicked === button) {s
       lastClicked = null; // Reset the lastClicked
       console.log("Hiding collegelist");
     } else {
@@ -404,3 +403,59 @@ document.addEventListener("DOMContentLoaded", () => {
 // });
 
 
+
+
+  // Select elements for College of Nursing
+  const conli = document.querySelector(".conli"); // College of Nursing button
+  const nursingPanel = document.querySelector("#modelBuilding:nth-of-type(2)"); // Nursing panel
+  const backbtnNursing = nursingPanel.querySelector("#backbtn"); // Back button in Nursing panel
+
+  // Select elements for College of Medicine
+  const comli = document.querySelector(".comli"); // College of Medicine button
+  const medicinePanel = document.querySelector("#modelBuilding:nth-of-type(1)"); // Medicine panel
+  const backbtnMedicine = medicinePanel.querySelector("#backbtn"); // Back button in Medicine panel
+
+  // Select the college list panel
+  const collegePanel = document.getElementById("college");
+
+  // Show the College of Nursing panel when conli is clicked
+  conli.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Hide other panels
+    collegePanel.style.display = "none";
+    medicinePanel.style.display = "none";
+
+    // Show the College of Nursing panel
+    nursingPanel.style.display = "block";
+  });
+
+  // Hide the College of Nursing panel when clicking the back button
+  backbtnNursing.addEventListener("click", () => {
+    nursingPanel.style.display = "none";
+
+    // Optionally, show the college panel again
+    collegePanel.style.display = "block";
+  });
+
+  // Show the College of Medicine panel when comli is clicked
+  comli.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Hide other panels
+    collegePanel.style.display = "none";
+    nursingPanel.style.display = "none";
+
+    // Show the College of Medicine panel
+    medicinePanel.style.display = "block";
+  });
+
+  // Hide the College of Medicine panel when clicking the back button
+  backbtnMedicine.addEventListener("click", () => {
+    medicinePanel.style.display = "none";
+
+    // Optionally, show the college panel again
+    collegePanel.style.display = "block";
+  });

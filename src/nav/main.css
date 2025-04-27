@@ -271,6 +271,47 @@ h1, h2, h3, h4, h5, h6, h7 {
     background-position: center center;
 }
 
+/* FACILITIES */
+#foodfac {
+    background-image: url("/././img/Facilities/Factory.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+#clinic {
+    background-image: url("/././img/Facilities/HealthService.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+#store {
+    background-image: url("/././img/Facilities/AUPstore.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+#waterstation {
+    background-image: url("/././img/Facilities/WaterStation.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+#guidance {
+    background-image: url("/././img/Facilities/GuidaneServiceCenter.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+#kubo {
+    background-image: url("/././img/Facilities/Kubo.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+#psd {
+    background-image: url("/././img/Facilities/PublicSafetyDepartment.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+#ssc {
+    background-image: url("/././img/Facilities/StudentServiceCenter.jpg");
+    background-size: cover;
+    background-position: center center;
+}
 
 #modelBuilding {
     z-index: 120;

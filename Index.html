@@ -81,7 +81,7 @@
 
       <!-- This is the 3D Map -->
     <div id="experience" style=" background-color: rgba(0, 0, 0, 0.5);"> <!--background transparent?-->
-         <canvas id="experience-canvas"></canvas> 
+         <!-- <canvas id="experience-canvas"></canvas>  -->
     </div>
 
     
@@ -165,13 +165,13 @@
       }
     </script>
 		<script type="module" src="./src/main.js"></script>
-    <!-- <script>  -->
-      <!-- const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent); -->
+    <script> 
+      const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     
-      <!-- if (isMobile) { -->
+      if (isMobile) {
         window.location.href = "src/nav/noWeb.html";
-      <!-- } -->
-    <!-- </script> -->
+      }
+    </script>
 
 		<script>
 		// Simulate building rendering and hide the loading screen after rendering is complete

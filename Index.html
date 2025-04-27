@@ -10,43 +10,18 @@
 
       <!-- This is the 3D Map -->
     <div id="experience" style=" background-color: rgba(0, 0, 0, 0.5);"> <!--background transparent?-->
-        <canvas id="experience-canvas"></canvas>
+        <!-- <canvas id="experience-canvas"></canvas> -->
     </div>
 
-    <!-- This is the Search Bar -->
-    <div class="search-container">
-      <input type="text" id="mySearch" placeholder="Search.." title="Type in a category">
-      <ul id="myMenu" class="hidden">
-        <li><a href="#">College of Business</a></li>
-        <li><a href="#">College of Nursing</a></li>
-        <li><a href="#">College of Arts and Humanities</a></li>
-        <li><a href="#">College of Dentistry</a></li>
-        <li><a href="#">College of Health</a></li>
-        <li><a href="#">College of Medicine</a></li>
-        <li><a href="#">College of Science and Technology</a></li>
-        <li><a href="#">College of Theology</a></li>
-        <li><a href="#">College of Education</a></li>
-        <li><a href="#">Music Department</a></li>
-        <li><a href="#">College of Philippine International Church</a></li>
-        <li><a href="#">AUP Gymnasium</a></li>
-        <li><a href="#">Cafeteria</a></li>
-        <li><a href="#">College of Kubo</a></li>
-        <li><a href="#">College of AUP Swimming Pool</a></li>
-        <li><a href="#">AUP Motorpool</a></li>
-        <li><a href="#">AUP Social Service Office</a></li>
-        <li><a href="#">Apartment A</a></li>
-        <li><a href="#">Apartment B</a></li>
-        <li><a href="#">Apartment C</a></li>
-      </ul>
-    </div> 
+    
 
 
     <div id="modelBuilding" style="display: none;" >
       <div id="backbtn">Back</div>
-      <h1>COLLEGE OF MEDICINE</h1>
+      <h1 id=" buildingtitle">COLLEGE OF MEDICINE</h1>
       <div class="buildingSummary">
         <div class="buidlingImage"><img src="img/college_img/com.jpg"></div>
-        <p>
+        <p id="buildingSummary"> 
           The Adventist University of the Philippines College of Medicine (AUPCOM) is the first and only Adventist medical school in the Philippines and the Asia-Pacific region established in 2015. It is only the sixth of seven Adventist medical schools globally, the oldest of which is the Loma Linda University School of Medicine in Loma Linda, California, USA.  AUP College of Medicine is the only medical school in the Philippines and Southeast Asia which includes in its medical curriculum courses in Lifestyle Medicine, Religion, and Whole Person Care, because of its main thrust to produce physician-missionaries for Christ.<br><br>
 
           The medical school accepts baccalaureate allied health degree holders, to begin at the first-year level, with an NMAT score 60 and above, an above average GPA, an outstanding Christian character, and with good English communication skills. Freshmen Medicine students are welcomed in a White Coat Ceremony at the beginning of the year, with the donning of the white coat signifying the purity of the medical profession, and the giving out of the Holy Bible – the most important book above all books, and the Ministry of Healing. These medical students will be trained to become Five-Star Plus Physicians, namely, as mandated by CHED:  Clinician, Teacher, Researcher, Manager, and Social Mobilizer, and additionally the unique AUPCOM Plus – to become a Physician Missionary.<br><br>
@@ -55,9 +30,13 @@
         </p>
       </div>
     </div>
-    <div id="building">
+
+    <div id="building" style="display: none;">
       <canvas id="building-canva"></canvas>
     </div>
+
+    
+    
 
     <div id="dorm" class="collegelist" style="display: none;">
       <h3>Men's Dorm</h3>
@@ -84,15 +63,15 @@
 
     </div>
      <div id="college" class="collegelist"  style="display: none;">
-      <div class="cahli">College of Arts and Humanities</div>
-    <div class="cobli">College of Business</div>
+      <div id= "cahli" class="cahli">College of Arts and Humanities</div>
+    <div id= "cobli" class="cobli">College of Business</div>
     <div id="codli" class="codli">College of Dentistry</div>
-    <div class="coeli">College of Education</div>
-    <div class="cohli">College of Health</div>
-    <div class="comli">College of Medicine</div>
-    <div class="conli">College of Nursing</div>
-    <div class="cstli">College of Science and Technology</div>
-    <div class="cotli">College of Theology</div>
+    <div id="coeli" class="coeli">College of Education</div>
+    <div id= "cohli" class="cohli">College of Health</div>
+    <div id= "comli" class="comli">College of Medicine</div>
+    <div id="conli" class="conli">College of Nursing</div>
+    <div id= "cstli" class="cstli">College of Science and Technology</div>
+    <div id= "cotli" class="cotli">College of Theology</div>
     </div> 
 
  
@@ -227,5 +206,92 @@
         collegePanel.style.display = "block";
       });
     </script>
+
+    <div id="modelBuildingNursing" style="display: none;">
+  <div id="backbtnNursing">Back</div>
+  <h1>COLLEGE OF NURSING</h1>
+  <div class="buildingSummary">
+    <div class="buidlingImage"><img src="img/college_img/_con.jpg"></div>
+    <p>
+      The college is situated at the heart of the University where the utilization of science blends art, aptitude, and attitude in the making of a wholistic professional. It is the home base for developing competent, caring hands inspired by the purpose to harness the skillset hallmarked with quality in the rendering of nursing service to humankind. The College of Nursing is the training hive and haven that launches the future nurses for the world.
+    </p>
+  </div>
+</div>
+<div id="buildingNursing">
+  <canvas id="building-nursing-canva"></canvas>
+</div>
+
+<script>
+  const conli = document.querySelector(".conli");
+  const modelBuildingNursing = document.getElementById("modelBuildingNursing");
+  const backbtnNursing = document.getElementById("backbtnNursing");
+
+  // Show the College of Nursing panel when conli is clicked
+  conli.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Hide other panels
+    collegePanel.style.display = "none";
+    dormPanel.style.display = "none";
+
+    // Show the College of Nursing panel
+    modelBuildingNursing.style.display = "block";
+  });
+
+  // Hide the College of Nursing panel when clicking the back button
+  backbtnNursing.addEventListener("click", () => {
+    modelBuildingNursing.style.display = "none";
+
+    // Optionally, show the college panel again
+    collegePanel.style.display = "block";
+  });
+</script>
+
+<div id="modelBuildingBusiness" style="display: none;">
+  <div id="backbtnBusiness">Back</div>
+  <h1>COLLEGE OF BUSINESS</h1>
+  <div class="buildingSummary">
+    <div class="buidlingImage"><img src="img/college_img/cob.jpg"></div>
+    <p>
+      The College of Business prepares students to become principled, competitive, and ingenious business professionals in order to drive economic development and improve the quality of human life.<br><br>
+
+      COB serves as home to future entrepreneurs, business leaders, financial analysts, auditors, tax advisors, management consultants, IT experts, system administrators and analysts, office specialists and administrators in manufacturing, service, food, health, education, and agriculture industries in government or private companies and controlled corporations. It is an advocate of innovation, linkages, and continuous learning. COB has strong affiliation with universities in the ASEAN and reputable industry partners to provide a wide array of learning opportunities for students.<br><br>
+      
+      The Business Administration program is recognized as a Center of Development by the Commission on Higher Education (CHED). Further, CHED awarded AUP as a Delivering Higher Education Institution (DHEI) of the Master’s in Business Administration and Doctor of Philosophy in Business Administration programs for the Scholarships for Instructors’ Knowledge Advancement Program (SIKAP). Meanwhile, the Accountancy program is a Continuing Professional Development (CPD) provider duly accredited by the Professional Regulation Commission (PRC).
+    </p>
+  </div>
+</div>
+<div id="buildingBusiness">
+  <canvas id="building-business-canva"></canvas>
+</div>
+
+<script>
+  const cobli = document.querySelector(".cobli");
+  const modelBuildingBusiness = document.getElementById("modelBuildingBusiness");
+  const backbtnBusiness = document.getElementById("backbtnBusiness");
+
+  // Show the College of Business panel when cobli is clicked
+  cobli.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    // Hide other panels
+    collegePanel.style.display = "none";
+    dormPanel.style.display = "none";
+
+    // Show the College of Business panel
+    modelBuildingBusiness.style.display = "block";
+  });
+
+  // Hide the College of Business panel when clicking the back button
+  backbtnBusiness.addEventListener("click", () => {
+    modelBuildingBusiness.style.display = "none";
+
+    // Optionally, show the college panel again
+    collegePanel.style.display = "block";
+  });
+</script>
+
 	</body>
 </html>

@@ -11,6 +11,10 @@ body, html {
     background-color: rgb(255, 255, 255);
 }
 
+h1, h2, h3, h4, h5, h6, h7 {
+    pointer-events: none; /* Disable pointer events for all heading elements */
+}
+
 
 /* This is the 3D Map */
 #experience{

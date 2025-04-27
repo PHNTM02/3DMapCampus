@@ -317,74 +317,74 @@ document.addEventListener("DOMContentLoaded", () => {
 //       </div>
 //   `;
 
-//   const coesum = `
-//     <div id="backbtn">Back</div>
-//       <h1>COLLEGE OF EDUCATION</h1>
-//       <div class="buildingSummary">
-//         <div class="buidlingImage"><img src="img/college_img/coe.jpg"></div>
-//         <p>The College of Education (COE) is a training institution for Teacher Education that prepares graduates that demonstrate mastery of discipline, using a wide range of teaching methodologies and delivery modes appropriate to specific learners and their environment. COE is also committed to develop innovative curricula, instructional plans, teaching approaches, and resources for diverse learners.  It is the objective of the College to pursue lifelong learning for personal growth through varied experiential and field-based opportunities coupled with the Integration of Faith and Learning.
-//         </p>
-//       </div>
-//   `;
+  // const coesum = `
+  //   <div id="backbtn">Back</div>
+  //     <h1>COLLEGE OF EDUCATION</h1>
+  //     <div class="buildingSummary">
+  //       <div class="buidlingImage"><img src="img/college_img/coe.jpg"></div>
+  //       <p>The College of Education (COE) is a training institution for Teacher Education that prepares graduates that demonstrate mastery of discipline, using a wide range of teaching methodologies and delivery modes appropriate to specific learners and their environment. COE is also committed to develop innovative curricula, instructional plans, teaching approaches, and resources for diverse learners.  It is the objective of the College to pursue lifelong learning for personal growth through varied experiential and field-based opportunities coupled with the Integration of Faith and Learning.
+  //       </p>
+  //     </div>
+  // `;
 
-//   const cohsum = `
-//     <div id="backbtn">Back</div>
-//       <h1>COLLEGE OF HEALTH</h1>
-//       <div class="buildingSummary">
-//         <div class="buidlingImage"><img src="img/college_img/coh.jpg"></div>
-//         <p>The AUP College of Health is committed to provide quality Bible-based health professions education, nurturing students for academic excellence, Christlike character, and exemplary service.<br><br
+  // const cohsum = `
+  //   <div id="backbtn">Back</div>
+  //     <h1>COLLEGE OF HEALTH</h1>
+  //     <div class="buildingSummary">
+  //       <div class="buidlingImage"><img src="img/college_img/coh.jpg"></div>
+  //       <p>The AUP College of Health is committed to provide quality Bible-based health professions education, nurturing students for academic excellence, Christlike character, and exemplary service.<br><br>
 
-//         The College of Health aims to produce graduates who will be licensed to practice as medical technologists/medical laboratory scientists; therapeutic, administrative, clinical nutritionist-dietitians;  foodservice managers, community health workers, public health administrators, researchers, consultants, academicians, preventive health clinicians, health and wellness advocates, lifestyle management and community development interventionists, program managers and healthcare leaders in hospitals, local government units, non-government organizations, corporate industries, health organizations, and academic institutions in the Philippines and other parts of the world.
-//         </p>
-//       </div>
-//   `;
+  //       The College of Health aims to produce graduates who will be licensed to practice as medical technologists/medical laboratory scientists; therapeutic, administrative, clinical nutritionist-dietitians;  foodservice managers, community health workers, public health administrators, researchers, consultants, academicians, preventive health clinicians, health and wellness advocates, lifestyle management and community development interventionists, program managers and healthcare leaders in hospitals, local government units, non-government organizations, corporate industries, health organizations, and academic institutions in the Philippines and other parts of the world.
+  //       </p>
+  //     </div>
+  // `;
 
-//   const comsum = `
-//     <div id="backbtn">Back</div>
-//       <h1>COLLEGE OF MEDICINE</h1>
-//       <div class="buildingSummary">
-//         <div class="buidlingImage"><img src="img/college_img/com.jpg"></div>
-//         <p>
-//           The Adventist University of the Philippines College of Medicine (AUPCOM) is the first and only Adventist medical school in the Philippines and the Asia-Pacific region established in 2015. It is only the sixth of seven Adventist medical schools globally, the oldest of which is the Loma Linda University School of Medicine in Loma Linda, California, USA.  AUP College of Medicine is the only medical school in the Philippines and Southeast Asia which includes in its medical curriculum courses in Lifestyle Medicine, Religion, and Whole Person Care, because of its main thrust to produce physician-missionaries for Christ.<br><br>
+  // const comsum = `
+  //   <div id="backbtn">Back</div>
+  //     <h1>COLLEGE OF MEDICINE</h1>
+  //     <div class="buildingSummary">
+  //       <div class="buidlingImage"><img src="img/college_img/com.jpg"></div>
+  //       <p>
+  //         The Adventist University of the Philippines College of Medicine (AUPCOM) is the first and only Adventist medical school in the Philippines and the Asia-Pacific region established in 2015. It is only the sixth of seven Adventist medical schools globally, the oldest of which is the Loma Linda University School of Medicine in Loma Linda, California, USA.  AUP College of Medicine is the only medical school in the Philippines and Southeast Asia which includes in its medical curriculum courses in Lifestyle Medicine, Religion, and Whole Person Care, because of its main thrust to produce physician-missionaries for Christ.<br><br>
 
-//           The medical school accepts baccalaureate allied health degree holders, to begin at the first-year level, with an NMAT score 60 and above, an above average GPA, an outstanding Christian character, and with good English communication skills. Freshmen Medicine students are welcomed in a White Coat Ceremony at the beginning of the year, with the donning of the white coat signifying the purity of the medical profession, and the giving out of the Holy Bible – the most important book above all books, and the Ministry of Healing. These medical students will be trained to become Five-Star Plus Physicians, namely, as mandated by CHED:  Clinician, Teacher, Researcher, Manager, and Social Mobilizer, and additionally the unique AUPCOM Plus – to become a Physician Missionary.<br><br>
+  //         The medical school accepts baccalaureate allied health degree holders, to begin at the first-year level, with an NMAT score 60 and above, an above average GPA, an outstanding Christian character, and with good English communication skills. Freshmen Medicine students are welcomed in a White Coat Ceremony at the beginning of the year, with the donning of the white coat signifying the purity of the medical profession, and the giving out of the Holy Bible – the most important book above all books, and the Ministry of Healing. These medical students will be trained to become Five-Star Plus Physicians, namely, as mandated by CHED:  Clinician, Teacher, Researcher, Manager, and Social Mobilizer, and additionally the unique AUPCOM Plus – to become a Physician Missionary.<br><br>
 
-//           At the fourth-year level, selected outstanding medical students are given the opportunity to go on clinical clerkship rotation for six weeks at our sister institution – the Loma Linda University School of Medicine – Medical Center in Loma Linda, California.
-//         </p>
-//       </div>
-//   `;
+  //         At the fourth-year level, selected outstanding medical students are given the opportunity to go on clinical clerkship rotation for six weeks at our sister institution – the Loma Linda University School of Medicine – Medical Center in Loma Linda, California.
+  //       </p>
+  //     </div>
+  // `;
 
-//   const consum = `
-//     <div id="backbtn">Back</div>
-//       <h1>COLLEGE OF NURSING</h1>
-//       <div class="buildingSummary">
-//         <div class="buidlingImage"><img src="img/college_img/_con.jpg"></div>
-//         <p>The college is situated at the heart of the University where the utilization of science blends art, aptitude, and attitude in the making of a wholistic professional. It is the home base for developing competent, caring hands inspired by the purpose to harness the skillset hallmarked with quality in the rendering of nursing service to humankind. The College of Nursing is the training hive and haven that launches the future nurses for the world.
-//         </p>
-//       </div>
-//   `;
+  // const consum = `
+  //   <div id="backbtn">Back</div>
+  //     <h1>COLLEGE OF NURSING</h1>
+  //     <div class="buildingSummary">
+  //       <div class="buidlingImage"><img src="img/college_img/_con.jpg"></div>
+  //       <p>The college is situated at the heart of the University where the utilization of science blends art, aptitude, and attitude in the making of a wholistic professional. It is the home base for developing competent, caring hands inspired by the purpose to harness the skillset hallmarked with quality in the rendering of nursing service to humankind. The College of Nursing is the training hive and haven that launches the future nurses for the world.
+  //       </p>
+  //     </div>
+  // `;
 
-//   const cstsum = `
-//     <div id="backbtn">Back</div>
-//       <h1>COLLEGE OF SCIENCE AND TECHNOLOGY</h1>
-//       <div class="buildingSummary">
-//         <div class="buidlingImage"><img src="img/college_img/cst.jpg"></div>
-//         <p>The College of Science and Technology (CST) exists to provide excellent and quality Christian education to students who would be future biologists, medical doctors, chemists, chemical technicians, electronics engineers, mathematicians, data scientists, librarians, curators, and researchers equipped with the necessary skills reflecting Christian values. 
-//         </p>
-//       </div>
-//   `;
+  // const cstsum = `
+  //   <div id="backbtn">Back</div>
+  //     <h1>COLLEGE OF SCIENCE AND TECHNOLOGY</h1>
+  //     <div class="buildingSummary">
+  //       <div class="buidlingImage"><img src="img/college_img/cst.jpg"></div>
+  //       <p>The College of Science and Technology (CST) exists to provide excellent and quality Christian education to students who would be future biologists, medical doctors, chemists, chemical technicians, electronics engineers, mathematicians, data scientists, librarians, curators, and researchers equipped with the necessary skills reflecting Christian values. 
+  //       </p>
+  //     </div>
+  // `;
 
-//   const cotsum = `
-//     <div id="backbtn">Back</div>
-//       <h1>COLLEGE OF THEOLOGY</h1>
-//       <div class="buildingSummary">
-//         <div class="buidlingImage"><img src="img/college_img/cot.jpg"></div>
-//         <p>The College of Theology is the home for those who want to experience the good news of salvation of Jesus Christ. It aims to lead every student to have a saving, loving, and growing, relationship with Him by being a receiver and a sharer of the gospel.<br><br>
+  // const cotsum = `
+  //   <div id="backbtn">Back</div>
+  //     <h1>COLLEGE OF THEOLOGY</h1>
+  //     <div class="buildingSummary">
+  //       <div class="buidlingImage"><img src="img/college_img/cot.jpg"></div>
+  //       <p>The College of Theology is the home for those who want to experience the good news of salvation of Jesus Christ. It aims to lead every student to have a saving, loving, and growing, relationship with Him by being a receiver and a sharer of the gospel.<br><br>
 
-//         The College of Theology specifically provides education as the initial degree for those who are preparing for the gospel ministry in the Adventist church. For non-theology students, it provides Bible education that teaches Adventist values and lifestyle without forcing conversion of students from other faith. Overall, it exists to help in the faith development of the students.
-//         </p>
-//       </div>
-//   `;
+  //       The College of Theology specifically provides education as the initial degree for those who are preparing for the gospel ministry in the Adventist church. For non-theology students, it provides Bible education that teaches Adventist values and lifestyle without forcing conversion of students from other faith. Overall, it exists to help in the faith development of the students.
+  //       </p>
+  //     </div>
+  // `;
 
 
 // const dormbtn = document.getElementById('dormbar');

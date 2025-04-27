@@ -83,6 +83,15 @@
     <div id="experience" style=" background-color: rgba(0, 0, 0, 0.5);"> <!--background transparent?-->
          <!-- <canvas id="experience-canvas"></canvas>  -->
     </div>
+	<script type="importmap">
+		{
+		  "imports": {
+			"three": "https://cdn.jsdelivr.net/npm/three@v0.175.0/build/three.module.js",
+			"three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.175.0/examples/jsm/"
+		  }
+		}
+	  </script>
+		  <script type="module" src="./src/main.js"></script>
 
     
 
@@ -152,15 +161,7 @@
 
 
 
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@v0.175.0/build/three.module.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.175.0/examples/jsm/"
-        }
-      }
-    </script>
-		<script type="module" src="./src/main.js"></script>
+    
     <script> 
       const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     

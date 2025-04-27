@@ -18,7 +18,7 @@
 
     <div id="modelBuilding" style="display: none;" >
       <div id="backbtn">Back</div>
-      <h1 id=" buildingtitle">COLLEGE OF MEDICINE</h1>
+      <h1 id="buildingtitle">COLLEGE OF MEDICINE</h1>
       <div class="buildingSummary">
         <div class="buidlingImage"><img src="img/college_img/com.jpg"></div>
         <p id="buildingSummary"> 
@@ -82,7 +82,8 @@
     <a href="#" id="facilitybar">🏠Facilities</a>
   </div>
 
-<script type="module" src="./src/nav/bottomBar.js"></script>
+<!-- <script type="module" src="./src/nav/bottomBar.js"></script> -->
+<script type="module" src="./src/nav/sales.js"></script>
 
     <script type="importmap">
       {
@@ -101,197 +102,5 @@
       }
     </script>
     
-    <script>
-    
-      // Show college panel
-      collegeBar.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        togglePanel(collegePanel);
-      });
-    
-      // Show dorm panel
-      dormBar.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        togglePanel(dormPanel);
-      });
-    
-      // Close panels when clicking outside
-      document.addEventListener("click", (event) => {
-        const clickedInsideCollege = collegePanel.contains(event.target);
-        const clickedInsideDorm = dormPanel.contains(event.target);
-        const clickedCollegeBar = collegeBar.contains(event.target);
-        const clickedDormBar = dormBar.contains(event.target);
-    
-        if (!clickedInsideCollege && !clickedCollegeBar) {
-          collegePanel.style.display = "none";
-        }
-    
-        if (!clickedInsideDorm && !clickedDormBar) {
-          dormPanel.style.display = "none";
-        }
-      });
-    </script>
-    
-    <script>
-      const collegeBar = document.getElementById("collegebar");
-      const dormBar = document.getElementById("dormbar");
-    
-      
-      
-    
-      // Toggle College Panel
-      collegeBar.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        const isCollegeVisible = collegePanel.style.display === "block";
-    
-        collegePanel.style.display = isCollegeVisible ? "none" : "block";
-        dormPanel.style.display = "none";
-      });
-    
-      // Toggle Dorm Panel
-      dormBar.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        const isDormVisible = dormPanel.style.display;
-    
-        dormPanel.style.display = isDormVisible;
-        collegePanel.style.display = "none";
-      });
-    
-      // Hide panels when clicking outside
-      document.addEventListener("click", (event) => {
-        const clickedInsideCollege = collegePanel.contains(event.target);
-        const clickedInsideDorm = dormPanel.contains(event.target);
-        const clickedCollegeBar = collegeBar.contains(event.target);
-        const clickedDormBar = dormBar.contains(event.target);
-    
-        if (!clickedInsideCollege && !clickedCollegeBar) {
-          collegePanel.style.display = "none";
-        }
-    
-        if (!clickedInsideDorm && !clickedDormBar) {
-          dormPanel.style.display = "none";
-        }
-      });
-    </script>
-    
-    <script>
-      const comli = document.querySelector(".comli");
-      const modelBuilding = document.getElementById("modelBuilding");
-      const collegePanel = document.getElementById("college");
-      const dormPanel = document.getElementById("dorm");
-    
-      // Show the College of Medicine panel when comli is clicked
-      comli.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-    
-        // Hide other panels
-        collegePanel.style.display = "none";
-        dormPanel.style.display = "none";
-    
-        // Show the College of Medicine panel
-        modelBuilding.style.display = "block";
-      });
-    
-      // Hide the College of Medicine panel when clicking the back button
-      const backbtn = document.getElementById("backbtn");
-      backbtn.addEventListener("click", () => {
-        modelBuilding.style.display = "none";
-    
-        // Optionally, show the college panel again
-        collegePanel.style.display = "block";
-      });
-    </script>
-
-    <div id="modelBuildingNursing" style="display: none;">
-  <div id="backbtnNursing">Back</div>
-  <h1>COLLEGE OF NURSING</h1>
-  <div class="buildingSummary">
-    <div class="buidlingImage"><img src="img/college_img/_con.jpg"></div>
-    <p>
-      The college is situated at the heart of the University where the utilization of science blends art, aptitude, and attitude in the making of a wholistic professional. It is the home base for developing competent, caring hands inspired by the purpose to harness the skillset hallmarked with quality in the rendering of nursing service to humankind. The College of Nursing is the training hive and haven that launches the future nurses for the world.
-    </p>
-  </div>
-</div>
-<div id="buildingNursing">
-  <canvas id="building-nursing-canva"></canvas>
-</div>
-
-<script>
-  const conli = document.querySelector(".conli");
-  const modelBuildingNursing = document.getElementById("modelBuildingNursing");
-  const backbtnNursing = document.getElementById("backbtnNursing");
-
-  // Show the College of Nursing panel when conli is clicked
-  conli.addEventListener("click", (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    // Hide other panels
-    collegePanel.style.display = "none";
-    dormPanel.style.display = "none";
-
-    // Show the College of Nursing panel
-    modelBuildingNursing.style.display = "block";
-  });
-
-  // Hide the College of Nursing panel when clicking the back button
-  backbtnNursing.addEventListener("click", () => {
-    modelBuildingNursing.style.display = "none";
-
-    // Optionally, show the college panel again
-    collegePanel.style.display = "block";
-  });
-</script>
-
-<div id="modelBuildingBusiness" style="display: none;">
-  <div id="backbtnBusiness">Back</div>
-  <h1>COLLEGE OF BUSINESS</h1>
-  <div class="buildingSummary">
-    <div class="buidlingImage"><img src="img/college_img/cob.jpg"></div>
-    <p>
-      The College of Business prepares students to become principled, competitive, and ingenious business professionals in order to drive economic development and improve the quality of human life.<br><br>
-
-      COB serves as home to future entrepreneurs, business leaders, financial analysts, auditors, tax advisors, management consultants, IT experts, system administrators and analysts, office specialists and administrators in manufacturing, service, food, health, education, and agriculture industries in government or private companies and controlled corporations. It is an advocate of innovation, linkages, and continuous learning. COB has strong affiliation with universities in the ASEAN and reputable industry partners to provide a wide array of learning opportunities for students.<br><br>
-      
-      The Business Administration program is recognized as a Center of Development by the Commission on Higher Education (CHED). Further, CHED awarded AUP as a Delivering Higher Education Institution (DHEI) of the Master’s in Business Administration and Doctor of Philosophy in Business Administration programs for the Scholarships for Instructors’ Knowledge Advancement Program (SIKAP). Meanwhile, the Accountancy program is a Continuing Professional Development (CPD) provider duly accredited by the Professional Regulation Commission (PRC).
-    </p>
-  </div>
-</div>
-<div id="buildingBusiness">
-  <canvas id="building-business-canva"></canvas>
-</div>
-
-<script>
-  const cobli = document.querySelector(".cobli");
-  const modelBuildingBusiness = document.getElementById("modelBuildingBusiness");
-  const backbtnBusiness = document.getElementById("backbtnBusiness");
-
-  // Show the College of Business panel when cobli is clicked
-  cobli.addEventListener("click", (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    // Hide other panels
-    collegePanel.style.display = "none";
-    dormPanel.style.display = "none";
-
-    // Show the College of Business panel
-    modelBuildingBusiness.style.display = "block";
-  });
-
-  // Hide the College of Business panel when clicking the back button
-  backbtnBusiness.addEventListener("click", () => {
-    modelBuildingBusiness.style.display = "none";
-
-    // Optionally, show the college panel again
-    collegePanel.style.display = "block";
-  });
-</script>
-
 	</body>
 </html>

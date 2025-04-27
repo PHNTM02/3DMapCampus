@@ -105,9 +105,9 @@ export class Asset extends THREE.Group {
     }
     loadPool() {
         const codPath = '../models/model/modell/AUPPool.glb';
-        const codPosition = new THREE.Vector3(-31, 6.5, 0);
+        const codPosition = new THREE.Vector3(-40, 6.5, 0);
         const codRotation = new THREE.Euler(Math.PI / 2, Math.PI, 0);
-        const codScale = 0.17;
+        const codScale = .2;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
     loadPSD() {

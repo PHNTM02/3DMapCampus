@@ -70,7 +70,7 @@ export class Asset extends THREE.Group {
 
     loadGate() {
         const gatePath = '../FinalModel/Gate.glb';
-        const gatePosition = new THREE.Vector3(0.85, -7.2, 0);
+        const gatePosition = new THREE.Vector3(0.85, -26, 0);
         const gateRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2 - 0.05, 0);
         const gateScale = 1;
         this.loadGLTFModel(gatePath, gatePosition, gateRotation, gateScale);

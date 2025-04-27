@@ -15,13 +15,13 @@ export class Road extends THREE.Group {
 
     straightRoad2() {
 // Outside Road
-        for(let a = 1; a < 100; a++) {
+        for(let a = 1; a < 150; a++) {
             this.loader.load(
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {
                     const model = gltf.scene;
                     model.scale.set(2, 0.3, 0.335);
-                    model.position.set( a + (-49.5), -10, 0);
+                    model.position.set( a + (-70.5), -30, 0);
                     model.rotation.set(0, Math.PI / 2, Math.PI / 2);
                     this.add(model);
                 },
@@ -33,13 +33,13 @@ export class Road extends THREE.Group {
         }
 
 // After Gate
-        for(let i = 0; i < 22; i++) {
+        for(let i = 0; i < 43; i++) {
             this.loader.load(
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {
                     const model = gltf.scene;
                     model.scale.set(2, 0.5, 1);
-                    model.position.set(1, i + (-5.5), 0); 
+                    model.position.set(1, i + (-25), 0); 
                     model.rotation.x = Math.PI / 2;
                     this.add(model);
                 },
@@ -54,7 +54,7 @@ export class Road extends THREE.Group {
                 "../models/model/modell/road/noHutter.gltf",
                 (gltf) => {
                     const model = gltf.scene;
-                    model.scale.set(0.7, 0.3, 0.335);
+                    model.scale.set(2, 0.3, 0.335);
                     model.position.set(1, i + 18.5, 0);
                     model.rotation.x = Math.PI / 2;
                     this.add(model);
@@ -85,8 +85,8 @@ export class Road extends THREE.Group {
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {
                     const model = gltf.scene;
-                    model.scale.set(0.7, 0.3, 0.335);
-                    model.position.set( a + (1.5), 19, 0);
+                    model.scale.set(2, 0.3, 0.335);
+                    model.position.set( a + (3), 21, 0);
                     model.rotation.set(0, Math.PI / 2, Math.PI / 2);
                     this.add(model);
                 },
@@ -103,8 +103,8 @@ export class Road extends THREE.Group {
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {
                     const model = gltf.scene;
-                    model.scale.set(0.7, 0.3, 0.335);
-                    model.position.set( -a + 0.5, 19, 0);
+                    model.scale.set(2, 0.3, 0.335);
+                    model.position.set( -a + -1, 21, 0);
                     model.rotation.set(0, Math.PI / 2, Math.PI / 2);
                     this.add(model);
                 },

@@ -38,8 +38,8 @@ export class Road extends THREE.Group {
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {
                     const model = gltf.scene;
-                    model.scale.set(2, 0.3, 0.335);
-                    model.position.set(1, i + (-2.5), 0); 
+                    model.scale.set(2, 0.5, 1);
+                    model.position.set(1, i + (-5.5), 0); 
                     model.rotation.x = Math.PI / 2;
                     this.add(model);
                 },

@@ -98,9 +98,9 @@ export class Asset extends THREE.Group {
     }
     loadMusicDept() {
         const codPath = '../FinalModel/DepartmentOfMusic.glb';
-        const codPosition = new THREE.Vector3(-32, 16, 0);
+        const codPosition = new THREE.Vector3(-43, 20, 0);
         const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI / 2, 0);
-        const codScale = 0.6;
+        const codScale = 1;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
     loadPool() {

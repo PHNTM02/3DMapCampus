@@ -33,7 +33,7 @@ export class Road extends THREE.Group {
         }
 
 // After Gate
-        for(let i = 0; i < 43; i++) {
+        for(let i = 0; i < 44.5; i++) {
             this.loader.load(
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {
@@ -49,7 +49,7 @@ export class Road extends THREE.Group {
                 }
             );
         }
-        for(let i = 0; i < 2; i++){
+        for(let i = 0; i < 8; i++){
             this.loader.load(
                 "../models/model/modell/road/noHutter.gltf",
                 (gltf) => {
@@ -80,13 +80,13 @@ export class Road extends THREE.Group {
             }
         );
 // First cross Road
-        for(let a = 1; a < 13; a++) {
+        for(let a = 1; a < 20; a++) {
             this.loader.load(
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {
                     const model = gltf.scene;
                     model.scale.set(2, 0.3, 0.335);
-                    model.position.set( a + (3), 21, 0);
+                    model.position.set( a + (3), 23, 0);
                     model.rotation.set(0, Math.PI / 2, Math.PI / 2);
                     this.add(model);
                 },
@@ -98,13 +98,13 @@ export class Road extends THREE.Group {
         }
 
 // TO MUSIC DEPT
-        for(let a = 1; a < 25; a++) {
+        for(let a = 1; a < 27; a++) {
             this.loader.load(
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {
                     const model = gltf.scene;
                     model.scale.set(2, 0.3, 0.335);
-                    model.position.set( -a + -1, 21, 0);
+                    model.position.set( -a + -1, 23, 0);
                     model.rotation.set(0, Math.PI / 2, Math.PI / 2);
                     this.add(model);
                 },
@@ -119,8 +119,8 @@ export class Road extends THREE.Group {
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {
                     const model = gltf.scene;
-                    model.scale.set(0.7, 0.3, 0.335);
-                    model.position.set(-25, -i + 17.5, 0);
+                    model.scale.set(0.7, .3, 1);
+                    model.position.set(-28.5, -i + 18.5, 0);
                     model.rotation.x = Math.PI / 2;
                     this.add(model);
                 },
@@ -135,7 +135,7 @@ export class Road extends THREE.Group {
             (gltf) => {
                 const model = gltf.scene;
                 model.scale.set(0.7, 0.3, 0.7);
-                model.position.set(-25, 12, 0);
+                model.position.set(-28, 12, 0);
                 model.rotation.set(Math.PI, -Math.PI / 2, Math.PI / 2);
                 this.add(model);
             },
@@ -148,8 +148,8 @@ export class Road extends THREE.Group {
             "../models/model/modell/road/lowerrightcorner.gltf",
             (gltf) => {
                 const model = gltf.scene;
-                model.scale.set(0.7, 0.3, 0.7);
-                model.position.set(-25, 19, 0);
+                model.scale.set(2, 0.3, 0.7);
+                model.position.set(-28.5, 23, 0);
                 model.rotation.set(Math.PI * 2, Math.PI / 2, Math.PI / 2);
                 this.add(model);
             },
@@ -175,13 +175,13 @@ export class Road extends THREE.Group {
             );
         }
 // CROSSROAD ABOVE IN GYM & PIC
-        for(let i = 0; i < 18; i++) {
+        for(let i = 0; i < 25; i++) {
             this.loader.load(
                 "../models/model/modell/straightRoad.gltf",
                 (gltf) => {
                     const model = gltf.scene;
-                    model.scale.set(0.7, 0.3, 0.335);
-                    model.position.set(1, i + 20.5, 0);
+                    model.scale.set(2, 0.3, 0.335);
+                    model.position.set(1, i + 26., 0);
                     model.rotation.x = Math.PI / 2;
                     this.add(model);
                 },

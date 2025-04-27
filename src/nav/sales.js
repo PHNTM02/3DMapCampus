@@ -161,112 +161,112 @@ cot.addEventListener("click", function () {
 // APARTMENT
 Mahogany.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
-    college.style.display = 'none';
+    dorm.style.display = 'none';
     buildingtitle.innerHTML = "MAHOGANY";
     buildingImg.src = "img/aupDorm/mahogany.jpg";
     buildingSummary.innerHTML = ".";
 });
 Acacia.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
-    college.style.display = 'none';
+    dorm.style.display = 'none';
     buildingtitle.innerHTML = "ACACIA RESIDENCE HALL";
     buildingImg.src = "img/aupDorm/acacia.jpg";
     buildingSummary.innerHTML = ".";
 });
 F.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
-    college.style.display = 'none';
+    dorm.style.display = 'none';
     buildingtitle.innerHTML = "APARTMENT F";
     buildingImg.src = "img/aupDorm/apt_f.jpg";
     buildingSummary.innerHTML = ".";
 });
 Eastern.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
-    college.style.display = 'none';
+    dorm.style.display = 'none';
     buildingtitle.innerHTML = "EASTERN RESIDENCE HALL";
     buildingImg.src = "img/aupDorm/eastern.jpg";
     buildingSummary.innerHTML = ".";
 });
 Molave.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
-    college.style.display = 'none';
+    dorm.style.display = 'none';
     buildingtitle.innerHTML = "MOLAVE";
     buildingImg.src = "img/aupDorm/molave.jpg";
     buildingSummary.innerHTML = ".";
 });
 A.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
-    college.style.display = 'none';
+    dorm.style.display = 'none';
     buildingtitle.innerHTML = "APARTMENT A";
     buildingImg.src = "img/aupDorm/apt_a.jpg";
     buildingSummary.innerHTML = ".";
 });
 Sampaguita.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
-    college.style.display = 'none';
+    dorm.style.display = 'none';
     buildingtitle.innerHTML = "SAMPAGUITA HALL";
     buildingImg.src = "img/aupDorm/sampa.jpg";
     buildingSummary.innerHTML = ".";
 });
 Cadena.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
-    college.style.display = 'none';
+    dorm.style.display = 'none';
     buildingtitle.innerHTML = "CADENA DE AMOR HALL";
     buildingImg.src = "img/aupDorm/cadena.jpg";
     buildingSummary.innerHTML = ".";
 });
 Dama.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
-    college.style.display = 'none';
+    dorm.style.display = 'none';
     buildingtitle.innerHTML = "DAMA DE NOCHE";
     buildingImg.src = "img/aupDorm/dama.jpg";
     buildingSummary.innerHTML = ".";
 });
 Cattleya.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
-    college.style.display = 'none';
+    dorm.style.display = 'none';
     buildingtitle.innerHTML = "CATTLEYA";
     buildingImg.src = "img/aupDorm/cattleya.jpg";
     buildingSummary.innerHTML = ".";
 });
 Waling.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
-    college.style.display = 'none';
+    dorm.style.display = 'none';
     buildingtitle.innerHTML = "WALING-WALING RESIDENCE HALL";
     buildingImg.src = "img/aupDorm/waling.jpg";
     buildingSummary.innerHTML = ".";
 });
 Ilang.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
-    college.style.display = 'none';
+    dorm.style.display = 'none';
     buildingtitle.innerHTML = "ILANG-ILANG";
     buildingImg.src = "img/aupDorm/ilang.jpg";
     buildingSummary.innerHTML = ".";
 });
 aptbli.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
-    college.style.display = 'none';
+    dorm.style.display = 'none';
     buildingtitle.innerHTML = "APARTMENT B";
     buildingImg.src = "img/aupDorm/apt_b.jpg";
     buildingSummary.innerHTML = ".";
 });
 aptgli.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
-    college.style.display = 'none';
+    dorm.style.display = 'none';
     buildingtitle.innerHTML = "APARTMENT G";
     buildingImg.src = "img/aupDorm/apt_g.jpg";
     buildingSummary.innerHTML = ".";
 });
 apthli.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
-    college.style.display = 'none';
+    dorm.style.display = 'none';
     buildingtitle.innerHTML = "APARTMENT H";
     buildingImg.src = "img/aupDorm/apt_h.jpg";
     buildingSummary.innerHTML = ".";
 });
 apteli.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
-    college.style.display = 'none';
+    dorm.style.display = 'none';
     buildingtitle.innerHTML = "APARTMENT E";
     buildingImg.src = "img/aupDorm/apt_e.jpg";
     buildingSummary.innerHTML = ".";

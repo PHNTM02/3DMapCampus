@@ -62,7 +62,7 @@ export class Asset extends THREE.Group {
         this.loadCadena();
         this.loadStudentService();
         // Remove the old loadtree call and replace with new async call
-        await this.loadRandomTrees(100, 500,);
+        await this.loadTreeClusters();
 
         this.loadPioneer();
         // this.loadAdminOffice();
@@ -71,6 +71,94 @@ export class Asset extends THREE.Group {
         // this.loadDormMolave();
         this.loadDormWaling();
         this.loadDormSampa();
+    }
+
+    async loadTreeClusters() {
+        const loader = this.loader;
+        const treePath = '../FinalModel/tree1.glb';
+
+        // Define approximate road bounding rectangles (xMin, xMax, yMin, yMax)
+        const roadAreas = [
+            { xMin: -101, xMax: 50, yMin: -70, yMax: -60 }, // Example road area 1
+            { xMin: -40, xMax: 5, yMin: -20, yMax: 30 },    // Example road area 2
+            { xMin: -220, xMax: -170, yMin: 25, yMax: 160 },// Example road area 3
+            { xMin: -40, xMax: 20, yMin: 25, yMax: 70 },    // Example road area 4
+            { xMin: -50, xMax: 50, yMin: -50, yMax: 50 }    // General road area
+        ];
+
+        // Function to check if a point is inside any road area
+        function isInRoad(x, y) {
+            for (const area of roadAreas) {
+                if (x >= area.xMin && x <= area.xMax && y >= area.yMin && y <= area.yMax) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        // Load the tree model once
+        const gltf = await new Promise((resolve, reject) => {
+            loader.load(
+                treePath,
+                (gltf) => resolve(gltf),
+                undefined,
+                (error) => reject(error)
+            );
+        });
+
+        const treeModel = gltf.scene;
+
+        // Define fixed positions for tree clusters (expanded positions)
+        const clusterPositions = [
+            new THREE.Vector3(-80, -80, 3),
+            new THREE.Vector3(-60, -40, 3),
+            new THREE.Vector3(-30, -30, 3),
+            new THREE.Vector3(20, 10, 3),
+            new THREE.Vector3(-10, 40, 3),
+            new THREE.Vector3(40, -20, 3),
+            new THREE.Vector3(0, 0, 3),
+            new THREE.Vector3(-50, 20, 3),
+            new THREE.Vector3(50, 50, 3),
+            new THREE.Vector3(-40, 60, 3),
+            new THREE.Vector3(30, -40, 3),
+            new THREE.Vector3(10, -50, 3),
+            new THREE.Vector3(60, 60, 3),
+            new THREE.Vector3(-70, 70, 3),
+            new THREE.Vector3(70, -70, 3)
+        ];
+
+        for (const pos of clusterPositions) {
+            // Skip cluster if center is inside road
+            if (isInRoad(pos.x, pos.y)) {
+                continue;
+            }
+
+            // Place 3 to 4 trees clustered around the position
+            const clusterSize = 3 + Math.floor(Math.random() * 2); // 3 or 4 trees
+            for (let i = 0; i < clusterSize; i++) {
+                const treeInstance = treeModel.clone(true);
+
+                // Small random offset within 2 units around cluster center
+                const offsetX = (Math.random() - 0.5) * 2;
+                const offsetY = (Math.random() - 0.5) * 2;
+
+                // Skip tree if position is inside road
+                if (isInRoad(pos.x + offsetX, pos.y + offsetY)) {
+                    continue;
+                }
+
+                treeInstance.position.set(pos.x + offsetX, pos.y + offsetY, pos.z);
+
+                // Random rotation around Y axis
+                treeInstance.rotation.set(Math.PI / 2, Math.random() * Math.PI * 2, 0);
+
+                // Random scale variation between 2.5 and 3.5
+                const scale = 2.5 + Math.random();
+                treeInstance.scale.set(scale, scale, scale);
+
+                this.add(treeInstance);
+            }
+        }
     }
 
     loadGate() {
@@ -103,43 +191,43 @@ export class Asset extends THREE.Group {
     }
 
     // Remove the old loadtree method and replace with new random trees method
-    // async loadRandomTrees(count = 50, terrainSize = 500) {
-    //     const loader = this.loader;
-    //     const treePath = '../FinalModel/tree1.glb';
+    async loadRandomTrees(count = 50, terrainSize = 500) {
+        const loader = this.loader;
+        const treePath = '../FinalModel/tree1.glb';
 
-    //     // Load the tree model once
-    //     const gltf = await new Promise((resolve, reject) => {
-    //         loader.load(
-    //             treePath,
-    //             (gltf) => resolve(gltf),
-    //             undefined,
-    //             (error) => reject(error)
-    //         );
-    //     });
+        // Load the tree model once
+        const gltf = await new Promise((resolve, reject) => {
+            loader.load(
+                treePath,
+                (gltf) => resolve(gltf),
+                undefined,
+                (error) => reject(error)
+            );
+        });
 
-    //     const treeModel = gltf.scene;
+        const treeModel = gltf.scene;
 
-    //     for (let i = 0; i < count; i++) {
-    //         // Clone the tree model
-    //         const treeInstance = treeModel.clone(true);
+        for (let i = 0; i < count; i++) {
+            // tree model
+            const treeInstance = treeModel.clone(true);
 
-    //         // Random position within terrain bounds
-    //         const x = Math.random() * terrainSize - terrainSize / 2;
-    //         const y = Math.random() * terrainSize - terrainSize / 2;
-    //         const z = 0; // Assuming ground level is 0, adjust if needed
+            // Random position within terrain bounds
+            const x = Math.random() * terrainSize - terrainSize / 2;
+            const y = Math.random() * terrainSize - terrainSize / 2;
+            const z = 0; // Assuming ground level is 0, adjust if needed
 
-    //         treeInstance.position.set(x, y, 3);
+            treeInstance.position.set(x, y, 3);
 
-    //         // Random rotation around Y axis
-    //         treeInstance.rotation.set(Math.PI / 2, Math.random() * Math.PI * 2, 0);
+            // Random rotation around Y axis
+            treeInstance.rotation.set(Math.PI / 2, Math.random() * Math.PI * 2, 0);
 
-    //         // Random scale variation between 2.5 and 3.5
-    //         const scale = 2.5 + Math.random();
-    //         treeInstance.scale.set(scale, scale, scale);
+            // Random scale variation between 2.5 and 3.5
+            const scale = 2.5 + Math.random();
+            treeInstance.scale.set(scale, scale, scale);
 
-    //         this.add(treeInstance);
-    //     }
-    // }
+            this.add(treeInstance);
+        }
+    }
     loadMusicDept() {
         const codPath = '../FinalModel/DepartmentOfMusic.glb';
         const codPosition = new THREE.Vector3(-40, -20, 0);

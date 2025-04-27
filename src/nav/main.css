@@ -346,35 +346,8 @@ h1, h2, h3, h4, h5, h6, h7 {
 
 
 
-
-@media (max-width: 768px) {
-
-    .sidebar {
-        z-index: 50;
-        position: relative;
-        background: none;
-        background-color: lightsalmon;
-        /* width: 100%; */
-        flex-direction: column;
-        gap: 10px;
-        width: fit-content;
-    }
-    .Sidebar a {
-        display: block;
-        padding: 10px 20px;
-        text-decoration: none;
-        background-color: #55f7ff;
-        color: black;
-        font-weight: bold;
-        border-radius: 10px;
-        text-align: center;
-      }
-      .college {
-        border: 2px solid black; /* Added border for mobile version */
-    }
-
         
-}#modelBuildingNursing {
+#modelBuildingNursing {
     z-index: 120;
     position: absolute;
     border-radius: 10px;
@@ -505,3 +478,58 @@ h1, h2, h3, h4, h5, h6, h7 {
     left: 525px;
     right: 0;
 }
+
+	/* Mobile-specific styles */
+    @media (max-width: 768px) {
+        #welcomeScreen {
+            font-size: 2.5em; /* Larger font size for mobile */
+        }
+
+        #welcomeScreen button {
+            font-size: 1.2em; /* Larger button size for mobile */
+        }
+    }
+
+    #welcomeScreen img {
+        width: 150px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    #mobileSidebar {
+        display: none; /* Hidden by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        color: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        z-index: 1000;
+    }
+
+    #mobileSidebar a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 0;
+        font-size: 20px;
+        width: 100%;
+        text-align: left;
+    }
+
+    #mobileSidebar a:hover {
+        background-color: #333;
+    }
+
+    @media (max-width: 768px) {
+        #sidebar {
+            display: none; /* Hide the desktop sidebar */
+        }
+
+        #mobileSidebar {
+            display: flex; /* Show the mobile sidebar */
+        }
+    }

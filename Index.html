@@ -13,12 +13,12 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color: rgba(0, 0, 0, 0.8);
+			background-color: black; /* Solid black background */
 			color: white;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			font-size: 1.5em;
+			font-size: 50px;
 			z-index: 1000;
 		}
 
@@ -35,7 +35,7 @@
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
-			font-size: 2em;
+			font-size: 50px;
 			text-align: center;
 			z-index: 1000;
 			display: none; /* Initially hidden */
@@ -44,7 +44,7 @@
 		#welcomeScreen button {
 			margin-top: 20px;
 			padding: 10px 20px;
-			font-size: 1em;
+			font-size: 40px;
 			background-color: #4caf50;
 			color: white;
 			border: none;
@@ -56,16 +56,6 @@
 			background-color: #45a049;
 		}
 
-		/* Mobile-specific styles */
-		@media (max-width: 768px) {
-			#welcomeScreen {
-				font-size: 2.5em; /* Larger font size for mobile */
-			}
-
-			#welcomeScreen button {
-				font-size: 1.2em; /* Larger button size for mobile */
-			}
-		}
 	</style>
 	</head>
 	<body>
@@ -75,13 +65,14 @@
 
 	<!-- Welcome Screen -->
 	<div id="welcomeScreen">
-		<p>WELCOME TO AUP 3D MAP: ON EVER ONWARD!</p>
+		<img src="img/icons/aup logo.png" alt="AUP Logo">
+		<p>WELCOME TO AUP 3D MAP:<br><br> ON EVER ONWARD!</p>
 		<button id="enterButton">Enter</button>
 	</div>
 
       <!-- This is the 3D Map -->
     <div id="experience" style=" background-color: rgba(0, 0, 0, 0.5);"> <!--background transparent?-->
-         <!-- <canvas id="experience-canvas"></canvas>  -->
+          <canvas id="experience-canvas"></canvas>  
     </div>
 	<script type="importmap">
 		{
@@ -159,15 +150,20 @@
     <a href="#" id="facilitybar">🏠Facilities</a>
   </div>
 
-
+  <!-- Mobile Sidebar -->
+  <div id="mobileSidebar">
+    <a href="#" id="collegebar">🏫 College Buildings</a>
+    <a href="#" id="dormbar">🏢 Dormitories</a>
+    <a href="#" id="facilitybar">🏠 Facilities</a>
+  </div>
 
     
     <script> 
-      const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    //   const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     
-      if (isMobile) {
-        window.location.href = "src/nav/noWeb.html";
-      }
+    //   if (isMobile) {
+        // window.location.href = "src/nav/noWeb.html";
+    //   }
     </script>
 
 		<script>

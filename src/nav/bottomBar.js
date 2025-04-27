@@ -269,6 +269,27 @@ document.addEventListener("DOMContentLoaded", () => {
   //   handleToggle(cod, codsum, collegeSum);
   // });
 
+  const mobileSidebar = document.getElementById("mobileSidebar");
+  const toggleButton = document.getElementById("toggleSidebarButton"); // Button to toggle sidebar
+  const closeButton = document.getElementById("closeSidebarButton"); // Button to close sidebar
+
+  // Show the mobile sidebar when the toggle button is clicked
+  toggleButton.addEventListener("click", () => {
+      mobileSidebar.style.display = "flex";
+  });
+
+  // Hide the mobile sidebar when the close button is clicked
+  closeButton.addEventListener("click", () => {
+      mobileSidebar.style.display = "none";
+  });
+
+  // Optional: Hide the sidebar when clicking outside of it
+  document.addEventListener("click", (event) => {
+      if (!mobileSidebar.contains(event.target) && event.target !== toggleButton) {
+          mobileSidebar.style.display = "none";
+      }
+  });
+
 });
 
 

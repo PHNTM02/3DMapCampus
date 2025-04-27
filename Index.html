@@ -56,6 +56,42 @@
 			background-color: #45a049;
 		}
 
+		/* Mobile-specific styles */
+		@media (max-width: 768px) {
+			#sidebar {
+				display: none; /* Hide desktop sidebar */
+			}
+
+			#mobileSidebar {
+				display: block; /* Show mobile sidebar */
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				background-color: #333;
+				color: white;
+				padding: 10px;
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+			}
+
+			#mobileSidebar a {
+				display: block;
+				padding: 10px;
+				text-decoration: none;
+				color: white;
+				border-bottom: 1px solid #444;
+			}
+
+			#mobileSidebar a:hover {
+				background-color: #555;
+			}
+		}
+
+		/* Default: Hide mobile sidebar */
+		#mobileSidebar {
+			display: none;
+		}
+
 	</style>
 	</head>
 	<body>

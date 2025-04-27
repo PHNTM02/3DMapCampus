@@ -50,6 +50,7 @@ backbtn.addEventListener("click", () => {
 
 cob.addEventListener("click", function () {
     modelBuilding.style.display = 'block';
+    college.style.display = 'none';
     buildingImg.src = "img/college_img/cob.jpg";
     buildingtitle.innerHTML = "COLLEGE OF BUSINESS";
     buildingSummary.innerHTML= `The College of Business prepares students to become principled, competitive, and ingenious business professionals in order to drive economic development and improve the quality of human life.<br><br>
@@ -121,20 +122,24 @@ let hidden = false;
 collegebar.addEventListener("click", () => {
     if(!hidden){
         college.style.display = 'none';
+        modelBuilding.style.display = 'none'; 
         hidden = true
     } else {
         college.style.display = 'block';
         dorm.style.display = 'none';
+        modelBuilding.style.display = 'none'; 
         hidden = false;
     }
 });
 dormbar.addEventListener("click", () => {
     if(!hidden){
         dorm.style.display = 'none';
+        modelBuilding.style.display = 'none'; 
         hidden = true
     } else {
         dorm.style.display = 'block';
         college.style.display = 'none';
+        modelBuilding.style.display = 'none'; 
         hidden = false;
     }
 });

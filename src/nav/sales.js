@@ -14,6 +14,8 @@ const backbtn = document.getElementById("backbtn");
 // College & dorm Display
 const dorm = document.getElementById("dorm");
 const college = document.getElementById("college");
+const facility = document.getElementById("faci");
+
 // COLLEGE & DORM LIST
 const cah = document.getElementById("cahli");
 const cob = document.getElementById("cobli");
@@ -40,8 +42,14 @@ const aptbli = document.getElementById("aptbli");
 const aptgli = document.getElementById("aptgli");
 const apthli = document.getElementById("apthli");
 const apteli = document.getElementById("apteli");
-
-
+const foodfac = document.getElementById("foodfac");
+const clinic = document.getElementById("clinic");
+const store = document.getElementById("store");
+const waterstation = document.getElementById("waterstation");
+const guidance = document.getElementById("guidance");
+const kubo = document.getElementById("kubo");
+const psd = document.getElementById("psd");
+const ssc = document.getElementById("ssc");
 
 let hidden = false;
 
@@ -49,11 +57,13 @@ collegebar.addEventListener("click", () => {
     if(!hidden){
         college.style.display = 'none';
         modelBuilding.style.display = 'none'; 
+        faci.style.display = 'none'; 
         hidden = true
     } else {
         college.style.display = 'block';
         dorm.style.display = 'none';
         modelBuilding.style.display = 'none'; 
+        faci.style.display = 'none'; 
         hidden = false;
     }
 });
@@ -61,9 +71,24 @@ dormbar.addEventListener("click", () => {
     if(!hidden){
         dorm.style.display = 'none';
         modelBuilding.style.display = 'none'; 
+        faci.style.display = 'none'; 
         hidden = true
     } else {
         dorm.style.display = 'block';
+        college.style.display = 'none';
+        modelBuilding.style.display = 'none'; 
+        faci.style.display = 'none'; 
+        hidden = false;
+    }
+});
+facilitybar.addEventListener("click", () => {
+    if(!hidden){
+        dorm.style.display = 'none';
+        modelBuilding.style.display = 'none'; 
+        modelBuilding.style.display = 'none'; 
+        hidden = true
+    } else {
+        faci.style.display = 'block';
         college.style.display = 'none';
         modelBuilding.style.display = 'none'; 
         hidden = false;
@@ -269,5 +294,71 @@ apteli.addEventListener("click", () => {
     dorm.style.display = 'none';
     buildingtitle.innerHTML = "APARTMENT E";
     buildingImg.src = "img/aupDorm/apt_e.jpg";
+    buildingSummary.innerHTML = ".";
+});
+
+// FACILITIES
+foodfac.addEventListener("click", () => {
+    modelBuilding.style.display = 'block';
+    dorm.style.display = 'none';
+    college.style.display = 'none';
+    buildingtitle.innerHTML = "AUP Food Factory";
+    buildingImg.src = "img/Facilities/Factory.jpg";
+    buildingSummary.innerHTML = ".";
+});
+clinic.addEventListener("click", () => {
+    modelBuilding.style.display = 'block';
+    dorm.style.display = 'none';
+    college.style.display = 'none';
+    buildingtitle.innerHTML = "AUP Health Service";
+    buildingImg.src = "img/Facilities/HealthService.jpg";
+    buildingSummary.innerHTML = ".";
+});
+store.addEventListener("click", () => {
+    modelBuilding.style.display = 'block';
+    dorm.style.display = 'none';
+    college.style.display = 'none';
+    buildingtitle.innerHTML = "AUP Store";
+    buildingImg.src = "img/Facilities/AUPstore.jpg";
+    buildingSummary.innerHTML = ".";
+});
+waterstation.addEventListener("click", () => {
+    modelBuilding.style.display = 'block';
+    dorm.style.display = 'none';
+    college.style.display = 'none';
+    buildingtitle.innerHTML = "AUP Water Station";
+    buildingImg.src = "img/Facilities/WaterStation.jpg";
+    buildingSummary.innerHTML = ".";
+});
+guidance.addEventListener("click", () => {
+    modelBuilding.style.display = 'block';
+    dorm.style.display = 'none';
+    college.style.display = 'none';
+    buildingtitle.innerHTML = "Guidance Service Center";
+    buildingImg.src = "img/Facilities/GuidaneServiceCenter.jpg";
+    buildingSummary.innerHTML = ".";
+});
+kubo.addEventListener("click", () => {
+    modelBuilding.style.display = 'block';
+    dorm.style.display = 'none';
+    college.style.display = 'none';
+    buildingtitle.innerHTML = "AUP Kubo";
+    buildingImg.src = "img/Facilities/Kubo.jpg";
+    buildingSummary.innerHTML = ".";
+});
+psd.addEventListener("click", () => {
+    modelBuilding.style.display = 'block';
+    dorm.style.display = 'none';
+    college.style.display = 'none';
+    buildingtitle.innerHTML = "Public Safety Department";
+    buildingImg.src = "img/Facilities/PublicSafetyDepartment.jpg";
+    buildingSummary.innerHTML = ".";
+});
+ssc.addEventListener("click", () => {
+    modelBuilding.style.display = 'block';
+    dorm.style.display = 'none';
+    college.style.display = 'none';
+    buildingtitle.innerHTML = "Student Service Center";
+    buildingImg.src = "img/Facilities/StudentServiceCenter.jpg";
     buildingSummary.innerHTML = ".";
 });

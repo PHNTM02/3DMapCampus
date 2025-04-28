@@ -203,15 +203,15 @@ export class Asset extends THREE.Group {
             new THREE.Vector3(20, 10, 3),
             new THREE.Vector3(-10, 40, 3),
             new THREE.Vector3(40, -20, 3),
-            new THREE.Vector3(0, 0, 3),
+            new THREE.Vector3(-1, 1, 3),
             new THREE.Vector3(-50, 20, 3),
             new THREE.Vector3(50, 50, 3),
             new THREE.Vector3(-40, 60, 3),
             new THREE.Vector3(30, -40, 3),
             new THREE.Vector3(10, -50, 3),
             new THREE.Vector3(60, 60, 3),
-            new THREE.Vector3(-70, 70, 3),
-            new THREE.Vector3(70, -70, 3),
+            new THREE.Vector3(-70, 80, 3),
+            new THREE.Vector3(70, -75, 3),
             new THREE.Vector3(80, 80, 3),
             new THREE.Vector3(-90, 50, 3),
             new THREE.Vector3(25, -60, 3),
@@ -224,7 +224,7 @@ export class Asset extends THREE.Group {
             new THREE.Vector3(40, 40, 3),
             new THREE.Vector3(-30, 60, 3),
             new THREE.Vector3(85, -60, 3),
-            new THREE.Vector3(-85, 60, 3),
+            new THREE.Vector3(-85, 75, 3),
             new THREE.Vector3(55, 80, 3),
             new THREE.Vector3(-60, 90, 3),
             new THREE.Vector3(20, -70, 3),
@@ -234,13 +234,16 @@ export class Asset extends THREE.Group {
             new THREE.Vector3(70, 30, 3),
             new THREE.Vector3(-90, -30, 3),
             new THREE.Vector3(100, 100, 3),
-            new THREE.Vector3(-100, 100, 3),
+            // COB Front
+            new THREE.Vector3(-100, 64.5, 3),
+            new THREE.Vector3(-110, 64.5, 3),
             new THREE.Vector3(100, -100, 3),
             new THREE.Vector3(-100, -100, 3),
             new THREE.Vector3(0, 100, 3),
             new THREE.Vector3(100, 0, 3),
             new THREE.Vector3(-100, 0, 3),
-            new THREE.Vector3(0, -100, 3)
+            new THREE.Vector3(0, -100, 3),
+            new THREE.Vector3(10, -20, 30) ,
         ];
 
         for (const pos of clusterPositions) {
@@ -402,16 +405,16 @@ export class Asset extends THREE.Group {
     }
     loadCOB() {
         const codPath = '../FinalModel/COB.glb';
-        const codPosition = new THREE.Vector3(-110.5, 50, 1);
-        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI/2, 0);
-        const codScale = 1;
+        const codPosition = new THREE.Vector3(-110.5, 58, 2.2);
+        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI/-2, 0);
+        const codScale = 1.2;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
     loadCST() {
         const codPath = '../FinalModel/CST.glb';
-        const codPosition = new THREE.Vector3(-105.5, 65, 0.5);
+        const codPosition = new THREE.Vector3(-105.5, 70, 1.5);
         const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI, 0);
-        const codScale = .9;
+        const codScale = 1;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
     loadCOM() {
@@ -572,7 +575,7 @@ export class Asset extends THREE.Group {
 
     loadPIONEER() {
         const codPath = '../FinalModel/Pioneer.glb';
-        const codPosition = new THREE.Vector3(-108, 77,1);
+        const codPosition = new THREE.Vector3(-108, 85,1);
         const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI / 2, 0);
         const codScale = .8;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);

@@ -6,6 +6,7 @@ export class Asset extends THREE.Group {
         super();
 
         this.loader = new GLTFLoader();
+        this.clouds = [];
         this.loadAll();
     }
 
@@ -71,6 +72,92 @@ export class Asset extends THREE.Group {
         // this.loadDormMolave();
         this.loadDormWaling();
         this.loadDormSampa();
+
+        this.loadPolyClouds();
+    }
+
+    loadPolyClouds() {
+        const cloudGeometry = new THREE.SphereGeometry(5, 6, 6);
+        const cloudMaterial = new THREE.MeshLambertMaterial({
+            color: 0xffffff,
+            transparent: true,
+            opacity: 0.8,
+            depthWrite: false,
+        });
+
+        const cloudCount = 10;
+        for (let i = 0; i < cloudCount; i++) {
+            const cloud = new THREE.Mesh(cloudGeometry, cloudMaterial);
+            const originalX = Math.random() * 200 - 100;
+            const originalY = Math.random() * 200 - 100;
+            const originalZ = 50 + Math.random() * 20;
+            cloud.position.set(originalX, originalY, originalZ);
+            cloud.scale.setScalar(1 + Math.random());
+            cloud.userData = { originalPosition: new THREE.Vector3(originalX, originalY, originalZ), offset: Math.random() * Math.PI * 2 };
+            this.clouds.push(cloud);
+            this.add(cloud);
+        }
+    }
+
+    update(delta) {
+        // Move clouds with realistic drifting and floating effect, and spawn new clouds
+        const cloudsToRemove = [];
+        for (const cloud of this.clouds) {
+            if (!cloud.userData.speed) {
+                // Assign a random horizontal speed between 0.1 and 0.5 units per second
+                cloud.userData.speed = 0.1 + Math.random() * 0.4;
+                // Assign a random vertical oscillation amplitude between 1 and 3 units
+                cloud.userData.verticalAmplitude = 1 + Math.random() * 2;
+                // Assign a random vertical oscillation speed
+                cloud.userData.verticalSpeed = 0.5 + Math.random();
+                // Store a phase offset for vertical oscillation
+                cloud.userData.verticalPhase = Math.random() * Math.PI * 2;
+            }
+
+            const originalPos = cloud.userData.originalPosition;
+            const speed = cloud.userData.speed;
+            const verticalAmplitude = cloud.userData.verticalAmplitude;
+            const verticalSpeed = cloud.userData.verticalSpeed;
+            const verticalPhase = cloud.userData.verticalPhase;
+
+            // Update horizontal position (drift to the right)
+            cloud.position.x += speed * delta;
+
+            // Mark clouds that moved out of bounds for removal
+            if (cloud.position.x > 100) {
+                cloudsToRemove.push(cloud);
+            }
+
+            // Update vertical position with oscillation (floating effect)
+            cloud.position.y = originalPos.y + Math.sin(verticalPhase + performance.now() * 0.001 * verticalSpeed) * verticalAmplitude;
+        }
+
+        // Remove clouds that moved out of bounds and spawn new clouds on the left
+        for (const cloud of cloudsToRemove) {
+            this.remove(cloud);
+            const index = this.clouds.indexOf(cloud);
+            if (index > -1) {
+                this.clouds.splice(index, 1);
+            }
+
+            // Spawn new cloud on the left side with random vertical and depth positions
+            const cloudGeometry = new THREE.SphereGeometry(5, 6, 6);
+            const cloudMaterial = new THREE.MeshLambertMaterial({
+                color: 0xffffff,
+                transparent: true,
+                opacity: 0.8,
+                depthWrite: false,
+            });
+            const newCloud = new THREE.Mesh(cloudGeometry, cloudMaterial);
+            const originalX = -100;
+            const originalY = Math.random() * 200 - 100;
+            const originalZ = 50 + Math.random() * 20;
+            newCloud.position.set(originalX, originalY, originalZ);
+            newCloud.scale.setScalar(1 + Math.random());
+            newCloud.userData = { originalPosition: new THREE.Vector3(originalX, originalY, originalZ), offset: Math.random() * Math.PI * 2 };
+            this.clouds.push(newCloud);
+            this.add(newCloud);
+        }
     }
 
     async loadTreeClusters() {
@@ -108,7 +195,7 @@ export class Asset extends THREE.Group {
 
         const treeModel = gltf.scene;
 
-        // Define fixed positions for tree clusters (expanded positions)
+        // Define fixed positions for tree 
         const clusterPositions = [
             new THREE.Vector3(-80, -80, 3),
             new THREE.Vector3(-60, -40, 3),
@@ -124,7 +211,36 @@ export class Asset extends THREE.Group {
             new THREE.Vector3(10, -50, 3),
             new THREE.Vector3(60, 60, 3),
             new THREE.Vector3(-70, 70, 3),
-            new THREE.Vector3(70, -70, 3)
+            new THREE.Vector3(70, -70, 3),
+            new THREE.Vector3(80, 80, 3),
+            new THREE.Vector3(-90, 50, 3),
+            new THREE.Vector3(25, -60, 3),
+            new THREE.Vector3(90, -40, 3),
+            new THREE.Vector3(-80, 30, 3),
+            new THREE.Vector3(60, -70, 3),
+            new THREE.Vector3(-20, 80, 3),
+            new THREE.Vector3(10, 70, 3),
+            new THREE.Vector3(-70, -20, 3),
+            new THREE.Vector3(40, 40, 3),
+            new THREE.Vector3(-30, 60, 3),
+            new THREE.Vector3(85, -60, 3),
+            new THREE.Vector3(-85, 60, 3),
+            new THREE.Vector3(55, 80, 3),
+            new THREE.Vector3(-60, 90, 3),
+            new THREE.Vector3(20, -70, 3),
+            new THREE.Vector3(-10, -80, 3),
+            new THREE.Vector3(0, 90, 3),
+            new THREE.Vector3(-40, -60, 3),
+            new THREE.Vector3(70, 30, 3),
+            new THREE.Vector3(-90, -30, 3),
+            new THREE.Vector3(100, 100, 3),
+            new THREE.Vector3(-100, 100, 3),
+            new THREE.Vector3(100, -100, 3),
+            new THREE.Vector3(-100, -100, 3),
+            new THREE.Vector3(0, 100, 3),
+            new THREE.Vector3(100, 0, 3),
+            new THREE.Vector3(-100, 0, 3),
+            new THREE.Vector3(0, -100, 3)
         ];
 
         for (const pos of clusterPositions) {
@@ -133,8 +249,8 @@ export class Asset extends THREE.Group {
                 continue;
             }
 
-            // Place 3 to 4 trees clustered around the position
-            const clusterSize = 3 + Math.floor(Math.random() * 2); // 3 or 4 trees
+            // Place 4 to 5 trees clustered around the position (increased cluster size)
+            const clusterSize = 7 + Math.floor(Math.random() * 4); // 7 to 10 trees
             for (let i = 0; i < clusterSize; i++) {
                 const treeInstance = treeModel.clone(true);
 
@@ -272,7 +388,7 @@ export class Asset extends THREE.Group {
     }
     loadLibrary() {
         const codPath = '../models/model/modell/Library.glb';
-        const codPosition = new THREE.Vector3(-60.5, 45, 0.1);
+        const codPosition = new THREE.Vector3(-60.5, 45, .5);
         const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI / 2, 0);
         const codScale = .4;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
@@ -350,7 +466,7 @@ export class Asset extends THREE.Group {
     }
     loadCOD() {
         const codPath = '../models/model/modell/COD .glb';
-        const codPosition = new THREE.Vector3(-45.5, 100, -2);
+        const codPosition = new THREE.Vector3(-45.5, 100, -1.5);
         const codRotation = new THREE.Euler(Math.PI / 2, Math.PI, 0);
         const codScale = 1.5;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
@@ -456,7 +572,7 @@ export class Asset extends THREE.Group {
 
     loadPIONEER() {
         const codPath = '../FinalModel/Pioneer.glb';
-        const codPosition = new THREE.Vector3(-108, 77, 0);
+        const codPosition = new THREE.Vector3(-108, 77,1);
         const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI / 2, 0);
         const codScale = .8;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);

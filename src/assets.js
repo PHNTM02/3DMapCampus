@@ -388,7 +388,7 @@ export class Asset extends THREE.Group {
     }
     loadLibrary() {
         const codPath = '../models/model/modell/Library.glb';
-        const codPosition = new THREE.Vector3(-60.5, 45, 0.1);
+        const codPosition = new THREE.Vector3(-60.5, 45, .5);
         const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI / 2, 0);
         const codScale = .4;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
@@ -466,7 +466,7 @@ export class Asset extends THREE.Group {
     }
     loadCOD() {
         const codPath = '../models/model/modell/COD .glb';
-        const codPosition = new THREE.Vector3(-45.5, 100, -2);
+        const codPosition = new THREE.Vector3(-45.5, 100, -1.5);
         const codRotation = new THREE.Euler(Math.PI / 2, Math.PI, 0);
         const codScale = 1.5;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
@@ -572,7 +572,7 @@ export class Asset extends THREE.Group {
 
     loadPIONEER() {
         const codPath = '../FinalModel/Pioneer.glb';
-        const codPosition = new THREE.Vector3(-108, 77, 0);
+        const codPosition = new THREE.Vector3(-108, 77,1);
         const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI / 2, 0);
         const codScale = .8;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);

@@ -15,7 +15,7 @@ export class Terrain extends THREE.Group {
         const tileSize = 500;
 
         const geometry = new THREE.PlaneGeometry(tileSize, tileSize, tileSize, tileSize);
-        const material = new THREE.MeshBasicMaterial({ color: 0x7cca92, wireframe: true });
+        const material = new THREE.MeshLambertMaterial({ color: 0x7cca92, wireframe: false });
         const terrain = new THREE.Mesh( geometry, material );
         // terrain.position.set(0, 50, 0);
         terrain.position.set(0, 0, 0);

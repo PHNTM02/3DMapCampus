@@ -39,6 +39,7 @@ scene.add(sun, ambientLight);
 
 // ADD TERRAIN
 const terrain = new Terrain();
+terrain.position.set(-20,-15, -15);
 scene.add(terrain);
 
 // ---HANDLING RE-SIZE OF THE SCREEN

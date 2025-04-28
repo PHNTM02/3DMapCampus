@@ -243,7 +243,9 @@ export class Asset extends THREE.Group {
             new THREE.Vector3(100, 0, 3),
             new THREE.Vector3(-100, 0, 3),
             new THREE.Vector3(0, -100, 3),
-            new THREE.Vector3(10, -20, 30) ,
+            new THREE.Vector3(15, -20, 3),
+            //PSD 
+            new THREE.Vector3(-3, 10, 3),
         ];
 
         for (const pos of clusterPositions) {
@@ -483,7 +485,7 @@ export class Asset extends THREE.Group {
     }
 
     loadDormSampa(){
-        const codPath = '../FinalModel/ Sampaguita.glb';
+        const codPath = '../FinalModel/Sampaguita.glb';
         const codPosition = new THREE.Vector3(-45.5, 100, -2);
         const codRotation = new THREE.Euler(Math.PI / 2, Math.PI, 0);
         const codScale = 1.5;

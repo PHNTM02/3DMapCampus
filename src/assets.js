@@ -124,7 +124,28 @@ export class Asset extends THREE.Group {
             new THREE.Vector3(10, -50, 3),
             new THREE.Vector3(60, 60, 3),
             new THREE.Vector3(-70, 70, 3),
-            new THREE.Vector3(70, -70, 3)
+            new THREE.Vector3(70, -70, 3),
+            new THREE.Vector3(80, 80, 3),
+            new THREE.Vector3(-90, 50, 3),
+            new THREE.Vector3(25, -60, 3),
+            new THREE.Vector3(90, -40, 3),
+            new THREE.Vector3(-80, 30, 3),
+            new THREE.Vector3(60, -70, 3),
+            new THREE.Vector3(-20, 80, 3),
+            new THREE.Vector3(10, 70, 3),
+            new THREE.Vector3(-70, -20, 3),
+            new THREE.Vector3(40, 40, 3),
+            new THREE.Vector3(-30, 60, 3),
+            new THREE.Vector3(85, -60, 3),
+            new THREE.Vector3(-85, 60, 3),
+            new THREE.Vector3(55, 80, 3),
+            new THREE.Vector3(-60, 90, 3),
+            new THREE.Vector3(20, -70, 3),
+            new THREE.Vector3(-10, -80, 3),
+            new THREE.Vector3(0, 90, 3),
+            new THREE.Vector3(-40, -60, 3),
+            new THREE.Vector3(70, 30, 3),
+            new THREE.Vector3(-90, -30, 3)
         ];
 
         for (const pos of clusterPositions) {
@@ -133,8 +154,8 @@ export class Asset extends THREE.Group {
                 continue;
             }
 
-            // Place 3 to 4 trees clustered around the position
-            const clusterSize = 3 + Math.floor(Math.random() * 2); // 3 or 4 trees
+            // Place 4 to 5 trees clustered around the position (increased cluster size)
+            const clusterSize = 7 + Math.floor(Math.random() * 4); // 7 to 10 trees
             for (let i = 0; i < clusterSize; i++) {
                 const treeInstance = treeModel.clone(true);
 

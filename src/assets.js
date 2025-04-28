@@ -195,7 +195,7 @@ export class Asset extends THREE.Group {
 
         const treeModel = gltf.scene;
 
-        // Define fixed positions for tree clusters (expanded positions)
+        // Define fixed positions for tree 
         const clusterPositions = [
             new THREE.Vector3(-80, -80, 3),
             new THREE.Vector3(-60, -40, 3),
@@ -232,7 +232,15 @@ export class Asset extends THREE.Group {
             new THREE.Vector3(0, 90, 3),
             new THREE.Vector3(-40, -60, 3),
             new THREE.Vector3(70, 30, 3),
-            new THREE.Vector3(-90, -30, 3)
+            new THREE.Vector3(-90, -30, 3),
+            new THREE.Vector3(100, 100, 3),
+            new THREE.Vector3(-100, 100, 3),
+            new THREE.Vector3(100, -100, 3),
+            new THREE.Vector3(-100, -100, 3),
+            new THREE.Vector3(0, 100, 3),
+            new THREE.Vector3(100, 0, 3),
+            new THREE.Vector3(-100, 0, 3),
+            new THREE.Vector3(0, -100, 3)
         ];
 
         for (const pos of clusterPositions) {

@@ -65,7 +65,8 @@ export class Asset extends THREE.Group {
         this.loadParkingS();
         this.loadMultipeTree();
         this.loadMultipeTree2();
-        // Remove the old loadtree call and replace with new async call
+        this.loadWideTree();
+        
         await this.loadTreeClusters();
 
         this.loadPIONEER();
@@ -301,14 +302,22 @@ export class Asset extends THREE.Group {
     }
     loadGym() {
         const codPath = '../models/model/modell/Gym.gltf';
-        const codPosition = new THREE.Vector3(11, -26, 0);
+        const codPosition = new THREE.Vector3(11, -26, 1);
         const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, 0);
         const codScale = 2.5;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
+    loadWideTree(){
+        const codPath = '../FinalModel/WideTree.glb';
+        const codPosition = new THREE.Vector3(-70, 5, 1);
+        const codRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2, 0);
+        const codScale = 2.5;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+
     loadPIC() {
         const codPath = '../FinalModel/PIC.glb';
-        const codPosition = new THREE.Vector3(-12, -26, 0);
+        const codPosition = new THREE.Vector3(-12, -26, 1);
         const codRotation = new THREE.Euler(Math.PI / 2, Math.PI, 0);
         const codScale = 1;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);

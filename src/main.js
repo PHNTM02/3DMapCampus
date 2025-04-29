@@ -12,9 +12,10 @@ const size = {
 }
 
 // --- RENDERER MAKER
-const renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true});
+const renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true, alpha: true});
 renderer.setSize(size.width, size.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 3));
+renderer.setClearColor(0x000000, 0);
 
 
 // --- CAMERA MAKER & POSITION

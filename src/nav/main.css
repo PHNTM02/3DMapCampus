@@ -31,6 +31,7 @@ h1, h2, h3, h4, h5, h6, h7 {
     display: block;
     height: 100vh; /*Former 100%*/
     width: 100vh; /*Former 100%*/
+    background: linear-gradient(to top, #ddffa3, #6798c9, #003366);
 }
 
 /* This is the Search Bar */

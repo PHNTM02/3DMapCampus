@@ -66,12 +66,12 @@ h1, h2, h3, h4, h5, h6, h7 {
     width: 100%;
     top: 90%;
     bottom: 0;
-    background-color: aqua;
+    background-color: transparent; /* Hide the background */
     transition: bottom 0.3s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    box-shadow: 2px 0 5px rgba(195, 147, 147, 0.2);
+    box-shadow: none; /* Remove the shadow */
 }
 
 .sidebar a {

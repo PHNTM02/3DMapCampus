@@ -56,42 +56,196 @@
 			background-color: #45a049;
 		}
 
-		/* Mobile-specific styles */
+	
+	
+	
+
+		/* Box styles */
+		.cdfList, .cahli, .cobli, .codli, .coeli, .cohli, .comli, .conli, .cstli, .cotli, .facili {
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			padding: 15px;
+			margin: 10px;
+			border: 1px solid #ddd;
+			border-radius: 8px;
+			background-color: #f9f9f9;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			cursor: pointer;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+
+		.cdfList img, .facili img, .cahli img, .cobli img, .codli img, .coeli img, .cohli img, .comli img, .conli img, .cstli img, .cotli img {
+			width: 60px;
+			height: 60px;
+			margin-right: 15px;
+			border-radius: 8px;
+			object-fit: cover;
+		}
+
+		.cdfList:hover, .facili:hover, .cahli:hover, .cobli:hover, .codli:hover, .coeli:hover, .cohli:hover, .comli:hover, .conli:hover, .cstli:hover, .cotli:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+			background-color: #e6e6e6;
+		}
+
+		.cdfList:hover img, .facili:hover img, .cahli:hover img, .cobli:hover img, .codli:hover img, .coeli:hover img, .cohli:hover img, .comli:hover img, .conli:hover img, .cstli:hover img, .cotli:hover img {
+			transform: scale(1.1);
+			transition: transform 0.3s ease;
+		}
+
+		/* Sidebar styles */
+		.sidebar {
+			display: flex;
+			flex-direction: row;
+			gap: 10px;
+		}
+
+		/* Vertical layout for smaller screens */
 		@media (max-width: 768px) {
-			#sidebar {
-				display: none; /* Hide desktop sidebar */
-			}
-
-			#mobileSidebar {
-				display: block; /* Show mobile sidebar */
-				position: fixed;
-				top: 0;
-				left: 0;
+			.sidebar {
+				flex-direction: column;
 				width: 100%;
-				background-color: #333;
-				color: white;
-				padding: 10px;
-				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 			}
 
-			#mobileSidebar a {
+			.sidebar a {
 				display: block;
-				padding: 10px;
-				text-decoration: none;
-				color: white;
-				border-bottom: 1px solid #444;
+				text-align: center;
+				padding: 15px;
+				margin: 5px 0;
+				border: 1px solid #ddd;
+				border-radius: 5px;
+				background-color: #f9f9f9;
+				box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 			}
 
-			#mobileSidebar a:hover {
-				background-color: #555;
+			.sidebar a:hover {
+				background-color: #e6e6e6;
 			}
 		}
 
-		/* Default: Hide mobile sidebar */
-		#mobileSidebar {
-			display: none;
+		/* Instruction box styles */
+		#instructionBox {
+			position: absolute;
+			top: 10px;
+			right: 10px; /* Move to the top-right corner */
+			background-color: rgba(0, 0, 0, 0.7); /* Slightly darker background */
+			color: white;
+			padding: 20px 25px; /* Larger padding */
+			border-radius: 8px; /* Slightly larger border radius */
+			font-size: 16px; /* Larger font size */
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+			z-index: 1001;
+			display: none; /* Initially hidden */
 		}
 
+		#infoButton {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			width: 40px;
+			height: 40px;
+			background-color: rgba(0, 0, 0, 0.7);
+			color: white;
+			border: none;
+			border-radius: 50%;
+			font-size: 20px;
+			font-weight: bold;
+			display: none; /* Initially hidden */
+			cursor: pointer;
+			align-items: center;
+			justify-content: center;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+			z-index: 1002;
+		}
+
+		#infoButton:hover {
+			background-color: rgba(0, 0, 0, 0.9);
+		}
+
+		/* Sidebar button styles */
+		.sidebar button {
+			width: 250px; /* Make the buttons longer */
+			height: 70px; /* Make the buttons bigger */
+			background-color: white; /* Change background to white */
+			color: black; /* Change text color to black */
+			border: none;
+			border-radius: 35px; /* Ellipse shape */
+			font-size: 20px; /* Larger font size */
+			font-weight: bold;
+			cursor: pointer;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+		}
+
+		.sidebar button:hover {
+			background-color: #f0f0f0; /* Slightly darker white on hover */
+			transform: translateY(-5px) scale(1.05); /* Add hover animation */
+			box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+		}
+
+		.sidebar button:active {
+			transform: translateY(0) scale(1); /* Reset transform on click */
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+		}
+
+		.collegelist {
+			display: flex; /* Use flexbox for horizontal layout */
+			flex-wrap: wrap; /* Allow wrapping to the next row if needed */
+			gap: 15px; /* Add spacing between boxes */
+			padding: 20px;
+			justify-content: flex-start; /* Align boxes to the left */
+		}
+
+		.collegelist div {
+			background-size: cover;
+			background-position: center;
+			border-radius: 10px;
+			position: relative;
+			display: flex;
+			height: 100px; /* Adjust height for a longer appearance */
+			width: 100%; /* Make the boxes stretch to fit the panel */
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			color: black; /* Change text color to black */
+			font-size: 20px; /* Make the text bigger */
+			font-weight: 900; /* Make the text bolder */
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+
+		.collegelist div:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+		}
+
+		/* Add fade-in and fade-out animations */
+		.fade-in {
+			animation: fadeIn 0.5s forwards;
+		}
+
+		.fade-out {
+			animation: fadeOut 0.5s forwards;
+		}
+
+		@keyframes fadeIn {
+			from {
+				opacity: 0;
+			}
+			to {
+				opacity: 1;
+			}
+		}
+
+		@keyframes fadeOut {
+			from {
+				opacity: 1;
+			}
+			to {
+				opacity: 0;
+			}
+		}
 	</style>
 	</head>
 	<body>
@@ -101,7 +255,7 @@
 
 	<!-- Welcome Screen -->
 	<div id="welcomeScreen">
-		<img src="img/icons/aup logo.png" alt="AUP Logo">
+		<img src="img/icons/aup logo.png">
 		<p>WELCOME TO AUP 3D MAP:<br><br> ON EVER ONWARD!</p>
 		<button id="enterButton">Enter</button>
 	</div>
@@ -147,65 +301,167 @@
     
 
     <div id="dorm" class="collegelist" style="display: none;">
-      	<h3>Men's Dorm</h3>
-			<div id="mahoganyli" class="cdfList">Mahogany</div>
-			<div id="acaciali" class="cdfList">Acacia Residence Hall</div>
-			<div id="aptfli" class="cdfList">Apartment F</div>
-			<div id="easternli" class="cdfList">Eastern Residence Hall</div>
-			<div id="molaveli" class="cdfList">Molave</div>
-			<div id="aptali" class="cdfList">Apartment A</div>
-      	<h3>Ladies's Dorm</h3>
-			<div id="sampali" class="cdfList">Sampaguita Hall</div>
-			<div id="cadenali" class="cdfList">Cadena De Amor Hall</div>
-			<div id="damali" class="cdfList">Dama De Noche</div>
-			<div id="catli" class="cdfList">Cattleya</div>
-			<div id="walingli" class="cdfList">Waling-Waling Residence Hall</div>
-			<div id="ilangli" class="cdfList">Ilang-Ilang</div>
-      	<h3>Family / Graduate</h3>
-			<div id="aptbli" class="cdfList">Apartment B</div>
-			<div id="aptgli" class="cdfList">Apartment G</div>
-			<div id="apthli" class="cdfList">Apartment H</div>
-			<div id="apteli" class="cdfList">Apartment E</div>
-    </div>
-	<div id="college" class="collegelist"  style="display: none;">
-      	<div id= "cahli" class="cahli">College of Arts and Humanities</div>
-		<div id= "cobli" class="cobli">College of Business</div>
-		<div id="codli" class="codli">College of Dentistry</div>
-		<div id="coeli" class="coeli">College of Education</div>
-		<div id= "cohli" class="cohli">College of Health</div>
-		<div id= "comli" class="comli">College of Medicine</div>
-		<div id="conli" class="conli">College of Nursing</div>
-		<div id= "cstli" class="cstli">College of Science and Technology</div>
-		<div id= "cotli" class="cotli">College of Theology</div>
-    </div> 
+		<h3>Men's Dorm</h3>
+		<div id="mahoganyli" class="cdfList">
+			<img src="img/dorms/mahogany.jpg">
+			Mahogany
+		</div>
+		<div id="acaciali" class="cdfList">
+			<img src="img/dorms/acacia.jpg">
+			Acacia Residence Hall
+		</div>
+		<div id="aptfli" class="cdfList">
+			<img src="img/dorms/apartment_f.jpg">
+			Apartment F
+		</div>
+		<div id="easternli" class="cdfList">
+			<img src="img/dorms/eastern.jpg">
+			Eastern Residence Hall
+		</div>
+		<div id="molaveli" class="cdfList">
+			<img src="img/dorms/molave.jpg">
+			Molave
+		</div>
+		<div id="aptali" class="cdfList">
+			<img src="img/dorms/apartment_a.jpg">
+			Apartment As
+		</div>
+		<h3>Ladies' Dorm</h3>
+		<div id="sampali" class="cdfList">
+			<img src="img/dorms/sampaguitaWW.jpg">
+			Sampaguita Hall
+		</div>
+		<div id="cadenali" class="cdfList">
+			<img src="img/dorms/cadena.jpg">
+			Cadena De Amor Hall
+		</div>
+		<div id="damali" class="cdfList">
+			<img src="img/dorms/dama.jpg">
+			Dama De Noche
+		</div>
+		<div id="catli" class="cdfList">
+			<img src="img/dorms/cattleya.jpg">
+			Cattleya
+		</div>
+		<div id="walingli" class="cdfList">
+			<img src="img/dorms/waling.jpg">
+			Waling-Waling Residence Hall
+		</div>
+		<div id="ilangli" class="cdfList">
+			<img src="img/dorms/ilang.jpg">
+			Ilang-Ilang
+		</div>
+		<h3>Family / Graduate</h3>
+		<div id="aptbli" class="cdfList">
+			<img src="img/dorms/apartment_b.jpg">
+			Apartment B
+		</div>
+		<div id="aptgli" class="cdfList">
+			<img src="img/dorms/apartment_g.jpg">
+			Apartment G
+		</div>
+		<div id="apthli" class="cdfList">
+			<img src="img/dorms/apartment_h.jpg">
+			Apartment H
+		</div>
+		<div id="apteli" class="cdfList">
+			<img src="img/dorms/apartment_e.jpg">
+			Apartment E
+		</div>
+	</div>
 
+	<div id="college" class="collegelist" style="display: none;">
+		<h2 style="color: black; font-weight: bold; text-align: center; margin-bottom: 20px;">College Buildings</h2>
+		<div id="cahli" class="cahli">
+			<img src="img/colleges/cah.jpg">
+			College of Arts and Humanities
+		</div>
+		<div id="cobli" class="cobli">
+			<img src="img/colleges/cob.jpg">
+			College of Business
+		</div>
+		<div id="codli" class="codli">
+			<img src="img/colleges/cod.jpg">
+			College of Dentistry
+		</div>
+		<div id="coeli" class="coeli">
+			<img src="img/colleges/coe.jpg">
+			College of Education
+		</div>
+		<div id="cohli" class="cohli">
+			<img src="img/colleges/coh.jpg">
+			College of Health
+		</div>
+		<div id="comli" class="comli">
+			<img src="img/colleges/com.jpg">
+			College of Medicine
+		</div>
+		<div id="conli" class="conli">
+			<img src="img/colleges/con.jpg">
+			College of Nursing
+		</div>
+		<div id="cstli" class="cstli">
+			<img src="img/colleges/cst.jpg">
+			College of Science and Technology
+		</div>
+		<div id="cotli" class="cotli">
+			<img src="img/colleges/cot.jpg">
+			College of Theology
+		</div>
+	</div>
 
-	<div id="faci" class="collegelist"  style="display: none;">
-		<div id= "foodfac" class="facili">AUP Food Factory</div>
-		<div id="clinic" class="facili">AUP Health Service</div>
-		<div id= "store" class="facili">AUP Store</div>
-		<div id= "waterstation" class="facili">AUP Water Station</div>
-		<div id="guidance" class="facili">Guidance Service Center</div>
-		<div id= "kubo" class="facili">Kubo</div>
-		<div id= "psd" class="facili">Public Safety Department</div>
-		<div id="ssc" class="facili">Student Service Center</div>
-  </div> 
-
+	<div id="faci" class="collegelist" style="display: none;">
+		<div id="foodfac" class="facili">
+			<img src="img/facilities/food_factory.jpg">
+			AUP Food Factory
+		</div>
+		<div id="clinic" class="facili">
+			<img src="img/facilities/clinic.jpg">
+			AUP Health Service
+		</div>
+		<div id="store" class="facili">
+			<img src="img/facilities/store.jpg">
+			AUP Store
+		</div>
+		<div id="waterstation" class="facili">
+			<img src="img/facilities/water_station.jpg">
+			AUP Water Station
+		</div>
+		<div id="guidance" class="facili">
+			<img src="img/facilities/guidance.jpg">
+			Guidance Service Center
+		</div>
+		<div id="kubo" class="facili">
+			<img src="img/facilities/kubo.jpg">
+			Kubo
+		</div>
+		<div id="psd" class="facili">
+			<img src="img/facilities/psd.jpg">
+			Public Safety Department
+		</div>
+		<div id="ssc" class="facili">
+			<img src="img/facilities/ssc.jpg">
+			Student Service Center
+		</div>
+	</div>
+    
 	<script type="module" src="./src/nav/sales.js"></script>
  
   <!-- This is the Navigation -->
-  <div id="sidebar" class="sidebar">
-    <a href="#" id="collegebar">🏫College Buildings</a>
-    <a href="#" id="dormbar">🏢Dormitories</a>
-    <a href="#" id="facilitybar">🏠Facilities</a>
+  <div id="sidebar" class="sidebar col-lg-3 col-md-6">
+    <button id="collegebar">🏫 College Buildings</button>
+    <button id="dormbar">🏢 Dormitories</button>
+    <button id="facilitybar">🏠 Facilities</button>
   </div>
 
-  <!-- Mobile Sidebar -->
-  <div id="mobileSidebar">
-    <a href="#" id="collegebar">🏫 College Buildings</a>
-    <a href="#" id="dormbar">🏢 Dormitories</a>
-    <a href="#" id="facilitybar">🏠 Facilities</a>
-  </div>
+  <!-- Instruction Box -->
+	<div id="instructionBox">
+		Hold <strong>left click</strong> and drag the mouse to rotate around the map.<br>
+		Hold <strong>right click</strong> and drag the mouse to explore the map.
+	</div>
+
+	<!-- Info Button -->
+	<button id="infoButton">i</button>
 
     
     <script> 
@@ -227,10 +483,13 @@
 			});
 		}
 
+		// Show the instruction box after the loading screen is hidden
 		window.addEventListener("load", async () => {
 			const loadingScreen = document.getElementById("loadingScreen");
 			const welcomeScreen = document.getElementById("welcomeScreen");
 			const enterButton = document.getElementById("enterButton");
+			const instructionBox = document.getElementById("instructionBox");
+			const infoButton = document.getElementById("infoButton");
 
 			// Wait for buildings to render
 			await renderBuildings();
@@ -241,11 +500,70 @@
 			// Show the welcome screen
 			welcomeScreen.style.display = "flex";
 
-			// Hide the welcome screen when the enter button is clicked
+			// Show the instruction box
+			instructionBox.style.display = "block";
+
+			// Hide the welcome screen and instruction box when the enter button is clicked
 			enterButton.addEventListener("click", () => {
 				welcomeScreen.style.display = "none";
+				instructionBox.style.display = "none";
+				infoButton.style.display = "flex"; // Show the info button
+			});
+
+			// Toggle the instruction box visibility when the info button is clicked
+			infoButton.addEventListener("click", () => {
+				instructionBox.style.display = "block";
+				infoButton.style.display = "none"; // Hide the info button
+
+				// Add a click listener to hide the instruction box when clicking outside
+				document.addEventListener("click", function hideInstructionBox(event) {
+					if (!instructionBox.contains(event.target) && event.target !== infoButton) {
+						instructionBox.style.display = "none";
+						infoButton.style.display = "flex"; // Show the info button again
+						document.removeEventListener("click", hideInstructionBox); // Remove the listener
+					}
+				});
 			});
 		});
+
+		// Add fade-in and fade-out functionality
+		function togglePanel(panelId) {
+			const panel = document.getElementById(panelId);
+			const allPanels = document.querySelectorAll('.collegelist');
+
+			// Hide all panels
+			allPanels.forEach((p) => {
+				if (p !== panel && p.style.display === 'block') {
+					p.classList.remove('fade-in');
+					p.classList.add('fade-out');
+					setTimeout(() => (p.style.display = 'none'), 500);
+				}
+			});
+
+			// Show the selected panel
+			if (panel.style.display === 'none' || panel.style.display === '') {
+				panel.style.display = 'block';
+				panel.classList.remove('fade-out');
+				panel.classList.add('fade-in');
+
+				// Add click listener to hide the panel when clicking outside
+				setTimeout(() => {
+					document.addEventListener('click', function hidePanel(event) {
+						if (!panel.contains(event.target) && event.target.id !== `${panelId}bar`) {
+							panel.classList.remove('fade-in');
+							panel.classList.add('fade-out');
+							setTimeout(() => (panel.style.display = 'none'), 500);
+							document.removeEventListener('clissck', hidePanel);
+						}
+					});
+				}, 0); // Delay to ensure the click event doesn't immediately trigger
+			}
+		}
+
+		// Attach event listeners to sidebar buttons
+		document.getElementById('collegebar').addEventListener('click', () => togglePanel('college'));
+		document.getElementById('dormbar').addEventListener('click', () => togglePanel('dorm'));
+		document.getElementById('facilitybar').addEventListener('click', () => togglePanel('faci'));
 	</script>
     
 	</body>

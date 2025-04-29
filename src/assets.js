@@ -62,6 +62,7 @@ export class Asset extends THREE.Group {
         this.loadCentinial();
         this.loadCadena();
         this.loadStudentService();
+        this.loadParkingS();
         // Remove the old loadtree call and replace with new async call
         await this.loadTreeClusters();
 
@@ -398,6 +399,16 @@ export class Asset extends THREE.Group {
         const codScale = .4;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
+
+    loadParkingS() {
+        const codPath = '../FinalModel/ParkingS.glb';
+        const codPosition = new THREE.Vector3(-12.5, 50, .5);
+        const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI / -2, 0);
+        const codScale = 1;
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+    }
+
+
     loadCON() {
         const codPath = '../models/model/modell/_CON.glb';
         const codPosition = new THREE.Vector3(-115.5, 40, 0);

@@ -362,3 +362,11 @@ ssc.addEventListener("click", () => {
     buildingImg.src = "img/Facilities/StudentServiceCenter.jpg";
     buildingSummary.innerHTML = ".";
 });
+Library.addEventListener("click", () => {
+    modelBuilding.style.display = 'block';
+    dorm.style.display = 'none';
+    college.style.display = 'none';
+    buildingtitle.innerHTML = "Aup Library";
+    buildingImg.src = "img/Facilities/library.jpg";
+    buildingSummary.innerHTML = "John Lawrence Detwiler Memorial Library is centrally located on our campus, the lifeblood of the university’s academic life.  Dr. Howard Detwiler whose big picture is displayed under the stairs is the Philanthropist who donated an amount to construct the whole library building. His son, John Lawrence Detwiler. studied and took medicine at the University of Sto. Tomas. Right after graduation, he and some friends went scuba diving in Palawan where he met his untimely and tragic death. This is how AUP library was named John Lawrence Detwiler Memorial Library.";
+});

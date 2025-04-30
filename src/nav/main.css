@@ -313,6 +313,9 @@ h1, h2, h3, h4, h5, h6, h7 {
     background-size: cover;
     background-position: center center;
 }
+#library {
+    background-image: url("/img/Facilities/library.jpg");
+}
 
 #modelBuilding {
     z-index: 120;

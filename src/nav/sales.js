@@ -66,7 +66,6 @@ collegebar.addEventListener("click", () => {
         faci.style.display = 'none'; 
         hidden = false;
     }
-});
 dormbar.addEventListener("click", () => {
     if(!hidden){
         dorm.style.display = 'none';
@@ -158,6 +157,21 @@ com.addEventListener("click", function () {
           The medical school accepts baccalaureate allied health degree holders, to begin at the first-year level, with an NMAT score 60 and above, an above average GPA, an outstanding Christian character, and with good English communication skills. Freshmen Medicine students are welcomed in a White Coat Ceremony at the beginning of the year, with the donning of the white coat signifying the purity of the medical profession, and the giving out of the Holy Bible – the most important book above all books, and the Ministry of Healing. These medical students will be trained to become Five-Star Plus Physicians, namely, as mandated by CHED:  Clinician, Teacher, Researcher, Manager, and Social Mobilizer, and additionally the unique AUPCOM Plus – to become a Physician Missionary.<br><br>
 
           At the fourth-year level, selected outstanding medical students are given the opportunity to go on clinical clerkship rotation for six weeks at our sister institution – the Loma Linda University School of Medicine – Medical Center in Loma Linda, California.`;
+
+    // Move camera closer to Mesh_69_14
+    if (selectedBuilding.name === 'Mesh_69_14') {
+        detailsPanel.innerHTML = `<h3>${buildingtitle.innerHTML}</h3><p>${buildingSummary.innerHTML}</p>`;
+
+        const bbox = new THREE.Box3().setFromObject(selectedBuilding);
+        const center = bbox.getCenter(new THREE.Vector3());
+        const offset = new THREE.Vector3(0, 10, 15); // Adjust offset as needed
+        const newCameraPos = center.clone().add(offset);
+
+        camera.position.copy(newCameraPos);
+        controls.target.copy(center);
+        controls.update();
+    }
+});
 });
 con.addEventListener("click", function () {
     modelBuilding.style.display = 'block';
@@ -369,4 +383,56 @@ Library.addEventListener("click", () => {
     buildingtitle.innerHTML = "Aup Library";
     buildingImg.src = "img/Facilities/library.jpg";
     buildingSummary.innerHTML = "John Lawrence Detwiler Memorial Library is centrally located on our campus, the lifeblood of the university’s academic life.  Dr. Howard Detwiler whose big picture is displayed under the stairs is the Philanthropist who donated an amount to construct the whole library building. His son, John Lawrence Detwiler. studied and took medicine at the University of Sto. Tomas. Right after graduation, he and some friends went scuba diving in Palawan where he met his untimely and tragic death. This is how AUP library was named John Lawrence Detwiler Memorial Library.";
+
 });
+
+function addButtonToElement(element, buttonText, onClickHandler) {
+    const button = document.createElement('button');
+    button.innerHTML = buttonText;
+    button.style.marginLeft = '10px';
+    button.style.padding = '5px 10px';
+    button.style.fontSize = '12px';
+    button.style.cursor = 'pointer';
+    button.addEventListener('click', onClickHandler);
+    element.appendChild(button);
+}
+
+// Add buttons to college elements
+addButtonToElement(cob, 'Info', () => alert('More info about College of Business'));
+addButtonToElement(cah, 'Info', () => alert('More info about College of Arts and Humanities'));
+addButtonToElement(cod, 'Info', () => alert('More info about College of Dentistry'));
+addButtonToElement(coh, 'Info', () => alert('More info about College of Health'));
+addButtonToElement(coe, 'Info', () => alert('More info about College of Education'));
+addButtonToElement(com, 'Info', () => alert('More info about College of Medicine'));
+addButtonToElement(con, 'Info', () => alert('More info about College of Nursing'));
+addButtonToElement(cst, 'Info', () => alert('More info about College of Science and Technology'));
+addButtonToElement(cot, 'Info', () => alert('More info about College of Theology'));
+
+// Add buttons to dorm elements
+addButtonToElement(Mahogany, 'Info', () => alert('More info about Mahogany'));
+addButtonToElement(Acacia, 'Info', () => alert('More info about Acacia Residence Hall'));
+addButtonToElement(F, 'Info', () => alert('More info about Apartment F'));
+addButtonToElement(Eastern, 'Info', () => alert('More info about Eastern Residence Hall'));
+addButtonToElement(Molave, 'Info', () => alert('More info about Molave'));
+addButtonToElement(A, 'Info', () => alert('More info about Apartment A'));
+addButtonToElement(Sampaguita, 'Info', () => alert('More info about Sampaguita Hall'));
+addButtonToElement(Cadena, 'Info', () => alert('More info about Cadena De Amor Hall'));
+addButtonToElement(Dama, 'Info', () => alert('More info about Dama De Noche'));
+addButtonToElement(Cattleya, 'Info', () => alert('More info about Cattleya'));
+addButtonToElement(Waling, 'Info', () => alert('More info about Waling-Waling Residence Hall'));
+addButtonToElement(Ilang, 'Info', () => alert('More info about Ilang-Ilang'));
+addButtonToElement(aptbli, 'Info', () => alert('More info about Apartment B'));
+addButtonToElement(aptgli, 'Info', () => alert('More info about Apartment G'));
+addButtonToElement(apthli, 'Info', () => alert('More info about Apartment H'));
+addButtonToElement(apteli, 'Info', () => alert('More info about Apartment E'));
+
+// Add buttons to facility elements
+addButtonToElement(foodfac, 'Info', () => alert('More info about AUP Food Factory'));
+addButtonToElement(clinic, 'Info', () => alert('More info about AUP Health Service'));
+addButtonToElement(store, 'Info', () => alert('More info about AUP Store'));
+addButtonToElement(waterstation, 'Info', () => alert('More info about AUP Water Station'));
+addButtonToElement(guidance, 'Info', () => alert('More info about Guidance Service Center'));
+addButtonToElement(kubo, 'Info', () => alert('More info about AUP Kubo'));
+addButtonToElement(psd, 'Info', () => alert('More info about Public Safety Department'));
+addButtonToElement(ssc, 'Info', () => alert('More info about Student Service Center'));
+addButtonToElement(Library, 'Info', () => alert('More info about AUP Library'));

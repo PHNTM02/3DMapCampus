@@ -47,7 +47,115 @@ setTimeout(() => {
     // Assuming buildings are children of the Asset instance inside terrain
     const asset = terrain.children.find(child => child.type === 'Group' && child.name === '');
     const buildingsGroup = asset || null;
-    setupMouseEvents(scene, camera, terrain, buildingsGroup);
+    const mouseEvents = setupMouseEvents(scene, camera, terrain, buildingsGroup, controls);
+
+    // Add click event listener to the Library div
+    const libraryDiv = document.getElementById('Library');
+    if (libraryDiv) {
+        libraryDiv.addEventListener('click', () => {
+            // Select the building mesh by name
+            mouseEvents.selectBuildingByName('Mesh_264_60');
+
+            // Find the mesh in buildingsGroup
+            if (!buildingsGroup) return;
+            const buildingMeshes = buildingsGroup.children.filter(child => child.isMesh || child.isGroup);
+            const targetMesh = buildingMeshes.find(b => b.name === 'Mesh_264_60');
+            if (!targetMesh) return;
+
+            // Compute bounding box center of the target mesh
+            const bbox = new THREE.Box3().setFromObject(targetMesh);
+            const center = bbox.getCenter(new THREE.Vector3());
+
+            // Move camera to focus on the target mesh with some offset
+            const offset = new THREE.Vector3(0, 10, 15); // Adjust offset as needed
+            const newCameraPos = center.clone().add(offset);
+
+            // Immediate set position and controls target
+            camera.position.copy(newCameraPos);
+            controls.target.copy(center);
+            controls.update();
+        });
+    }
+
+    // Add click event listener to the highlightedCode div
+    const highlightedCodeDiv = document.getElementById('highlightedCode');
+    if (highlightedCodeDiv) {
+        highlightedCodeDiv.addEventListener('click', () => {
+            // Move camera to fixed coordinates as requested
+            const fixedPosition = new THREE.Vector3(-60.5, 95, 0);
+            camera.position.copy(fixedPosition);
+
+            // Optionally set controls target to fixed position or origin
+            controls.target.set(0, 0, 0);
+            controls.update();
+
+            // Select the building mesh by name (optional)
+            mouseEvents.selectBuildingByName('Mesh_69_14');
+        });
+    }
+
+
+    // Add event listener for custom event to move camera to COM
+    document.addEventListener('moveCameraToCOM', () => {
+        mouseEvents.selectBuildingByName('Mesh_69_14');
+
+        if (!buildingsGroup) return;
+        const buildingMeshes = buildingsGroup.children.filter(child => child.isMesh || child.isGroup);
+        const targetMesh = buildingMeshes.find(b => b.name === 'Mesh_69_14');
+        if (!targetMesh) return;
+
+        const bbox = new THREE.Box3().setFromObject(targetMesh);
+        const center = bbox.getCenter(new THREE.Vector3());
+
+        const offset = new THREE.Vector3(0, 10, 15);
+        const newCameraPos = center.clone().add(offset);
+
+        camera.position.copy(newCameraPos);
+        controls.target.copy(center);
+        controls.update();
+    });
+
+    // Add click event listener for College of Medicine div
+    const comliDiv = document.getElementById('comli');
+    if (comliDiv) {
+        comliDiv.addEventListener('click', () => {
+            // Show modelBuilding, hide college
+            const modelBuilding = document.getElementById('modelBuilding');
+            const college = document.getElementById('college');
+            const buildingtitle = document.getElementById('buildingtitle');
+            const buildingImg = document.getElementById('buildingImg');
+            const buildingSummary = document.getElementById('buildingSummary');
+
+            if (modelBuilding) modelBuilding.style.display = 'block';
+            if (college) college.style.display = 'none';
+
+            if (buildingtitle) buildingtitle.innerHTML = "COLLEGE OF MEDICINE";
+            if (buildingImg) buildingImg.src = "img/college_img/com.jpg";
+            if (buildingSummary) buildingSummary.innerHTML = `The Adventist University of the Philippines College of Medicine (AUPCOM) is the first and only Adventist medical school in the Philippines and the Asia-Pacific region established in 2015. It is only the sixth of seven Adventist medical schools globally, the oldest of which is the Loma Linda University School of Medicine in Loma Linda, California, USA.  AUP College of Medicine is the only medical school in the Philippines and Southeast Asia which includes in its medical curriculum courses in Lifestyle Medicine, Religion, and Whole Person Care, because of its main thrust to produce physician-missionaries for Christ.<br><br>
+
+            The medical school accepts baccalaureate allied health degree holders, to begin at the first-year level, with an NMAT score 60 and above, an above average GPA, an outstanding Christian character, and with good English communication skills. Freshmen Medicine students are welcomed in a White Coat Ceremony at the beginning of the year, with the donning of the white coat signifying the purity of the medical profession, and the giving out of the Holy Bible – the most important book above all books, and the Ministry of Healing. These medical students will be trained to become Five-Star Plus Physicians, namely, as mandated by CHED:  Clinician, Teacher, Researcher, Manager, and Social Mobilizer, and additionally the unique AUPCOM Plus – to become a Physician Missionary.<br><br>
+
+            At the fourth-year level, selected outstanding medical students are given the opportunity to go on clinical clerkship rotation for six weeks at our sister institution – the Loma Linda University School of Medicine – Medical Center in Loma Linda, California.`;  
+
+            // Select the building mesh by name
+            mouseEvents.selectBuildingByName('Mesh_69_14');
+
+            if (!buildingsGroup) return;
+            const buildingMeshes = buildingsGroup.children.filter(child => child.isMesh || child.isGroup);
+            const targetMesh = buildingMeshes.find(b => b.name === 'Mesh_69_14');
+            if (!targetMesh) return;
+
+            const bbox = new THREE.Box3().setFromObject(targetMesh);
+            const center = bbox.getCenter(new THREE.Vector3());
+
+            const offset = new THREE.Vector3(0, 10, 15);
+            const newCameraPos = center.clone().add(offset);
+
+            camera.position.copy(newCameraPos);
+            controls.target.copy(center);
+            controls.update();
+        });
+    }
 }, 1000);
 
 // ---HANDLING RE-SIZE OF THE SCREEN

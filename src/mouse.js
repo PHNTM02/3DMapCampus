@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-export function setupMouseEvents(scene, camera, terrain, buildingsGroup) {
+export function setupMouseEvents(scene, camera, terrain, buildingsGroup, controls) {
     const raycaster = new THREE.Raycaster();
     const mouse = new THREE.Vector2();
     let lastHoveredTile = null;
@@ -61,103 +61,16 @@ export function setupMouseEvents(scene, camera, terrain, buildingsGroup) {
     arrowMesh.visible = false;
     scene.add(arrowMesh);
 
-    // Create search bar element
-    let searchBar = document.getElementById('mesh-search-bar');
-    if (!searchBar) {
-        searchBar = document.createElement('input');
-        searchBar.id = 'mesh-search-bar';
-        searchBar.type = 'text';
-        searchBar.placeholder = 'Search building mesh...';
-        searchBar.style.position = 'fixed';
-        searchBar.style.top = '10px';
-        searchBar.style.left = '10px';
-        searchBar.style.padding = '8px';
-        searchBar.style.fontSize = '1em';
-        searchBar.style.zIndex = '1002';
-        document.body.appendChild(searchBar);
+    // Removed search bar and suggestion box creation and related functions and event listeners as per user request
+function getDisplayName(building) {
+    if (building.name === 'Mesh_264_60') {
+        return 'AUP Library';
     }
-
-    // Create suggestion dropdown element
-    let suggestionBox = document.getElementById('mesh-suggestion-box');
-    if (!suggestionBox) {
-        suggestionBox = document.createElement('div');
-        suggestionBox.id = 'mesh-suggestion-box';
-        suggestionBox.style.position = 'fixed';
-        suggestionBox.style.top = '40px';
-        suggestionBox.style.left = '10px';
-        suggestionBox.style.backgroundColor = 'rgba(0,0,0,0.85)';
-        suggestionBox.style.color = '#fff';
-        suggestionBox.style.maxHeight = '200px';
-        suggestionBox.style.overflowY = 'auto';
-        suggestionBox.style.width = '200px';
-        suggestionBox.style.borderRadius = '5px';
-        suggestionBox.style.display = 'none';
-        suggestionBox.style.zIndex = '1003';
-        document.body.appendChild(suggestionBox);
+    if (building.name === 'Mesh_69_14') {
+        return 'College of Medicine';
     }
-
-    function getDisplayName(building) {
-        if (building.name === 'Mesh_264_60') {
-            return 'AUP Library';
-        }
-        return building.name || building.userData.name || 'Building';
-    }
-
-    function clearSuggestions() {
-        suggestionBox.innerHTML = '';
-        suggestionBox.style.display = 'none';
-    }
-
-    function showSuggestions(matches) {
-        suggestionBox.innerHTML = '';
-        matches.forEach(building => {
-            const name = getDisplayName(building);
-            const item = document.createElement('div');
-            item.textContent = name;
-            item.style.padding = '5px 10px';
-            item.style.cursor = 'pointer';
-            item.addEventListener('click', () => {
-                const bbox = new THREE.Box3().setFromObject(building);
-                const center = bbox.getCenter(new THREE.Vector3());
-                const size = bbox.getSize(new THREE.Vector3());
-
-                arrowMesh.position.set(center.x, center.y + size.y + 1, center.z);
-                arrowMesh.visible = true;
-
-                detailsPanel.innerHTML = `<h3>${name}</h3>`;
-                detailsPanel.style.display = 'block';
-
-                clearSuggestions();
-                searchBar.value = name;
-            });
-            suggestionBox.appendChild(item);
-        });
-        suggestionBox.style.display = matches.length > 0 ? 'block' : 'none';
-    }
-
-    searchBar.addEventListener('input', () => {
-        const query = searchBar.value.trim().toLowerCase();
-        if (!query || !buildingsGroup) {
-            arrowMesh.visible = false;
-            detailsPanel.style.display = 'none';
-            clearSuggestions();
-            return;
-        }
-
-        const buildingMeshes = buildingsGroup.children.filter(child => child.isMesh || child.isGroup);
-        const matches = buildingMeshes.filter(mesh => {
-            const name = (mesh.name || mesh.userData.name || '').toLowerCase();
-            return name.startsWith(query);
-        });
-
-        if (matches.length > 0) {
-            showSuggestions(matches);
-        } else {
-            clearSuggestions();
-            arrowMesh.visible = false;
-            detailsPanel.style.display = 'none';
-        }
-    });
+    return building.name || building.userData.name || 'Building';
+}
 
     function onMouseMove(event) {
         mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
@@ -201,47 +114,101 @@ export function setupMouseEvents(scene, camera, terrain, buildingsGroup) {
         }
     }
 
-    function onClick(event) {
-        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+let hideTimeout = null;
 
-        raycaster.setFromCamera(mouse, camera);
+function onClick(event) {
+    mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+    mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
 
-        if (buildingsGroup) {
-            const buildingMeshes = buildingsGroup.children.filter(child => child.isMesh || child.isGroup);
-            const buildingIntersects = raycaster.intersectObjects(buildingMeshes, true);
+    raycaster.setFromCamera(mouse, camera);
 
-            if (buildingIntersects.length > 0) {
-                selectedBuilding = buildingIntersects[0].object;
-                const name = getDisplayName(selectedBuilding);
+    if (buildingsGroup) {
+        const buildingMeshes = buildingsGroup.children.filter(child => child.isMesh || child.isGroup);
+        const buildingIntersects = raycaster.intersectObjects(buildingMeshes, true);
 
-                if (selectedBuilding.name === 'Mesh_264_60') {
-                    if (modelBuilding) modelBuilding.style.display = 'block';
-                    if (dorm) dorm.style.display = 'none';
-                    if (college) college.style.display = 'none';
-                    if (buildingtitle) buildingtitle.innerHTML = 'Aup Library';
-                    if (buildingImg) buildingImg.src = 'img/Facilities/library.jpg';
-                    if (buildingSummary) buildingSummary.innerHTML = "John Lawrence Detwiler Memorial Library is centrally located on our campus, the lifeblood of the university’s academic life.  Dr. Howard Detwiler whose big picture is displayed under the stairs is the Philanthropist who donated an amount to construct the whole library building. His son, John Lawrence Detwiler. studied and took medicine at the University of Sto. Tomas. Right after graduation, he and some friends went scuba diving in Palawan where he met his untimely and tragic death. This is how AUP library was named John Lawrence Detwiler Memorial Library.";
-                } else {
-                    detailsPanel.innerHTML = `<h3>${name}</h3>`;
-                    detailsPanel.style.display = 'block';
-                }
+        if (buildingIntersects.length > 0) {
+            if (hideTimeout) {
+                clearTimeout(hideTimeout);
+                hideTimeout = null;
+            }
 
+            selectedBuilding = buildingIntersects[0].object;
+            const name = getDisplayName(selectedBuilding);
+
+            if (selectedBuilding.name === 'Mesh_264_60') {
+                detailsPanel.innerHTML = `<h3>${name}</h3><p>John Lawrence Detwiler Memorial Library</p>`;
+            } else if (selectedBuilding.name === 'Mesh_69_14') {
+                detailsPanel.innerHTML = `<h3>${name}</h3><p>The Adventist University of the Philippines College of Medicine (AUPCOM) is the first and only Adventist medical school in the Philippines and the Asia-Pacific region established in 2015. It is only the sixth of seven Adventist medical schools globally, the oldest of which is the Loma Linda University School of Medicine in Loma Linda, California, USA. AUP College of Medicine is the only medical school in the Philippines and Southeast Asia which includes in its medical curriculum courses in Lifestyle Medicine, Religion, and Whole Person Care, because of its main thrust to produce physician-missionaries for Christ.</p>`;
+
+                // Move camera closer to Mesh_69_14
+                const bbox = new THREE.Box3().setFromObject(selectedBuilding);
+                const center = bbox.getCenter(new THREE.Vector3());
+                const offset = new THREE.Vector3(0, 10, 15); // Adjust offset as needed
+                const newCameraPos = center.clone().add(offset);
+
+                camera.position.copy(newCameraPos);
+                controls.target.copy(center);
+                controls.update();
+            } else {
+                detailsPanel.innerHTML = `<h3>${name}</h3><p>Details about this building mesh will be displayed here.</p>`;
+            }
+            detailsPanel.style.display = 'block';
+
+            if (selectedBuilding.name !== 'Mesh_69_14') {
                 const bbox = new THREE.Box3().setFromObject(selectedBuilding);
                 const center = bbox.getCenter(new THREE.Vector3());
                 const size = bbox.getSize(new THREE.Vector3());
 
                 arrowMesh.position.set(center.x, center.y + size.y + 1, center.z);
                 arrowMesh.visible = true;
-            } else {
-                detailsPanel.style.display = 'none';
-                arrowMesh.visible = false;
             }
         } else {
-            arrowMesh.visible = false;
+            hideTimeout = setTimeout(() => {
+                detailsPanel.style.display = 'none';
+                arrowMesh.visible = false;
+            }, 500);
         }
+    } else {
+        arrowMesh.visible = false;
     }
+}
+
+// Prevent hiding detailsPanel when clicking inside it
+detailsPanel.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
 
     window.addEventListener('mousemove', onMouseMove);
     window.addEventListener('click', onClick);
+
+    // New function to select building by name programmatically
+    function selectBuildingByName(name) {
+        if (!buildingsGroup) return;
+        const buildingMeshes = buildingsGroup.children.filter(child => child.isMesh || child.isGroup);
+        const building = buildingMeshes.find(b => b.name === name);
+        if (!building) return;
+
+        // Clear previous highlight
+        if (selectedBuilding && selectedBuilding.material && selectedBuilding.userData.originalColor) {
+            selectedBuilding.material.color.set(selectedBuilding.userData.originalColor);
+        }
+
+        selectedBuilding = building;
+
+        // Save original color if not saved
+        if (selectedBuilding.material && !selectedBuilding.userData.originalColor) {
+            selectedBuilding.userData.originalColor = selectedBuilding.material.color.getHex();
+        }
+
+        // Highlight selected building by changing color
+        if (selectedBuilding.material) {
+            selectedBuilding.material.color.set(0xff0000); // Red highlight
+        }
+
+        const displayName = getDisplayName(selectedBuilding);
+
+        if (selectedBuilding.name === 'Mesh_264_60') {
+                    detailsPanel.innerHTML = `<h3>${displayName}</h3><p>John Lawrence Detwiler Memorial Library</p>`;
+                }
+            }
 }

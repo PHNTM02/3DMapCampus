@@ -650,15 +650,5 @@ export class Asset extends THREE.Group {
         const codScale = .3;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
     }
-    loadDirectionArrow() {
-        const codPath = '../FinalModel/direction_arrow.glb';
-
-        // Position the arrow directly above the library
-        const codPosition = new THREE.Vector3(-60.5, 45, 15); // Y = 45 (library base) + 5 (above it)
-        const codRotation = new THREE.Euler(Math.PI, -Math.PI / 2, 0); // Rotate to point downward
-        const codScale = 2.5; // Small to look like a button, not a structure
-
-        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
-    }
     
 }

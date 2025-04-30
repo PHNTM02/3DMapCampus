@@ -66,6 +66,7 @@ export class Asset extends THREE.Group {
         this.loadMultipeTree();
         this.loadMultipeTree2();
         this.loadWideTree();
+        this.loadRandomTrees();
         
         await this.loadTreeClusters();
 
@@ -283,6 +284,24 @@ export class Asset extends THREE.Group {
 
                 this.add(treeInstance);
             }
+        }
+    }
+    
+    loadRandomTrees() {
+        const count = 10; // Number of trees you want to randomly place
+        const area = {
+            x: { min: -200, max: 200 },
+            z: { min: -200, max: 200 },
+        };
+    
+        for (let i = 0; i < count; i++) {
+            const x = THREE.MathUtils.randFloat(area.x.min, area.x.max);
+            const z = THREE.MathUtils.randFloat(area.z.min, area.z.max);
+            const position = new THREE.Vector3(x, 0, z);
+            const rotation = new THREE.Euler(0, Math.random() * Math.PI * 2, 0);
+            const scale = THREE.MathUtils.randFloat(0.8, 1.2);
+    
+            this.loadGLTFModel('./FinalModel/MultipleTree.glb', position, rotation, scale);
         }
     }
 

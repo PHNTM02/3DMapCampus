@@ -246,7 +246,71 @@
 				opacity: 0;
 			}
 		}
-	</style>
+
+		/* Watch Video Button Styles */
+		#watchVideoButton {
+			position: absolute;
+			top: 60px; /* Positioned below the info button */
+			right: 10px;
+			width: 40px;
+			height: 40px;
+			background-color: red; /* Change background color to red */
+			color: white;
+			border: none;
+			border-radius: 50%;
+			font-size: 16px;
+			font-weight: bold;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+			z-index: 1002;
+		}
+
+		#watchVideoButton:hover {
+			background-color: darkred; /* Darker red on hover */
+		}
+
+		/* Video Modal Styles */
+		#videoModal {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.8);
+			display: none;
+			justify-content: center;
+			align-items: center;
+			z-index: 1003;
+		}
+
+		#videoModal iframe {
+			width: 80%;
+			height: 80%;
+			border: none;
+			border-radius: 10px;
+		}
+
+		#videoModalClose {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			background-color: rgba(255, 255, 255, 0.8);
+			color: black;
+			border: none;
+			border-radius: 50%;
+			width: 30px;
+			height: 30px;
+			font-size: 20px;
+			font-weight: bold;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: pointer;
+		}
+		</style>
 	</head>
 	<body>
 
@@ -467,7 +531,15 @@
 	<!-- Info Button -->
 	<button id="infoButton">i</button>
 
-    
+	<!-- Watch Video Button -->
+	<button id="watchVideoButton">▶</button>
+
+	<!-- Video Modal -->
+	<div id="videoModal">
+		<button id="videoModalClose">×</button>
+		<iframe src="" id="videoIframe" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+	</div>
+
     <script> 
     //   const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     
@@ -568,6 +640,22 @@
 		document.getElementById('collegebar').addEventListener('click', () => togglePanel('college'));
 		document.getElementById('dormbar').addEventListener('click', () => togglePanel('dorm'));
 		document.getElementById('facilitybar').addEventListener('click', () => togglePanel('faci'));
+
+		// Watch Video Button Functionality
+		const watchVideoButton = document.getElementById('watchVideoButton');
+		const videoModal = document.getElementById('videoModal');
+		const videoIframe = document.getElementById('videoIframe');
+		const videoModalClose = document.getElementById('videoModalClose');
+
+		watchVideoButton.addEventListener('click', () => {
+			videoIframe.src = "https://www.youtube.com/embed/Nb5Cz-ayBx4"; // Updated video URL
+			videoModal.style.display = "flex";
+		});
+
+		videoModalClose.addEventListener('click', () => {
+			videoIframe.src = ""; // Stop the video
+			videoModal.style.display = "none";
+		});
 	</script>
     
 	</body>

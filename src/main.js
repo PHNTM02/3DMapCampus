@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { Terrain } from './terrain.js';
-
+import { setupMouseEvents } from './mouse.js';
 
 // --- SCENE MAKER
 const scene = new THREE.Scene();
@@ -16,7 +16,6 @@ const renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true, alpha
 renderer.setSize(size.width, size.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 3));
 renderer.setClearColor(0x000000, 0);
-
 
 // --- CAMERA MAKER & POSITION
 const camera = new THREE.PerspectiveCamera(75, size.width / size.height, 0.1, 1000);
@@ -37,11 +36,19 @@ sun.intensity = 3;
 sun.position.set(7, 5, 1);
 scene.add(sun, ambientLight);
 
-
 // ADD TERRAIN
 const terrain = new Terrain();
 terrain.position.set(-20,-15, -15);
 scene.add(terrain);
+
+// Setup mouse events for hover and click on buildings
+// Wait a bit to ensure assets are loaded
+setTimeout(() => {
+    // Assuming buildings are children of the Asset instance inside terrain
+    const asset = terrain.children.find(child => child.type === 'Group' && child.name === '');
+    const buildingsGroup = asset || null;
+    setupMouseEvents(scene, camera, terrain, buildingsGroup);
+}, 1000);
 
 // ---HANDLING RE-SIZE OF THE SCREEN
 function handleResize(){
@@ -58,10 +65,8 @@ function handleResize(){
 // --- ADVENT LISTENER
 window.addEventListener("resize", handleResize);
 
-
 function animate() {
-    // console.log(camera.position)
     controls.update();
-	renderer.render( scene, camera );
+    renderer.render( scene, camera );
 }
 renderer.setAnimationLoop( animate );

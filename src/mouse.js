@@ -63,7 +63,7 @@ export function setupMouseEvents(scene, camera, terrain, buildingsGroup, control
 
     // Removed search bar and suggestion box creation and related functions and event listeners as per user request
 function getDisplayName(building) {
-    if (building.name === 'Mesh_264_60') {
+    if (building.name === '../models/model/modell/Library.glb') {
         return 'AUP Library';
     }
     if (building.name === 'Mesh_69_14') {

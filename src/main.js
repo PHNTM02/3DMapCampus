@@ -19,9 +19,9 @@ renderer.setClearColor(0x000000, 0);
 
 // --- CAMERA MAKER & POSITION
 const camera = new THREE.PerspectiveCamera(75, size.width / size.height, 0.1, 1000);
-camera.position.set(1, 20, 10);
-camera.position.set(1, 1, 6); //for intial view
-camera.position.set(1, 9, 9); //final view for dragging
+// camera.position.set(1, 20, 10);
+// camera.position.set(1, 1, 6); 
+camera.position.set(1, 9, 9); 
 scene.add(camera);
 
 // --- ORBITCONTROL MAKER
@@ -41,61 +41,47 @@ const terrain = new Terrain();
 terrain.position.set(-20,-15, -15);
 scene.add(terrain);
 
-// Setup mouse events for hover and click on buildings
-// Wait a bit to ensure assets are loaded
+
 setTimeout(() => {
-    // Assuming buildings are children of the Asset instance inside terrain
     const asset = terrain.children.find(child => child.type === 'Group' && child.name === '');
     const buildingsGroup = asset || null;
     const mouseEvents = setupMouseEvents(scene, camera, terrain, buildingsGroup, controls);
 
-    // Add click event listener to the Library div
     const libraryDiv = document.getElementById('Library');
     if (libraryDiv) {
         libraryDiv.addEventListener('click', () => {
-            // Select the building mesh by name
             mouseEvents.selectBuildingByName('Mesh_264_60');
 
-            // Find the mesh in buildingsGroup
             if (!buildingsGroup) return;
             const buildingMeshes = buildingsGroup.children.filter(child => child.isMesh || child.isGroup);
             const targetMesh = buildingMeshes.find(b => b.name === 'Mesh_264_60');
             if (!targetMesh) return;
 
-            // Compute bounding box center of the target mesh
             const bbox = new THREE.Box3().setFromObject(targetMesh);
             const center = bbox.getCenter(new THREE.Vector3());
 
-            // Move camera to focus on the target mesh with some offset
-            const offset = new THREE.Vector3(0, 10, 15); // Adjust offset as needed
+            const offset = new THREE.Vector3(0, 10, 15); 
             const newCameraPos = center.clone().add(offset);
 
-            // Immediate set position and controls target
             camera.position.copy(newCameraPos);
             controls.target.copy(center);
             controls.update();
         });
     }
 
-    // Add click event listener to the highlightedCode div
     const highlightedCodeDiv = document.getElementById('highlightedCode');
     if (highlightedCodeDiv) {
         highlightedCodeDiv.addEventListener('click', () => {
-            // Move camera to fixed coordinates as requested
             const fixedPosition = new THREE.Vector3(-60.5, 95, 0);
             camera.position.copy(fixedPosition);
 
-            // Optionally set controls target to fixed position or origin
             controls.target.set(0, 0, 0);
             controls.update();
 
-            // Select the building mesh by name (optional)
             mouseEvents.selectBuildingByName('Mesh_69_14');
         });
     }
 
-
-    // Add event listener for custom event to move camera to COM
     document.addEventListener('moveCameraToCOM', () => {
         mouseEvents.selectBuildingByName('Mesh_69_14');
 
@@ -115,11 +101,9 @@ setTimeout(() => {
         controls.update();
     });
 
-    // Add click event listener for College of Medicine div
     const comliDiv = document.getElementById('comli');
     if (comliDiv) {
         comliDiv.addEventListener('click', () => {
-            // Show modelBuilding, hide college
             const modelBuilding = document.getElementById('modelBuilding');
             const college = document.getElementById('college');
             const buildingtitle = document.getElementById('buildingtitle');
@@ -137,7 +121,6 @@ setTimeout(() => {
 
             At the fourth-year level, selected outstanding medical students are given the opportunity to go on clinical clerkship rotation for six weeks at our sister institution – the Loma Linda University School of Medicine – Medical Center in Loma Linda, California.`;  
 
-            // Select the building mesh by name
             mouseEvents.selectBuildingByName('Mesh_69_14');
 
             if (!buildingsGroup) return;

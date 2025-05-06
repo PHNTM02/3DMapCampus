@@ -203,112 +203,112 @@ Mahogany.addEventListener("click", () => {
     dorm.style.display = 'none';
     buildingtitle.innerHTML = "MAHOGANY";
     buildingImg.src = "img/aupDorm/mahogany.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "Mahogany Residence Hall has rooms good for two occupants only. Each room also has its own toilet. It has a big parking space nearby, making it easy for students with vehicles to park their cars or motorbikes.";
 });
 Acacia.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     buildingtitle.innerHTML = "ACACIA RESIDENCE HALL";
     buildingImg.src = "img/aupDorm/acacia.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "Acacia Residence Hall is a two-story dormitory which has a variety of rooms that can accommodate working, high school and full-time students. Because of its diverse occupants, students in this dorm are given the opportunity to mingle with other students from different backgrounds and status in life. It also has wider hallways, and rooms have good ventilation for comfortable living.";
 });
 F.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     buildingtitle.innerHTML = "APARTMENT F";
     buildingImg.src = "img/aupDorm/apt_f.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = " For male-medical students.";
 });
 Eastern.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     buildingtitle.innerHTML = "EASTERN RESIDENCE HALL";
     buildingImg.src = "img/aupDorm/eastern.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "A dormitory for self-cooked and working students.";
 });
 Molave.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     buildingtitle.innerHTML = "MOLAVE";
     buildingImg.src = "img/aupDorm/molave.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "This dorm is set into three categories Molave A, B and C";
 });
 A.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     buildingtitle.innerHTML = "APARTMENT A";
     buildingImg.src = "img/aupDorm/apt_a.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "For male undergraduate students (junior and senior only)";
 });
 Sampaguita.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     buildingtitle.innerHTML = "SAMPAGUITA HALL";
     buildingImg.src = "img/aupDorm/sampa.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "Sampaguita Hall is the longest reigning dorm for ladies to date. A 2 storey building that can house 246 ladies. It has a spacious and well ventilated rooms, the ground floor offers 4 person in a room occupancy with bathroom and cr inside. Meanwhile, the 2nd floor offers 6 person in a room occupancy with common bathroom and CR. It is located near the cafeteria and the College of Dentistry, university store, offices and classrooms.";
 });
 Cadena.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     buildingtitle.innerHTML = "CADENA DE AMOR HALL";
     buildingImg.src = "img/aupDorm/cadena.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "It’s chain of Love (Cadena de Amor) still serving AUP university with its uniqueness being one of  the oldest ladies dorm it withstand earthquakes & the challenge of Pandemic. A two-story-building with 54 rooms ready for occupancy and 4 hallways. It can house 200 beautiful, independent young ladies ready for growth. Cadena is very accessible to the Cafeteria, store and and even the offices and classrooms for many. Being one of the oldest residential hall for ladies, it’s durability ensures security to become a home away from home.";
 });
 Dama.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     buildingtitle.innerHTML = "DAMA DE NOCHE";
     buildingImg.src = "img/aupDorm/dama.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "Dama de Noche (Lady in the night) is also an apartment type dormitory for women that cater dentistry and foreign students that are on their 3rd or 4th year levels only. It is a 4 story- building with 16 unit door. Each Unit is fully furnished with dining area, living rooms, kitchen and laundry area. The 1st and 2nd floor units have 2 rooms with 2 occupants in each room, making it 4 occupants in a unit. Meanwhile, the 3rd and 4th floors have 3 single rooms. Students in this dorm enjoyed their own privacy while studying and at the same time promoting a community vibe amongst them.";
 });
 Cattleya.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     buildingtitle.innerHTML = "CATTLEYA";
     buildingImg.src = "img/aupDorm/cattleya.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "Cattleya Residence Hall is an apartment type dormitory for women. It is a four story building with 15 unit doors. Each Unit is fully furnished with dining area, living rooms, kitchen and laundry area. Each unit has 3 single rooms. It caters dentistry and foreign students that are on their 3rd or 4th year levels only. Students in this dorm enjoyed their own privacy while studying and at the same time promoting a community vibe amongst them.";
 });
 Waling.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     buildingtitle.innerHTML = "WALING-WALING RESIDENCE HALL";
     buildingImg.src = "img/aupDorm/waling.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "The grandeur and beauty of Waling-Waling outstands all trying circumstances of academic life and day to day stresses. A 3 story- building with 2 unique basements of 2 or 4 occupants in a room and can house 194 ladies. It is strategically situated in the center of most dormitory, adjacent to the cafeteria and student park. It’ modern home design promotes a conducive environment for living and learning.";
 });
 Ilang.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     buildingtitle.innerHTML = "ILANG-ILANG";
     buildingImg.src = "img/aupDorm/ilang.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "The U shape design of Ilang-ilang attracts ladies to its well ventilated environment. It can house 167 ladies with 6-8 ladies promoting a happy family life living and growing together enhancing a well-rounded ability of communication skills to have a wholesome atmosphere of friendship, camaraderie and togetherness. It is also the home for our work scholars with  a kitchen is provided for them to cook their own meals.  It is situated beside Waling-Waling ladies dorm, and adjacent to the student park and Roda’s park.";
 });
 aptbli.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     buildingtitle.innerHTML = "APARTMENT B";
     buildingImg.src = "img/aupDorm/apt_b.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "Home setting: with 2 bedrooms, kitchen, living room and comfort room";
 });
 aptgli.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     buildingtitle.innerHTML = "APARTMENT G";
     buildingImg.src = "img/aupDorm/apt_g.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "For graduate and post graduate students.";
 });
 apthli.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     buildingtitle.innerHTML = "APARTMENT H";
     buildingImg.src = "img/aupDorm/apt_h.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "For chinese undergraduate students.";
 });
 apteli.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     buildingtitle.innerHTML = "APARTMENT E";
     buildingImg.src = "img/aupDorm/apt_e.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "For female-medical students.";
 });
 
 // FACILITIES
@@ -318,7 +318,7 @@ foodfac.addEventListener("click", () => {
     college.style.display = 'none';
     buildingtitle.innerHTML = "AUP Food Factory";
     buildingImg.src = "img/Facilities/Factory.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "The Adventist University of the Philippines Food Factory produces wholesome, plant-based food products that reflect the university’s commitment to health and nutrition. It serves the campus and community with nutritious options while promoting the Adventist principles of healthy living.";
 });
 clinic.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
@@ -326,7 +326,7 @@ clinic.addEventListener("click", () => {
     college.style.display = 'none';
     buildingtitle.innerHTML = "AUP Health Service";
     buildingImg.src = "img/Facilities/HealthService.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "The Adventist University of the Philippines Clinic provides quality healthcare services to students, staff, and the campus community. Committed to promoting wellness and preventive care, the clinic supports AUP's mission of holistic health in harmony with Adventist principles.";
 });
 store.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
@@ -334,7 +334,7 @@ store.addEventListener("click", () => {
     college.style.display = 'none';
     buildingtitle.innerHTML = "AUP Store";
     buildingImg.src = "img/Facilities/AUPstore.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "The Adventist University of the Philippines University Store offers a variety of school supplies, snacks, and daily essentials for students and staff. Conveniently located on campus, it supports the needs of the AUP community with friendly service and practical products.";
 });
 waterstation.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
@@ -342,7 +342,7 @@ waterstation.addEventListener("click", () => {
     college.style.display = 'none';
     buildingtitle.innerHTML = "AUP Water Station";
     buildingImg.src = "img/Facilities/WaterStation.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "The Silver Spring Water Station at Adventist University of the Philippines provides clean, safe, and refreshing drinking water for the campus community. It supports AUP's commitment to health and wellness by offering purified water through reliable and accessible service.";
 });
 guidance.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
@@ -350,7 +350,7 @@ guidance.addEventListener("click", () => {
     college.style.display = 'none';
     buildingtitle.innerHTML = "Guidance Service Center";
     buildingImg.src = "img/Facilities/GuidaneServiceCenter.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "The Guidance Service Center at Adventist University of the Philippines offers counseling, guidance, and support to help students achieve personal, academic, and spiritual growth. It provides a safe and caring space where students can find help and direction in line with AUP’s values.";
 });
 kubo.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
@@ -358,7 +358,7 @@ kubo.addEventListener("click", () => {
     college.style.display = 'none';
     buildingtitle.innerHTML = "AUP Kubo";
     buildingImg.src = "img/Facilities/Kubo.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "The Kubo Canteen at Adventist University of the Philippines offers a variety of healthy, vegetarian meals and snacks in a relaxed, open-air setting. It’s a favorite gathering spot where students and staff enjoy wholesome food and fellowship in a peaceful, nature-inspired environment.   ";
 });
 psd.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
@@ -366,7 +366,7 @@ psd.addEventListener("click", () => {
     college.style.display = 'none';
     buildingtitle.innerHTML = "Public Safety Department";
     buildingImg.src = "img/Facilities/PublicSafetyDepartment.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "The Public Safety Department at Adventist University of the Philippines ensures campus security through patrols, access control, and emergency response management.";
 });
 ssc.addEventListener("click", () => {
     modelBuilding.style.display = 'block';
@@ -374,7 +374,7 @@ ssc.addEventListener("click", () => {
     college.style.display = 'none';
     buildingtitle.innerHTML = "Student Service Center";
     buildingImg.src = "img/Facilities/StudentServiceCenter.jpg";
-    buildingSummary.innerHTML = ".";
+    buildingSummary.innerHTML = "The Student Services Office (SSO) at Adventist University of the Philippines (AUP) supports students by offering guidance counseling, educational information services, and facilitating orientation programs. These services aim to assist students in their academic and personal development, ensuring a well-rounded university experience.";
 });
 Library.addEventListener("click", () => {
     modelBuilding.style.display = 'block';

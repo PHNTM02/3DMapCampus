@@ -595,3 +595,274 @@ h1, h2, h3, h4, h5, h6, h7 {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 }
 
+#loadingScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black; /* Solid black background */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    z-index: 1000;
+}
+
+/* Welcome screen styles */
+#welcomeScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 50px;
+    text-align: center;
+    z-index: 1000;
+    display: none; /* Initially hidden */
+}
+
+#welcomeScreen button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 40px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#welcomeScreen button:hover {
+    background-color: #45a049;
+}
+
+.cdfList, .cahli, .cobli, .codli, .coeli, .cohli, .comli, .conli, .cstli, .cotli, .facili {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cdfList img, .facili img, .cahli img, .cobli img, .codli img, .coeli img, .cohli img, .comli img, .conli img, .cstli img, .cotli img {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.cdfList:hover, .facili:hover, .cahli:hover, .cobli:hover, .codli:hover, .coeli:hover, .cohli:hover, .comli:hover, .conli:hover, .cstli:hover, .cotli:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    background-color: #e6e6e6;
+}
+
+.cdfList:hover img, .facili:hover img, .cahli:hover img, .cobli:hover img, .codli:hover img, .coeli:hover img, .cohli:hover img, .comli:hover img, .conli:hover img, .cstli:hover img, .cotli:hover img {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+/* Sidebar styles */
+.sidebar {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/* Vertical layout for smaller screens */
+@media (max-width: 768px) {
+    .sidebar {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .sidebar a {
+        display: block;
+        text-align: center;
+        padding: 15px;
+        margin: 5px 0;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar a:hover {
+        background-color: #e6e6e6;
+    }
+}
+
+/* Instruction box styles */
+#instructionBox {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Move to the top-right corner */
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly darker background */
+    color: white;
+    padding: 20px 25px; /* Larger padding */
+    border-radius: 8px; /* Slightly larger border radius */
+    font-size: 16px; /* Larger font size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    z-index: 1001;
+    display: none; /* Initially hidden */
+}
+
+#infoButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    display: none; /* Initially hidden */
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1002;
+}
+
+#infoButton:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Sidebar button styles */
+.sidebar button {
+    width: 250px; /* Make the buttons longer */
+    height: 70px; /* Make the buttons bigger */
+    background-color: white; /* Change background to white */
+    color: black; /* Change text color to black */
+    border: none;
+    border-radius: 35px; /* Ellipse shape */
+    font-size: 20px; /* Larger font size */
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar button:hover {
+    background-color: #f0f0f0; /* Slightly darker white on hover */
+    transform: translateY(-5px) scale(1.05); /* Add hover animation */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.sidebar button:active {
+    transform: translateY(0) scale(1); /* Reset transform on click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.collegelist {
+    display: flex; /* Use flexbox for horizontal layout */
+    flex-wrap: wrap; /* Allow wrapping to the next row if needed */
+    gap: 15px; /* Add spacing between boxes */
+    padding: 20px;
+    justify-content: flex-start; /* Align boxes to the left */
+}
+
+.collegelist div {
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    height: 100px; /* Adjust height for a longer appearance */
+    width: 100%; /* Make the boxes stretch to fit the panel */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black; /* Change text color to black */
+    font-size: 20px; /* Make the text bigger */
+    font-weight: 900; /* Make the text bolder */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.collegelist div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Watch Video Button Styles */
+#watchVideoButton {
+    position: absolute;
+    top: 60px; /* Positioned below the info button */
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: red; /* Change background color to red */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1002;
+}
+
+#watchVideoButton:hover {
+    background-color: darkred; /* Darker red on hover */
+}
+
+/* Video Modal Styles */
+#videoModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1003;
+}
+
+#videoModal iframe {
+    width: 80%;
+    height: 80%;
+    border: none;
+    border-radius: 10px;
+}
+
+#videoModalClose {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

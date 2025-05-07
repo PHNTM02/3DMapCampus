@@ -79,7 +79,6 @@ export class Asset extends THREE.Group {
         this.loadDormSampa();
 
         this.loadPolyClouds();
-        this.loadDirectionArrow();
     }
 
     loadPolyClouds() {

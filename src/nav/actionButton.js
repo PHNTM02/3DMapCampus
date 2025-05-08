@@ -397,36 +397,87 @@ function addButtonToElement(element, buttonText, onClickHandler) {
     element.appendChild(button);
 }
 
-    document.getElementById('searchBar').addEventListener('input', function () {
-        const searchTerm = this.value.toLowerCase();
 
-        // Loop through all .collegelist containers
-        document.querySelectorAll('.collegelist').forEach(container => {
-            let anyVisible = false;
 
-            // Loop through each child div inside .collegelist
-            container.querySelectorAll('.cdfList').forEach(item => {
-                const text = item.textContent.toLowerCase();
+document.getElementById('searchBar').addEventListener('input', function () {
+    const searchTerm = this.value.toLowerCase().trim();
 
-                if (text.includes(searchTerm)) {
-                    item.style.display = 'flex';
-                    anyVisible = true;
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+    // Remove any existing search result panel
+    let existingPanel = document.getElementById('searchResultPanel');
+    if (existingPanel) {
+        existingPanel.remove();
+    }
 
-            // Optionally hide the whole section if none of its items are visible
-            const section = container.closest('div[id]');
-            if (searchTerm && !anyVisible) {
-                section.style.display = 'none';
-            } else if (!searchTerm) {
-                section.style.display = 'none'; // default hidden
-            } else {
-                section.style.display = 'block';
+    // Create a new search result panel
+    if (searchTerm) {
+        const searchBar = document.getElementById('searchBar');
+        const searchBarRect = searchBar.getBoundingClientRect();
+
+        const searchResultPanel = document.createElement('div');
+        searchResultPanel.id = 'searchResultPanel';
+        searchResultPanel.style.position = 'absolute';
+        searchResultPanel.style.top = `${searchBarRect.bottom + window.scrollY}px`; // Position below the search bar
+        searchResultPanel.style.left = `${searchBarRect.left + window.scrollX}px`; // Align with the search bar
+        searchResultPanel.style.width = `${searchBarRect.width}px`; // Match the width of the search bar
+        searchResultPanel.style.maxHeight = '400px';
+        searchResultPanel.style.overflowY = 'auto';
+        searchResultPanel.style.backgroundColor = '#fff';
+        searchResultPanel.style.border = '1px solid #ccc';
+        searchResultPanel.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+        searchResultPanel.style.padding = '10px';
+        searchResultPanel.style.zIndex = '1000';
+
+        // Search through all items in dorm, college, and faci sections
+        let resultsFound = false;
+        document.querySelectorAll('#dorm .cdfList, #college .cdfList, #faci .cdfList').forEach(item => {
+            const text = item.textContent.toLowerCase();
+
+            // Check if the search term matches the text or the first four letters
+            if (text.includes(searchTerm) || text.startsWith(searchTerm.slice(0, 4))) {
+                const resultItem = document.createElement('div');
+                resultItem.textContent = item.textContent;
+                resultItem.style.padding = '5px';
+                resultItem.style.cursor = 'pointer';
+                resultItem.style.borderBottom = '1px solid #eee';
+
+                // Highlight the result on hover
+                resultItem.addEventListener('mouseover', () => {
+                    resultItem.style.backgroundColor = '#f0f0f0';
+                });
+                resultItem.addEventListener('mouseout', () => {
+                    resultItem.style.backgroundColor = '#fff';
+                });
+
+                // Add click event to trigger the corresponding event listener
+                resultItem.addEventListener('click', () => {
+                    const itemId = item.id; // Get the ID of the clicked item
+                    const element = document.getElementById(itemId);
+
+                    if (element) {
+                        element.click(); // Trigger the corresponding event listener
+                    }
+
+                    // Close the search result panel
+                    searchResultPanel.remove();
+                });
+
+                searchResultPanel.appendChild(resultItem);
+                resultsFound = true;
             }
         });
-    });
+
+        // If no results are found, display a message
+        if (!resultsFound) {
+            const noResults = document.createElement('div');
+            noResults.textContent = 'No results found.';
+            noResults.style.textAlign = 'center';
+            noResults.style.color = '#888';
+            searchResultPanel.appendChild(noResults);
+        }
+
+        document.body.appendChild(searchResultPanel);
+    }
+});
 
 
 

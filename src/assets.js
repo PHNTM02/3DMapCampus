@@ -203,43 +203,9 @@ export class Asset extends THREE.Group {
 
         // Define fixed positions for tree 
         const clusterPositions = [
-            new THREE.Vector3(-80, -80, 3),
-            new THREE.Vector3(-60, -40, 3),
-            new THREE.Vector3(-30, -30, 3),
-            new THREE.Vector3(20, 10, 3),
-            new THREE.Vector3(-10, 40, 3),
-            new THREE.Vector3(40, -20, 3),
-            new THREE.Vector3(-1, 1, 3),
-            new THREE.Vector3(-50, 20, 3),
-            new THREE.Vector3(50, 50, 3),
-            new THREE.Vector3(-40, 60, 3),
-            new THREE.Vector3(30, -40, 3),
-            new THREE.Vector3(10, -50, 3),
-            new THREE.Vector3(60, 60, 3),
-            new THREE.Vector3(-70, 80, 3),
-            new THREE.Vector3(70, -75, 3),
-            new THREE.Vector3(80, 80, 3),
-            new THREE.Vector3(-90, 50, 3),
-            new THREE.Vector3(25, -60, 3),
-            new THREE.Vector3(90, -40, 3),
-            new THREE.Vector3(-80, 30, 3),
-            new THREE.Vector3(60, -70, 3),
-            new THREE.Vector3(-20, 80, 3),
-            new THREE.Vector3(10, 70, 3),
-            new THREE.Vector3(-70, -20, 3),
-            new THREE.Vector3(40, 40, 3),
-            new THREE.Vector3(-30, 60, 3),
-            new THREE.Vector3(85, -60, 3),
-            new THREE.Vector3(-85, 75, 3),
-            new THREE.Vector3(55, 80, 3),
-            new THREE.Vector3(-60, 90, 3),
-            new THREE.Vector3(20, -70, 3),
-            new THREE.Vector3(-10, -80, 3),
-            new THREE.Vector3(0, 90, 3),
-            new THREE.Vector3(-40, -60, 3),
-            new THREE.Vector3(70, 30, 3),
-            new THREE.Vector3(-90, -30, 3),
-            new THREE.Vector3(100, 100, 3),
+           
+           
+        
             // COB Front
             new THREE.Vector3(-100, 64.5, 3),
             new THREE.Vector3(-110, 64.5, 3),
@@ -248,7 +214,6 @@ export class Asset extends THREE.Group {
             new THREE.Vector3(0, 100, 3),
             new THREE.Vector3(100, 0, 3),
             new THREE.Vector3(-100, 0, 3),
-            new THREE.Vector3(0, -100, 3),
             new THREE.Vector3(15, -20, 3),
             //PSD 
             new THREE.Vector3(-3, 10, 3),
@@ -307,9 +272,9 @@ export class Asset extends THREE.Group {
     }
 
     loadGate() {
-        const gatePath = '../FinalModel/Gate.glb';
-        const gatePosition = new THREE.Vector3(0.85, -67, 0);
-        const gateRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2 - 0.05, 0);
+        const gatePath = '../FinalModel/FinalGate.glb';
+        const gatePosition = new THREE.Vector3(0.85, -70.5, 1);
+        const gateRotation = new THREE.Euler(Math.PI / 2, Math.PI / 2 - 0, 0);
         const gateScale = 1;
         this.loadGLTFModel(gatePath, gatePosition, gateRotation, gateScale, "gate");
     }

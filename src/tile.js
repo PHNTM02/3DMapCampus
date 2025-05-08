@@ -21,7 +21,7 @@ export class Road extends THREE.Group {
                 (gltf) => {
                     const model = gltf.scene;
                     model.scale.set(2, 0.3, 0.335);
-                    model.position.set( a + (-100.5), -70, 0);
+                    model.position.set( a + (-100.5), -81, 0);
                     model.rotation.set(0, Math.PI / 2, Math.PI / 2);
                     this.add(model);
                 },

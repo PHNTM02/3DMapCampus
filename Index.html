@@ -40,37 +40,7 @@
 			<input type="text" id="searchBar" placeholder="Search dorms, colleges, or facilities...">
 		</div>
 
-		<script>
-			window.addEventListener('DOMContentLoaded', function () {
-				document.getElementById('searchBar').addEventListener('input', function () {
-					const searchTerm = this.value.toLowerCase();
 		
-					document.querySelectorAll('.collegelist').forEach(container => {
-						let anyVisible = false;
-		
-						container.querySelectorAll('.cdfList').forEach(item => {
-							const text = item.textContent.toLowerCase();
-		
-							if (text.includes(searchTerm)) {
-								item.style.display = 'flex';
-								anyVisible = true;
-							} else {
-								item.style.display = 'none';
-							}
-						});
-		
-						const section = container.closest('div[id]');
-						if (searchTerm && !anyVisible) {
-							section.style.display = 'none';
-						} else if (!searchTerm) {
-							section.style.display = 'none';
-						} else {
-							section.style.display = 'block';
-						}
-					});
-				});
-			});
-		</script>
 		
 
 	<!-- Loading Screen -->

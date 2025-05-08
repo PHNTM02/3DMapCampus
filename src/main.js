@@ -1,7 +1,6 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { Terrain } from './terrain.js';
-import { setupMouseEvents } from './mouse.js';
 
 // --- SCENE MAKER
 const scene = new THREE.Scene();

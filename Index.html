@@ -40,6 +40,39 @@
 			<input type="text" id="searchBar" placeholder="Search dorms, colleges, or facilities...">
 		</div>
 
+		<script>
+			window.addEventListener('DOMContentLoaded', function () {
+				document.getElementById('searchBar').addEventListener('input', function () {
+					const searchTerm = this.value.toLowerCase();
+		
+					document.querySelectorAll('.collegelist').forEach(container => {
+						let anyVisible = false;
+		
+						container.querySelectorAll('.cdfList').forEach(item => {
+							const text = item.textContent.toLowerCase();
+		
+							if (text.includes(searchTerm)) {
+								item.style.display = 'flex';
+								anyVisible = true;
+							} else {
+								item.style.display = 'none';
+							}
+						});
+		
+						const section = container.closest('div[id]');
+						if (searchTerm && !anyVisible) {
+							section.style.display = 'none';
+						} else if (!searchTerm) {
+							section.style.display = 'none';
+						} else {
+							section.style.display = 'block';
+						}
+					});
+				});
+			});
+		</script>
+		
+
 	<!-- Loading Screen -->
 	<div id="loadingScreen">Loading, please wait...</div>
 
@@ -51,7 +84,7 @@
 	</div>
 
       <!-- This is the 3D Map -->
-     <!-- <div id="experience" style=" background-color: rgba(0, 0, 0, 0.5);">
+      <div id="experience" style=" background-color: rgba(0, 0, 0, 0.5);">
           <canvas id="experience-canvas"></canvas> 
     </div>
 	<script type="importmap">
@@ -61,7 +94,7 @@
 			"three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.175.0/examples/jsm/"
 		  }
 		}
-	  </script> -->
+	  </script>
 		  <script type="module" src="./src/main.js"></script>
 
     

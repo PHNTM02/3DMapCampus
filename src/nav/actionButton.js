@@ -397,36 +397,34 @@ function addButtonToElement(element, buttonText, onClickHandler) {
     element.appendChild(button);
 }
 
-    document.getElementById('searchBar').addEventListener('input', function () {
-        const searchTerm = this.value.toLowerCase();
 
-        // Loop through all .collegelist containers
-        document.querySelectorAll('.collegelist').forEach(container => {
-            let anyVisible = false;
 
-            // Loop through each child div inside .collegelist
-            container.querySelectorAll('.cdfList').forEach(item => {
-                const text = item.textContent.toLowerCase();
+document.getElementById('searchBar').addEventListener('input', function () {
+    const searchTerm = this.value.toLowerCase().trim();
 
-                if (text.includes(searchTerm)) {
-                    item.style.display = 'flex';
-                    anyVisible = true;
-                } else {
-                    item.style.display = 'none';
-                }
-            });
+    document.querySelectorAll('.collegelist').forEach(container => {
+        let anyVisible = false;
 
-            // Optionally hide the whole section if none of its items are visible
-            const section = container.closest('div[id]');
-            if (searchTerm && !anyVisible) {
-                section.style.display = 'none';
-            } else if (!searchTerm) {
-                section.style.display = 'none'; // default hidden
+        container.querySelectorAll('.cdfList').forEach(item => {
+            const text = item.textContent.toLowerCase();
+
+            // Check if the search term matches the text or the first four letters
+            if (searchTerm && (text.includes(searchTerm) || text.startsWith(searchTerm.slice(0, 4)))) {
+                item.style.display = 'flex';
+                anyVisible = true;
             } else {
-                section.style.display = 'block';
+                item.style.display = 'none';
             }
         });
+
+        const section = container.closest('div[id]');
+        if (searchTerm && anyVisible) {
+            section.style.display = 'block';
+        } else {
+            section.style.display = 'none';
+        }
     });
+});
 
 
 

@@ -321,6 +321,7 @@ document.getElementById("acaciali").addEventListener("click", () => {
 
         const shift = worldPos.clone().negate();
         terrain.position.add(shift);
+        camera.position.set(1, 7, 21);
 
         console.log("Moved terrain so model is at origin:", terrain.position);
     } else {
@@ -488,6 +489,7 @@ function handleResize(){
 window.addEventListener("resize", handleResize);
 
 function animate() {
+    // console.log(camera.position);
     controls.update();
     renderer.render( scene, camera );
 }

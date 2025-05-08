@@ -48,14 +48,14 @@
 	<div id="loadingScreen">Loading, please wait...</div>
 
 	<!-- Welcome Screen -->
-	<div id="welcomeScreen">
+	<!-- <div id="welcomeScreen">
 		<img src="img/icons/aup logo.png">
 		<p>WELCOME TO AUP 3D MAP:<br><br> ON EVER ONWARD!</p>
 		<button id="enterButton">Enter</button>
-	</div>
+	</div> -->
 
       <!-- This is the 3D Map -->
-      <div id="experience" style=" background-color: rgba(0, 0, 0, 0.5);">
+      <!-- <div id="experience" style=" background-color: rgba(0, 0, 0, 0.5);">
           <canvas id="experience-canvas"></canvas> 
     </div>
 	<script type="importmap">
@@ -66,18 +66,18 @@
 		  }
 		}
 	  </script>
-		  <script type="module" src="./src/main.js"></script>
+		  <script type="module" src="./src/main.js"></script> -->
 
     
 
 
-    <div id="modelBuilding" style="display: none;" >
+    <div id="modelBuilding" style="display: none; height: 650px;" >
       <div id="backbtn">Back</div>
       <h1 id="buildingtitle"></h1>
       <div class="buildingSummary">
         <div class="buidlingImage"><img id="buildingImg" src="img/college_img/com.jpg"></div>
-        <p id="buildingSummary"> 
-          
+        <p id="buildingSummary" style="display: none; height: 350px;"> 
+          .
         </p>
       </div>
     </div>
@@ -86,7 +86,7 @@
       <canvas id="building-canva"></canvas>
     </div>
 
-	<div id="dorm" style="display: none;">
+		<div id="dorm" style=" display: none; height: 450px; top: 21%; overflow-y: scroll;">
 		<h3>Men's Dorm</h3>
 		<div class="collegelist">
 			<div id="mahoganyli" class="cdfList"><span>Mahogany</span></div>
@@ -114,8 +114,9 @@
 			<div id="apthli" class="cdfList"><span>Apartment H</span></div>
 			<div id="apteli" class="cdfList"><span>Apartment E</span></div>
 		</div>
-	</div>
-		<div id="college" style="display: none;">
+		</div>
+
+		<div id="college"  style="display: none; top: 28%; overflow-y: scroll; -ms-overflow-style: none; height: 400px;">
 			<h3>College Buildings</h3>
 			<div class="collegelist">
 				<div id="cahli" class="cdfList"><span>College of Arts and Humanities</span></div>
@@ -130,7 +131,7 @@
 			</div>
 		</div>
 
-		<div id="faci" style="display: none;">
+		<div id="faci" style="display: none; top: 24%; height: 430px; overflow-y: scroll;">
 			<h2 style="text-align: center; margin-bottom: 20px;">AUP Facilities</h2>
 			<div class="collegelist">
 				<div id="foodfac" class="cdfList"><span>AUP Food Factory</span></div>
@@ -172,13 +173,13 @@
 		<iframe src="" id="videoIframe" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 	</div>
 
-    <script> 
+    <!-- <script> 
       const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     
       if (isMobile) {
         window.location.href = "src/nav/noWeb.html";
       }
-    </script>
+    </script> -->
 
 		<script>
 		// Simulate building rendering and hide the loading screen after rendering is complete

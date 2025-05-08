@@ -68,6 +68,7 @@ h1, h2, h3, h4, h5, h6, h7 {
 
 /* This is the Navigation Bar */
 .sidebar {
+    border-style: solid;
     z-index: 50;
     position: absolute;
     width: 100%;
@@ -107,7 +108,6 @@ h1, h2, h3, h4, h5, h6, h7 {
     grid-template-columns: repeat(3, 1fr); /* Create three equal columns */
     gap: 20px; /* Add spacing between items */
     padding: 20px; /* Add padding around the grid */
-    overflow-y: auto; /* Allow vertical scrolling if content overflows */
     width: 100%; /* Ensure it spans the full width */
     box-sizing: border-box; /* Include padding and border in width/height */
 }
@@ -146,11 +146,11 @@ h1, h2, h3, h4, h5, h6, h7 {
 }
 
 
-/* #dorm, #college {
-    display: none;
-} */
-
-
+#faci::-webkit-scrollbar,
+#college::-webkit-scrollbar,
+#dorm::-webkit-scrollbar {
+  display: none;                 /* Chrome/Safari */
+}
 
 
 /* BACKGROUND IMAGE */

@@ -11,7 +11,7 @@ const size = {
 }
 
 // --- RENDERER MAKER
-const renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true, alpha: true});
+const renderer = new THREE.WebGLRenderer({canvas: canvas});
 renderer.setSize(size.width, size.height);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 3));
 renderer.setClearColor(0x000000, 0);
@@ -141,6 +141,7 @@ document.getElementById("conli").addEventListener("click", () => {
 
         const shift = worldPos.clone().negate();
         terrain.position.add(shift);
+        camera.position.set(23, 15, 0.61);
 
         console.log("Moved terrain so model is at origin:", terrain.position);
     } else {
@@ -156,6 +157,7 @@ document.getElementById("cobli").addEventListener("click", () => {
 
         const shift = worldPos.clone().negate();
         terrain.position.add(shift);
+        camera.position.set(0, 7, -12);
 
         console.log("Moved terrain so model is at origin:", terrain.position);
     } else {
@@ -171,6 +173,7 @@ document.getElementById("cstli").addEventListener("click", () => {
 
         const shift = worldPos.clone().negate();
         terrain.position.add(shift);
+        camera.position.set(-0.82, 9.31, 13.4);
 
         console.log("Moved terrain so model is at origin:", terrain.position);
     } else {
@@ -186,6 +189,7 @@ document.getElementById("comli").addEventListener("click", () => {
 
         const shift = worldPos.clone().negate();
         terrain.position.add(shift);
+        camera.position.set(-0.82, 9.3, 13);
 
         console.log("Moved terrain so model is at origin:", terrain.position);
     } else {
@@ -216,6 +220,7 @@ document.getElementById("codli").addEventListener("click", () => {
 
         const shift = worldPos.clone().negate();
         terrain.position.add(shift);
+        camera.position.set(16, 9, -0.99)
 
         console.log("Moved terrain so model is at origin:", terrain.position);
     } else {
@@ -306,6 +311,7 @@ document.getElementById("mahoganyli").addEventListener("click", () => {
 
         const shift = worldPos.clone().negate();
         terrain.position.add(shift);
+        camera.position.set(0.40, 6.71, 14.88);
 
         console.log("Moved terrain so model is at origin:", terrain.position);
     } else {

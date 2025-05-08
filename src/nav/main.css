@@ -773,27 +773,30 @@ h1, h2, h3, h4, h5, h6, h7 {
 }
 
 .collegelist {
-    display: flex; /* Use flexbox for horizontal layout */
-    flex-wrap: wrap; /* Allow wrapping to the next row if needed */
-    gap: 15px; /* Add spacing between boxes */
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 15px;
     padding: 20px;
-    justify-content: flex-start; /* Align boxes to the left */
+    justify-content: flex-start;
 }
 
 .collegelist div {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     background-size: cover;
     background-position: center;
     border-radius: 10px;
     position: relative;
     display: flex;
-    height: 100px; /* Adjust height for a longer appearance */
-    width: 100%; /* Make the boxes stretch to fit the panel */
+    height: 100px;
+    width: 100%;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: black; /* Change text color to black */
-    font-size: 20px; /* Make the text bigger */
-    font-weight: 900; /* Make the text bolder */
+    color: black;
+    font-size: 20px;
+    font-weight: 900;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

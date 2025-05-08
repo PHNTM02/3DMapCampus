@@ -397,8 +397,6 @@ function addButtonToElement(element, buttonText, onClickHandler) {
     element.appendChild(button);
 }
 
-
-
 document.getElementById('searchBar').addEventListener('input', function () {
     const searchTerm = this.value.toLowerCase().trim();
 
@@ -448,17 +446,31 @@ document.getElementById('searchBar').addEventListener('input', function () {
                     resultItem.style.backgroundColor = '#fff';
                 });
 
-                // Add click event to trigger the corresponding event listener
+                // Add click event to show the corresponding section
                 resultItem.addEventListener('click', () => {
-                    const itemId = item.id; // Get the ID of the clicked item
-                    const element = document.getElementById(itemId);
+                    const section = item.closest('div[id]');
+                    if (section) {
+                        // Trigger the click event of the corresponding building
+                        const buildingId = item.id; // Assuming each item has a unique ID
+                        const buildingElement = document.getElementById(buildingId);
+                        if (buildingElement) {
+                            buildingElement.click(); // Trigger the click event
+                        }
 
-                    if (element) {
-                        element.click(); // Trigger the corresponding event listener
+                        // Hide all sections
+                        document.querySelectorAll('#dorm, #college, #faci').forEach(sec => {
+                            sec.style.display = 'none';
+                        });
+
+                        // Show the corresponding section
+                        section.style.display = 'block';
+
+                        // Optionally scroll to the clicked item
+                        item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                        // Close the search result panel
+                        searchResultPanel.remove();
                     }
-
-                    // Close the search result panel
-                    searchResultPanel.remove();
                 });
 
                 searchResultPanel.appendChild(resultItem);
@@ -478,6 +490,4 @@ document.getElementById('searchBar').addEventListener('input', function () {
         document.body.appendChild(searchResultPanel);
     }
 });
-
-
 

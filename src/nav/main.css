@@ -772,39 +772,35 @@ h1, h2, h3, h4, h5, h6, h7 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.collegelist {
-    display: flex;
-    flex-wrap: wrap; 
+/* .collegelist {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     padding: 20px;
-    justify-content: flex-start;
 }
 
 .collegelist div {
     box-sizing: border-box;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
     background-size: cover;
     background-position: center;
     border-radius: 10px;
-    position: relative;
-    display: flex;
     height: 100px;
     width: 100%;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     color: black;
     font-size: 20px;
     font-weight: 900;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: grid;
+    place-items: center;
 }
 
 .collegelist div:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
-}
+} */
+
 
 /* Watch Video Button Styles */
 #watchVideoButton {

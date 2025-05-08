@@ -49,6 +49,9 @@ const waterstation = document.getElementById("waterstation");
 const guidance = document.getElementById("guidance");
 const kubo = document.getElementById("kubo");
 const psd = document.getElementById("psd");
+const gym = document.getElementById("gym");
+const pic = document.getElementById("pic");
+const cintennial = document.getElementById("cintennial");
 const ssc = document.getElementById("ssc");
 
 let hidden = false;

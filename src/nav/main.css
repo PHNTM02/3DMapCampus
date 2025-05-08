@@ -94,33 +94,37 @@ h1, h2, h3, h4, h5, h6, h7 {
     color: #aaa;
 }
 
+
 /* Navigation Dorm Pop-Up */
 .collegelist {
-    position: absolute;
-    z-index: 50;
-    top: 46%;
-    bottom: 10%;
-    background-color: rgba(47, 221, 218, 0.9);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    overflow-y: auto;
-    width: 100%;
-    box-sizing: border-box;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    display: grid; /* Use CSS Grid */
+    grid-template-columns: repeat(3, 1fr); /* Create three equal columns */
+    gap: 20px; /* Add spacing between items */
+    padding: 20px; /* Add padding around the grid */
+    overflow-y: auto; /* Allow vertical scrolling if content overflows */
+    width: 100%; /* Ensure it spans the full width */
+    box-sizing: border-box; /* Include padding and border in width/height */
 }
 
 .collegelist div{
-    background-size: cover;
-    background-position: center;
-    border-radius: 10px;
-    position: relative;
-    display: flex;
-    height: 150px;
-    gap: 5px;
-    justify-content: left;
-    align-items: end;
+    background-size: cover; /* Ensure background images cover the div */
+    background-position: center; /* Center the background image */
+    border-radius: 10px; /* Add rounded corners */
+    height: 150px; /* Set a fixed height for items */
+    display: flex; /* Use flexbox for content alignment */
+    align-items: flex-end; /* Align content to the bottom */
+    justify-content: center; /* Center content horizontally */
+    color: white; /* Text color */
+    font-weight: bold; /* Make text bold */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for readability */
+    padding: 10px; /* Add padding inside the div */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effects */
+}
+
+.collegelist div:hover {
+    transform: translateY(-5px); /* Slightly lift the item */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
 }
 
 #dorm h3 {
@@ -144,47 +148,47 @@ h1, h2, h3, h4, h5, h6, h7 {
 
 
 /* BACKGROUND IMAGE */
-.cahli {
+#cahli {
     background-image: url("/././img/college_img/cah.jpg");
     background-size: cover;
     background-position: center center;
 }
-.cobli {
+#cobli {
     background-image: url("/././img/college_img/cob.jpg");
     background-size: cover;
     background-position: center center;
 }
-.codli {
+#codli {
     background-image: url("/././img//college_img/cod.jpg");
     background-size: cover;
     background-position: center center;
 }
-.coeli {
+#coeli {
     background-image: url("/././img/college_img/coe.jpg");
     background-size: cover;
     background-position: center center;
 }
-.cohli {
+#cohli {
     background-image: url("/././img/college_img/coh.jpg");
     background-size: cover;
     background-position: center center;
 }
-.comli {
+#comli {
     background-image: url("/././img/college_img/com.jpg");
     background-size: cover;
     background-position: center center;
 }
-.conli {
+#conli {
     background-image: url("/././img/college_img/_con.jpg");
     background-size: cover;
     background-position: center center;
 }
-.cstli {
+#cstli {
     background-image: url("/././img/college_img/cst.jpg");
     background-size: cover;
     background-position: center center;
 }
-.cotli {
+#cotli {
     background-image: url("/././img/college_img/cot.jpg");
     background-size: cover;
     background-position: center center;
@@ -864,4 +868,26 @@ h1, h2, h3, h4, h5, h6, h7 {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+.search-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background-color: transparent;
+}
+
+#searchBar {
+    width: 250px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+#searchBar:focus {
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    border-color: #007bff;
 }

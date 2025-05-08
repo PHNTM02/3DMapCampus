@@ -36,6 +36,10 @@
 	</head>
 	<body>
 
+		<div class="search-container">
+			<input type="text" id="searchBar" placeholder="Search dorms, colleges, or facilities...">
+		</div>
+
 	<!-- Loading Screen -->
 	<div id="loadingScreen">Loading, please wait...</div>
 
@@ -47,7 +51,7 @@
 	</div>
 
       <!-- This is the 3D Map -->
-    <!-- <div id="experience" style=" background-color: rgba(0, 0, 0, 0.5);">
+     <!-- <div id="experience" style=" background-color: rgba(0, 0, 0, 0.5);">
           <canvas id="experience-canvas"></canvas> 
     </div>
 	<script type="importmap">
@@ -57,8 +61,8 @@
 			"three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.175.0/examples/jsm/"
 		  }
 		}
-	  </script>
-		  <script type="module" src="./src/main.js"></script> -->
+	  </script> -->
+		  <script type="module" src="./src/main.js"></script>
 
     
 
@@ -78,160 +82,67 @@
       <canvas id="building-canva"></canvas>
     </div>
 
-    
-    
-
-	<div id="dorm" class="collegelist" style="display: none;">
+	<div id="dorm" style="display: none;">
 		<h3>Men's Dorm</h3>
-		<div id="mahoganyli" class="cdfList">
-			<img src="img/dorms/mahogany.jpg">
-			<span>Mahogany</span>
+		<div class="collegelist">
+			<div id="mahoganyli" class="cdfList"><span>Mahogany</span></div>
+			<div id="acaciali" class="cdfList"><span>Acacia Residence Hall</span></div>
+			<div id="aptfli" class="cdfList"><span>Apartment F</span></div>
+			<div id="easternli" class="cdfList"><span>Eastern Residence Hall</span></div>
+			<div id="molaveli" class="cdfList"><span>Molave</span></div>
+			<div id="aptali" class="cdfList"><span>Apartment As</span></div>
 		</div>
-		<div id="acaciali" class="cdfList">
-			<img src="img/dorms/acacia.jpg">
-			<span>Acacia Residence Hall</span>
-		</div>
-		<div id="aptfli" class="cdfList">
-			<img src="img/dorms/apartment_f.jpg">
-			<span>Apartment F</span>
-		</div>
-		<div id="easternli" class="cdfList">
-			<img src="img/dorms/eastern.jpg">
-			<span>Eastern Residence Hall</span>
-		</div>
-		<div id="molaveli" class="cdfList">
-			<img src="img/dorms/molave.jpg">
-			<span>Molave</span>
-		</div>
-		<div id="aptali" class="cdfList">
-			<img src="img/dorms/apartment_a.jpg">
-			<span>Apartment As</span>
-		</div>
+	
 		<h3>Ladies' Dorm</h3>
-		<div id="sampali" class="cdfList">
-			<img src="img/dorms/sampaguitaWW.jpg">
-			<span>Sampaguita Hall</span>
+		<div class="collegelist">
+			<div id="sampali" class="cdfList"><span>Sampaguita Hall</span></div>
+			<div id="cadenali" class="cdfList"><span>Cadena De Amor Hall</span></div>
+			<div id="damali" class="cdfList"><span>Dama De Noche</span></div>
+			<div id="catli" class="cdfList"><span>Cattleya</span></div>
+			<div id="walingli" class="cdfList"><span>Waling-Waling Residence Hall</span></div>
+			<div id="ilangli" class="cdfList"><span>Ilang-Ilang</span></div>
 		</div>
-		<div id="cadenali" class="cdfList">
-			<img src="img/dorms/cadena.jpg">
-			<span>Cadena De Amor Hall</span>
-		</div>
-		<div id="damali" class="cdfList">
-			<img src="img/dorms/dama.jpg">
-			<span>Dama De Noche</span>
-		</div>
-		<div id="catli" class="cdfList">
-			<img src="img/dorms/cattleya.jpg">
-			<span>Cattleya</span>
-		</div>
-		<div id="walingli" class="cdfList">
-			<img src="img/dorms/waling.jpg">
-			<span>Waling-Waling Residence Hall</span>
-		</div>
-		<div id="ilangli" class="cdfList">
-			<img src="img/dorms/ilang.jpg">
-			<span>Ilang-Ilang</span>
-		</div>
+	
 		<h3>Family / Graduate</h3>
-		<div id="aptbli" class="cdfList">
-			<img src="img/dorms/apartment_b.jpg">
-			<span>Apartment B</span>
-		</div>
-		<div id="aptgli" class="cdfList">
-			<img src="img/dorms/apartment_g.jpg">
-			<span>Apartment G</span>
-		</div>
-		<div id="apthli" class="cdfList">
-			<img src="img/dorms/apartment_h.jpg">
-			<span>Apartment H</span>
-		</div>
-		<div id="apteli" class="cdfList">
-			<img src="img/dorms/apartment_e.jpg">
-			<span>Apartment E</span>
+		<div class="collegelist">
+			<div id="aptbli" class="cdfList"><span>Apartment B</span></div>
+			<div id="aptgli" class="cdfList"><span>Apartment G</span></div>
+			<div id="apthli" class="cdfList"><span>Apartment H</span></div>
+			<div id="apteli" class="cdfList"><span>Apartment E</span></div>
 		</div>
 	</div>
+		<div id="college" style="display: none;">
+			<h3>College Buildings</h3>
+			<div class="collegelist">
+				<div id="cahli" class="cdfList"><span>College of Arts and Humanities</span></div>
+				<div id="cobli" class="cdfList"><span>College of Business</span></div>
+				<div id="codli" class="cdfList"><span>College of Dentistry</span></div>
+				<div id="coeli" class="cdfList"><span>College of Education</span></div>
+				<div id="cohli" class="cdfList"><span>College of Health</span></div>
+				<div id="comli" class="cdfList"><span>College of Medicine</span></div>
+				<div id="conli" class="cdfList"><span>College of Nursing</span></div>
+				<div id="cstli" class="cdfList"><span>College of Science and Technology</span></div>
+				<div id="cotli" class="cdfList"><span>College of Theology</span></div>
+			</div>
+		</div>
 
-	<div id="college" class="collegelist" style="display: none;">
-		<h2 style="color: black; font-weight: bold; text-align: center;">College Buildings</h2>
-		<div id="cahli" class="cahli">
-			<img src="img/colleges/cah.jpg">
-			College of Arts and Humanities
+		<div id="faci" style="display: none;">
+			<h2 style="text-align: center; margin-bottom: 20px;">AUP Facilities</h2>
+			<div class="collegelist">
+				<div id="foodfac" class="cdfList"><span>AUP Food Factory</span></div>
+				<div id="clinic" class="cdfList"><span>AUP Health Service</span></div>
+				<div id="store" class="cdfList"><span>AUP Store</span></div>
+				<div id="waterstation" class="cdfList"><span>AUP Water Station</span></div>
+				<div id="guidance" class="cdfList"><span>Guidance Service Center</span></div>
+				<div id="kubo" class="cdfList"><span>Kubo</span></div>
+				<div id="psd" class="cdfList"><span>Public Safety Department</span></div>
+				<div id="ssc" class="cdfList"><span>Student Service Center</span></div>
+				<div id="Library" class="cdfList"><span>AUP Library</span></div>
+			</div>
 		</div>
-		<div id="cobli" class="cobli">
-			<img src="img/colleges/cob.jpg">
-			College of Business
-		</div>
-		<div id="codli" class="codli">
-			<img src="img/colleges/cod.jpg">
-			College of Dentistry
-		</div>
-		<div id="coeli" class="coeli">
-			<img src="img/colleges/coe.jpg">
-			College of Education
-		</div>
-		<div id="cohli" class="cohli">
-			<img src="img/colleges/coh.jpg">
-			College of Health
-		</div>
-		<div id="comli" class="comli">
-			<img src="img/colleges/com.jpg">
-			College of Medicine
-		</div>
-		<div id="conli" class="conli">
-			<img src="img/colleges/con.jpg">
-			College of Nursing
-		</div>
-		<div id="cstli" class="cstli">
-			<img src="img/colleges/cst.jpg">
-			College of Science and Technology
-		</div>
-		<div id="cotli" class="cotli">
-			<img src="img/colleges/cot.jpg">
-			College of Theology
-		</div>
-	</div>
-
-	<div id="faci" class="collegelist" style="display: none;">
-		<h2 style="text-align: center; margin-bottom: 20px;">AUP Facilities</h2>
-		<div id="foodfac" class="facili">
-			<img src="img/facilities/food_factory.jpg">
-			AUP Food Factory
-		</div>
-		<div id="clinic" class="facili">
-			<img src="img/facilities/clinic.jpg">
-			AUP Health Service
-		</div>
-		<div id="store" class="facili">
-			<img src="img/facilities/store.jpg">
-			AUP Store
-		</div>
-		<div id="waterstation" class="facili">
-			<img src="img/facilities/water_station.jpg">
-			AUP Water Station
-		</div>
-		<div id="guidance" class="facili">
-			<img src="img/facilities/guidance.jpg">
-			Guidance Service Center
-		</div>
-		<div id="kubo" class="facili">
-			<img src="img/facilities/kubo.jpg">
-			Kubo
-		</div>
-		<div id="psd" class="facili">
-			<img src="img/facilities/psd.jpg">
-			Public Safety Department
-		</div>
-		<div id="ssc" class="facili">
-			<img src="img/facilities/ssc.jpg">
-			Student Service Center
-		</div>
-		<div id="Library" class="facili">
-			<img src="img/facilities/library.jpg">
-			AUP Library
-		</div>
-	</div>
 	<script type="module" src="./src/nav/actionButton.js"></script>
- 
+
+
   <!-- This is the Navigation -->
   <div id="sidebar" class="sidebar col-lg-3 col-md-6">
     <button id="collegebar">🏫 College Buildings</button>

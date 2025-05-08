@@ -397,42 +397,36 @@ function addButtonToElement(element, buttonText, onClickHandler) {
     element.appendChild(button);
 }
 
-// Add buttons to college elements
-addButtonToElement(cob, 'Info', () => alert('More info about College of Business'));
-addButtonToElement(cah, 'Info', () => alert('More info about College of Arts and Humanities'));
-addButtonToElement(cod, 'Info', () => alert('More info about College of Dentistry'));
-addButtonToElement(coh, 'Info', () => alert('More info about College of Health'));
-addButtonToElement(coe, 'Info', () => alert('More info about College of Education'));
-addButtonToElement(com, 'Info', () => alert('More info about College of Medicine'));
-addButtonToElement(con, 'Info', () => alert('More info about College of Nursing'));
-addButtonToElement(cst, 'Info', () => alert('More info about College of Science and Technology'));
-addButtonToElement(cot, 'Info', () => alert('More info about College of Theology'));
+    document.getElementById('searchBar').addEventListener('input', function () {
+        const searchTerm = this.value.toLowerCase();
 
-// Add buttons to dorm elements
-addButtonToElement(Mahogany, 'Info', () => alert('More info about Mahogany'));
-addButtonToElement(Acacia, 'Info', () => alert('More info about Acacia Residence Hall'));
-addButtonToElement(F, 'Info', () => alert('More info about Apartment F'));
-addButtonToElement(Eastern, 'Info', () => alert('More info about Eastern Residence Hall'));
-addButtonToElement(Molave, 'Info', () => alert('More info about Molave'));
-addButtonToElement(A, 'Info', () => alert('More info about Apartment A'));
-addButtonToElement(Sampaguita, 'Info', () => alert('More info about Sampaguita Hall'));
-addButtonToElement(Cadena, 'Info', () => alert('More info about Cadena De Amor Hall'));
-addButtonToElement(Dama, 'Info', () => alert('More info about Dama De Noche'));
-addButtonToElement(Cattleya, 'Info', () => alert('More info about Cattleya'));
-addButtonToElement(Waling, 'Info', () => alert('More info about Waling-Waling Residence Hall'));
-addButtonToElement(Ilang, 'Info', () => alert('More info about Ilang-Ilang'));
-addButtonToElement(aptbli, 'Info', () => alert('More info about Apartment B'));
-addButtonToElement(aptgli, 'Info', () => alert('More info about Apartment G'));
-addButtonToElement(apthli, 'Info', () => alert('More info about Apartment H'));
-addButtonToElement(apteli, 'Info', () => alert('More info about Apartment E'));
+        // Loop through all .collegelist containers
+        document.querySelectorAll('.collegelist').forEach(container => {
+            let anyVisible = false;
 
-// Add buttons to facility elements
-addButtonToElement(foodfac, 'Info', () => alert('More info about AUP Food Factory'));
-addButtonToElement(clinic, 'Info', () => alert('More info about AUP Health Service'));
-addButtonToElement(store, 'Info', () => alert('More info about AUP Store'));
-addButtonToElement(waterstation, 'Info', () => alert('More info about AUP Water Station'));
-addButtonToElement(guidance, 'Info', () => alert('More info about Guidance Service Center'));
-addButtonToElement(kubo, 'Info', () => alert('More info about AUP Kubo'));
-addButtonToElement(psd, 'Info', () => alert('More info about Public Safety Department'));
-addButtonToElement(ssc, 'Info', () => alert('More info about Student Service Center'));
-addButtonToElement(Library, 'Info', () => alert('More info about AUP Library'));
+            // Loop through each child div inside .collegelist
+            container.querySelectorAll('.cdfList').forEach(item => {
+                const text = item.textContent.toLowerCase();
+
+                if (text.includes(searchTerm)) {
+                    item.style.display = 'flex';
+                    anyVisible = true;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Optionally hide the whole section if none of its items are visible
+            const section = container.closest('div[id]');
+            if (searchTerm && !anyVisible) {
+                section.style.display = 'none';
+            } else if (!searchTerm) {
+                section.style.display = 'none'; // default hidden
+            } else {
+                section.style.display = 'block';
+            }
+        });
+    });
+
+
+

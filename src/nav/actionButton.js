@@ -94,7 +94,7 @@ facilitybar.addEventListener("click", () => {
         modelBuilding.style.display = 'none'; 
         hidden = true
     } else {
-        faci.style.display = 'block';
+        facility.style.display = 'block';
         college.style.display = 'none';
         modelBuilding.style.display = 'none'; 
         hidden = false;
@@ -321,6 +321,7 @@ apteli.addEventListener("click", () => {
 
 // FACILITIES
 foodfac.addEventListener("click", () => {
+    facility.style.display = 'none';
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     college.style.display = 'none';
@@ -329,6 +330,7 @@ foodfac.addEventListener("click", () => {
     buildingSummary.innerHTML = "The Adventist University of the Philippines Food Factory produces wholesome, plant-based food products that reflect the university’s commitment to health and nutrition. It serves the campus and community with nutritious options while promoting the Adventist principles of healthy living.";
 });
 clinic.addEventListener("click", () => {
+    facility.style.display = 'none';
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     college.style.display = 'none';
@@ -337,6 +339,7 @@ clinic.addEventListener("click", () => {
     buildingSummary.innerHTML = "The Adventist University of the Philippines Clinic provides quality healthcare services to students, staff, and the campus community. Committed to promoting wellness and preventive care, the clinic supports AUP's mission of holistic health in harmony with Adventist principles.";
 });
 store.addEventListener("click", () => {
+    facility.style.display = 'none';
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     college.style.display = 'none';
@@ -345,6 +348,7 @@ store.addEventListener("click", () => {
     buildingSummary.innerHTML = "The Adventist University of the Philippines University Store offers a variety of school supplies, snacks, and daily essentials for students and staff. Conveniently located on campus, it supports the needs of the AUP community with friendly service and practical products.";
 });
 waterstation.addEventListener("click", () => {
+    facility.style.display = 'none';
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     college.style.display = 'none';
@@ -353,6 +357,7 @@ waterstation.addEventListener("click", () => {
     buildingSummary.innerHTML = "The Silver Spring Water Station at Adventist University of the Philippines provides clean, safe, and refreshing drinking water for the campus community. It supports AUP's commitment to health and wellness by offering purified water through reliable and accessible service.";
 });
 guidance.addEventListener("click", () => {
+    facility.style.display = 'none';
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     college.style.display = 'none';
@@ -361,6 +366,7 @@ guidance.addEventListener("click", () => {
     buildingSummary.innerHTML = "The Guidance Service Center at Adventist University of the Philippines offers counseling, guidance, and support to help students achieve personal, academic, and spiritual growth. It provides a safe and caring space where students can find help and direction in line with AUP’s values.";
 });
 kubo.addEventListener("click", () => {
+    facility.style.display = 'none';
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     college.style.display = 'none';
@@ -369,6 +375,7 @@ kubo.addEventListener("click", () => {
     buildingSummary.innerHTML = "The Kubo Canteen at Adventist University of the Philippines offers a variety of healthy, vegetarian meals and snacks in a relaxed, open-air setting. It’s a favorite gathering spot where students and staff enjoy wholesome food and fellowship in a peaceful, nature-inspired environment.   ";
 });
 psd.addEventListener("click", () => {
+    facility.style.display = 'none';
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     college.style.display = 'none';
@@ -377,6 +384,7 @@ psd.addEventListener("click", () => {
     buildingSummary.innerHTML = "The Public Safety Department at Adventist University of the Philippines ensures campus security through patrols, access control, and emergency response management.";
 });
 ssc.addEventListener("click", () => {
+    facility.style.display = 'none';
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     college.style.display = 'none';
@@ -385,6 +393,7 @@ ssc.addEventListener("click", () => {
     buildingSummary.innerHTML = "The Student Services Office (SSO) at Adventist University of the Philippines (AUP) supports students by offering guidance counseling, educational information services, and facilitating orientation programs. These services aim to assist students in their academic and personal development, ensuring a well-rounded university experience.";
 });
 Library.addEventListener("click", () => {
+    facility.style.display = 'none';
     modelBuilding.style.display = 'block';
     dorm.style.display = 'none';
     college.style.display = 'none';

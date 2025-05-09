@@ -613,7 +613,7 @@ export class Asset extends THREE.Group {
         const codPosition = new THREE.Vector3(-144, 72, 3);
         const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI / 2, 0);
         const codScale = .3;
-        this.loadGLTFModel(codPath, codPosition, codRotation, codScale);
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale, "Centenial");
     }
     
 }

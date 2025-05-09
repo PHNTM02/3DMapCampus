@@ -55,7 +55,7 @@ const kubo = document.getElementById("kubo");
 const psd = document.getElementById("psd");
 const gym = document.getElementById("gym");
 const pic = document.getElementById("pic");
-const cintennial = document.getElementById("cintennial");
+const cintennial = document.getElementById("cintenial");
 const ssc = document.getElementById("ssc");
 
 let hidden = false;
@@ -403,7 +403,15 @@ Library.addEventListener("click", () => {
 
 });
 
-
+cintennial.addEventListener("click", () => {
+    facility.style.display = 'none';
+    modelBuilding.style.display = 'block';
+    dorm.style.display = 'none';
+    college.style.display = 'none';
+    buildingtitle.innerHTML = "CENTENNIAL PARK";
+    buildingImg.src = "img/Facilities/centennial.jpg";
+    buildingSummary.innerHTML = "The Adventist University of the Philippines (AUP) commemorated its centennial in 2017, marking 100 years since its establishment in 1917. The celebration featured a series of events that honored the university's rich history and its commitment to Christian education. These celebrations reflect AUP's dedication to its mission of providing quality Christian education and its commitment to service, excellence, and character development.";
+});
 map.addEventListener("click", () => {
     modelBuilding.style.display = 'none';
     dorm.style.display = 'none';

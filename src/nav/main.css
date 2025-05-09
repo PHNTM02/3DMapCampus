@@ -329,7 +329,17 @@ h1, h2, h3, h4, h5, h6, h7 {
     background-position: center center;
 }
 
+#cintenial {
+    background-image: url("/img/Facilities/centennial.jpg");
+    background-size: cover;
+    background-position: center center;
+}
 
+#gym {
+    background-image: url("/img/Facilities/gym.jpg");
+    background-size: cover;
+    background-position: center center;
+}
 #modelBuilding {
     z-index: 120;
     position: absolute;

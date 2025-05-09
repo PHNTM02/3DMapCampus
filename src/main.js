@@ -380,6 +380,22 @@ document.getElementById("cotli").addEventListener("click", () => {
     }
 });
 
+document.getElementById("cintenial").addEventListener("click", () => {
+    const model = terrain.getObjectByName("Centenial");
+    if (model) {
+        const worldPos = new THREE.Vector3();
+        model.getWorldPosition(worldPos);
+
+        const shift = worldPos.clone().negate();
+        terrain.position.add(shift);
+
+        console.log("Moved terrain so model is at origin:", terrain.position);
+    } else {
+        console.warn("Model not yet loaded.");
+    }
+});
+
+
 // setTimeout(() => {
 //     const asset = terrain.children.find(child => child.type === 'Group' && child.name === '');
 //     const buildingsGroup = asset || null;

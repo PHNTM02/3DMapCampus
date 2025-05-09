@@ -516,3 +516,45 @@ document.getElementById('searchBar').addEventListener('input', function () {
     }
 });
 
+// Add keyboard navigation for search results
+    document.addEventListener('keydown', function handleKeyNavigation(event) {
+        if (resultItems.length === 0) return;
+
+        if (event.key === 'ArrowDown') {
+            // Move selection down
+            if (currentIndex < resultItems.length - 1) {
+                if (currentIndex >= 0) {
+                    resultItems[currentIndex].style.backgroundColor = '#fff';
+                }
+                currentIndex++;
+                resultItems[currentIndex].style.backgroundColor = '#f0f0f0';
+                resultItems[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+            event.preventDefault();
+        } else if (event.key === 'ArrowUp') {
+            // Move selection up
+            if (currentIndex > 0) {
+                resultItems[currentIndex].style.backgroundColor = '#fff';
+                currentIndex--;
+                resultItems[currentIndex].style.backgroundColor = '#f0f0f0';
+                resultItems[currentIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+            event.preventDefault();
+        } else if (event.key === 'Enter') {
+            // Trigger click on the selected item
+            if (currentIndex >= 0 && currentIndex < resultItems.length) {
+                resultItems[currentIndex].click();
+            }
+            event.preventDefault();
+        } else if (event.key === 'Escape') {
+            // Temporarily hide the search result panel
+            existingPanel.style.display = 'none';
+            document.removeEventListener('keydown', handleKeyNavigation);
+
+            // Hide all sections (exit the current view)
+            document.querySelectorAll('#dorm, #college, #faci, #modelBuilding').forEach(sec => {
+                sec.style.display = 'none';
+            });
+        }
+    });
+

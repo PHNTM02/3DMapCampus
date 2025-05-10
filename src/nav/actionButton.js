@@ -410,8 +410,28 @@ cintennial.addEventListener("click", () => {
     college.style.display = 'none';
     buildingtitle.innerHTML = "CENTENNIAL PARK";
     buildingImg.src = "img/Facilities/centennial.jpg";
+    buildingSummary.innerHTML = `The Adventist University of the Philippines (AUP) features a gymnasium that serves as a central hub for sports, fitness, and community events on campus. <br><br>
+    the gymnasium is known to host recreational activities and events. For instance, the AUP Central Student Council has previously announced that the gym is open for recreational activities, inviting students to participate.`;
+});
+gym.addEventListener("click", () => {
+    facility.style.display = 'none';
+    modelBuilding.style.display = 'block';
+    dorm.style.display = 'none';
+    college.style.display = 'none';
+    buildingtitle.innerHTML = "AUP Gymnasium";
+    buildingImg.src = "img/Facilities/gym.jpg";
     buildingSummary.innerHTML = "The Adventist University of the Philippines (AUP) commemorated its centennial in 2017, marking 100 years since its establishment in 1917. The celebration featured a series of events that honored the university's rich history and its commitment to Christian education. These celebrations reflect AUP's dedication to its mission of providing quality Christian education and its commitment to service, excellence, and character development.";
 });
+pic.addEventListener("click", () => {
+    facility.style.display = 'none';
+    modelBuilding.style.display = 'block';
+    dorm.style.display = 'none';
+    college.style.display = 'none';
+    buildingtitle.innerHTML = "Philippine International Church";
+    buildingImg.src = "img/Facilities/pic.jpg";
+    buildingSummary.innerHTML = "The Adventist University of the Philippines (AUP) commemorated its centennial in 2017, marking 100 years since its establishment in 1917. The celebration featured a series of events that honored the university's rich history and its commitment to Christian education. These celebrations reflect AUP's dedication to its mission of providing quality Christian education and its commitment to service, excellence, and character development.";
+});
+
 map.addEventListener("click", () => {
     modelBuilding.style.display = 'none';
     dorm.style.display = 'none';

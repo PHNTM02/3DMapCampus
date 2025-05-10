@@ -394,6 +394,34 @@ document.getElementById("cintenial").addEventListener("click", () => {
         console.warn("Model not yet loaded.");
     }
 });
+document.getElementById("pic").addEventListener("click", () => {
+    const model = terrain.getObjectByName("pic");
+    if (model) {
+        const worldPos = new THREE.Vector3();
+        model.getWorldPosition(worldPos);
+
+        const shift = worldPos.clone().negate();
+        terrain.position.add(shift);
+
+        console.log("Moved terrain so model is at origin:", terrain.position);
+    } else {
+        console.warn("Model not yet loaded.");
+    }
+});
+document.getElementById("gym").addEventListener("click", () => {
+    const model = terrain.getObjectByName("gym");
+    if (model) {
+        const worldPos = new THREE.Vector3();
+        model.getWorldPosition(worldPos);
+
+        const shift = worldPos.clone().negate();
+        terrain.position.add(shift);
+
+        console.log("Moved terrain so model is at origin:", terrain.position);
+    } else {
+        console.warn("Model not yet loaded.");
+    }
+});
 
 
 // setTimeout(() => {

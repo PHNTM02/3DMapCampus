@@ -1,6 +1,8 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { Terrain } from './terrain.js';
+import { Arrow } from './arrow.js';
+
 
 // --- SCENE MAKER
 const scene = new THREE.Scene();
@@ -18,9 +20,8 @@ renderer.setClearColor(0x000000, 0);
 
 // --- CAMERA MAKER & POSITION
 const camera = new THREE.PerspectiveCamera(75, size.width / size.height, 0.1, 1000);
-camera.position.set(1, 20, 10);
-// camera.position.set(1, 1, 6); 
-// camera.position.set(1, 9, 9); 
+// camera.position.set(1, 20, 10);
+camera.position.set(0, 5, 6); 
 scene.add(camera);
 
 // --- ORBITCONTROL MAKER
@@ -37,7 +38,6 @@ scene.add(sun, ambientLight);
 
 // ADD TERRAIN
 const terrain = new Terrain();
-// terrain.position.set(-20,-15, -15);
 terrain.position.set(0, -5, -60);
 scene.add(terrain);
 
@@ -126,6 +126,7 @@ document.getElementById("Library").addEventListener("click", () => {
 
         const shift = worldPos.clone().negate();
         terrain.position.add(shift);
+        controls.target.set(0, 0, 0)
 
         console.log("Moved terrain so model is at origin:", terrain.position);
     } else {
@@ -141,6 +142,7 @@ document.getElementById("conli").addEventListener("click", () => {
 
         const shift = worldPos.clone().negate();
         terrain.position.add(shift);
+        controls.target.set(0, 0, 0)
         camera.position.set(23, 15, 0.61);
 
         console.log("Moved terrain so model is at origin:", terrain.position);
@@ -157,6 +159,7 @@ document.getElementById("cobli").addEventListener("click", () => {
 
         const shift = worldPos.clone().negate();
         terrain.position.add(shift);
+        controls.target.set(0, 0, 0)
         camera.position.set(0, 7, -12);
 
         console.log("Moved terrain so model is at origin:", terrain.position);
@@ -173,6 +176,7 @@ document.getElementById("cstli").addEventListener("click", () => {
 
         const shift = worldPos.clone().negate();
         terrain.position.add(shift);
+        controls.target.set(0, 0, 0)
         camera.position.set(-0.82, 9.31, 13.4);
 
         console.log("Moved terrain so model is at origin:", terrain.position);
@@ -189,6 +193,7 @@ document.getElementById("comli").addEventListener("click", () => {
 
         const shift = worldPos.clone().negate();
         terrain.position.add(shift);
+        controls.target.set(0, 0, 0)
         camera.position.set(-0.82, 9.3, 13);
 
         console.log("Moved terrain so model is at origin:", terrain.position);
@@ -220,6 +225,7 @@ document.getElementById("codli").addEventListener("click", () => {
 
         const shift = worldPos.clone().negate();
         terrain.position.add(shift);
+        controls.target.set(0, 0, 0)
         camera.position.set(16, 9, -0.99)
 
         console.log("Moved terrain so model is at origin:", terrain.position);
@@ -311,6 +317,7 @@ document.getElementById("mahoganyli").addEventListener("click", () => {
 
         const shift = worldPos.clone().negate();
         terrain.position.add(shift);
+        controls.target.set(0, 0, 0);
         camera.position.set(0.40, 6.71, 14.88);
 
         console.log("Moved terrain so model is at origin:", terrain.position);
@@ -343,6 +350,7 @@ document.getElementById("cahli").addEventListener("click", () => {
 
         const shift = worldPos.clone().negate();
         terrain.position.add(shift);
+        controls.target.set(0, 0, 0)
 
         console.log("Moved terrain so model is at origin:", terrain.position);
     } else {
@@ -358,6 +366,7 @@ document.getElementById("coeli").addEventListener("click", () => {
 
         const shift = worldPos.clone().negate();
         terrain.position.add(shift);
+        controls.target.set(0, 0, 0)
 
         console.log("Moved terrain so model is at origin:", terrain.position);
     } else {
@@ -424,104 +433,176 @@ document.getElementById("gym").addEventListener("click", () => {
 });
 
 
-// setTimeout(() => {
-//     const asset = terrain.children.find(child => child.type === 'Group' && child.name === '');
-//     const buildingsGroup = asset || null;
-//     const mouseEvents = setupMouseEvents(scene, camera, terrain, buildingsGroup, controls);
+setTimeout(() => {
+    const asset = terrain.children.find(child => child.type === 'Group' && child.name === '');
+    const buildingsGroup = asset || null;
+    const mouseEvents = setupMouseEvents(scene, camera, terrain, buildingsGroup, controls);
 
-//     const libraryDiv = document.getElementById('Library');
-//     if (libraryDiv) {
-//         libraryDiv.addEventListener('click', () => {
-//             mouseEvents.selectBuildingByName('Mesh_264_60');
+    const libraryDiv = document.getElementById('Library');
+    if (libraryDiv) {
+        libraryDiv.addEventListener('click', () => {
+            mouseEvents.selectBuildingByName('Mesh_264_60');
 
-//             if (!buildingsGroup) return;
-//             const buildingMeshes = buildingsGroup.children.filter(child => child.isMesh || child.isGroup);
-//             const targetMesh = buildingMeshes.find(b => b.name === 'Mesh_264_60');
-//             if (!targetMesh) return;
+            if (!buildingsGroup) return;
+            const buildingMeshes = buildingsGroup.children.filter(child => child.isMesh || child.isGroup);
+            const targetMesh = buildingMeshes.find(b => b.name === 'Mesh_264_60');
+            if (!targetMesh) return;
 
-//             const bbox = new THREE.Box3().setFromObject(targetMesh);
-//             const center = bbox.getCenter(new THREE.Vector3());
+            const bbox = new THREE.Box3().setFromObject(targetMesh);
+            const center = bbox.getCenter(new THREE.Vector3());
 
-//             const offset = new THREE.Vector3(0, 10, 15); 
-//             const newCameraPos = center.clone().add(offset);
+            const offset = new THREE.Vector3(0, 10, 15); 
+            const newCameraPos = center.clone().add(offset);
 
-//             camera.position.copy(newCameraPos);
-//             controls.target.copy(center);
-//             controls.update();
-//         });
-//     }
+            camera.position.copy(newCameraPos);
+            controls.target.copy(center);
+            controls.update();
+        });
+    }
 
-//     const highlightedCodeDiv = document.getElementById('highlightedCode');
-//     if (highlightedCodeDiv) {
-//         highlightedCodeDiv.addEventListener('click', () => {
-//             const fixedPosition = new THREE.Vector3(-60.5, 95, 0);
-//             camera.position.copy(fixedPosition);
+    const highlightedCodeDiv = document.getElementById('highlightedCode');
+    if (highlightedCodeDiv) {
+        highlightedCodeDiv.addEventListener('click', () => {
+            const fixedPosition = new THREE.Vector3(-60.5, 95, 0);
+            camera.position.copy(fixedPosition);
 
-//             controls.target.set(0, 0, 0);
-//             controls.update();
+            controls.target.set(0, 0, 0);
+            controls.update();
 
-//             mouseEvents.selectBuildingByName('Mesh_69_14');
-//         });
-//     }
+            mouseEvents.selectBuildingByName('Mesh_69_14');
+        });
+    }
 
-//     document.addEventListener('moveCameraToCOM', () => {
-//         mouseEvents.selectBuildingByName('Mesh_69_14');
+    document.addEventListener('moveCameraToCOM', () => {
+        mouseEvents.selectBuildingByName('Mesh_69_14');
 
-//         if (!buildingsGroup) return;
-//         const buildingMeshes = buildingsGroup.children.filter(child => child.isMesh || child.isGroup);
-//         const targetMesh = buildingMeshes.find(b => b.name === 'Mesh_69_14');
-//         if (!targetMesh) return;
+        if (!buildingsGroup) return;
+        const buildingMeshes = buildingsGroup.children.filter(child => child.isMesh || child.isGroup);
+        const targetMesh = buildingMeshes.find(b => b.name === 'Mesh_69_14');
+        if (!targetMesh) return;
 
-//         const bbox = new THREE.Box3().setFromObject(targetMesh);
-//         const center = bbox.getCenter(new THREE.Vector3());
+        const bbox = new THREE.Box3().setFromObject(targetMesh);
+        const center = bbox.getCenter(new THREE.Vector3());
 
-//         const offset = new THREE.Vector3(0, 10, 15);
-//         const newCameraPos = center.clone().add(offset);
+        const offset = new THREE.Vector3(0, 10, 15);
+        const newCameraPos = center.clone().add(offset);
 
-//         camera.position.copy(newCameraPos);
-//         controls.target.copy(center);
-//         controls.update();
-//     });
+        camera.position.copy(newCameraPos);
+        controls.target.copy(center);
+        controls.update();
+    });
 
-//     const comliDiv = document.getElementById('comli');
-//     if (comliDiv) {
-//         comliDiv.addEventListener('click', () => {
-//             const modelBuilding = document.getElementById('modelBuilding');
-//             const college = document.getElementById('college');
-//             const buildingtitle = document.getElementById('buildingtitle');
-//             const buildingImg = document.getElementById('buildingImg');
-//             const buildingSummary = document.getElementById('buildingSummary');
+    const comliDiv = document.getElementById('comli');
+    if (comliDiv) {
+        comliDiv.addEventListener('click', () => {
+            const modelBuilding = document.getElementById('modelBuilding');
+            const college = document.getElementById('college');
+            const buildingtitle = document.getElementById('buildingtitle');
+            const buildingImg = document.getElementById('buildingImg');
+            const buildingSummary = document.getElementById('buildingSummary');
 
-//             if (modelBuilding) modelBuilding.style.display = 'block';
-//             if (college) college.style.display = 'none';
+            if (modelBuilding) modelBuilding.style.display = 'block';
+            if (college) college.style.display = 'none';
 
-//             if (buildingtitle) buildingtitle.innerHTML = "COLLEGE OF MEDICINE";
-//             if (buildingImg) buildingImg.src = "img/college_img/com.jpg";
-//             if (buildingSummary) buildingSummary.innerHTML = `The Adventist University of the Philippines College of Medicine (AUPCOM) is the first and only Adventist medical school in the Philippines and the Asia-Pacific region established in 2015. It is only the sixth of seven Adventist medical schools globally, the oldest of which is the Loma Linda University School of Medicine in Loma Linda, California, USA.  AUP College of Medicine is the only medical school in the Philippines and Southeast Asia which includes in its medical curriculum courses in Lifestyle Medicine, Religion, and Whole Person Care, because of its main thrust to produce physician-missionaries for Christ.<br><br>
+            if (buildingtitle) buildingtitle.innerHTML = "COLLEGE OF MEDICINE";
+            if (buildingImg) buildingImg.src = "img/college_img/com.jpg";
+            if (buildingSummary) buildingSummary.innerHTML = `The Adventist University of the Philippines College of Medicine (AUPCOM) is the first and only Adventist medical school in the Philippines and the Asia-Pacific region established in 2015. It is only the sixth of seven Adventist medical schools globally, the oldest of which is the Loma Linda University School of Medicine in Loma Linda, California, USA.  AUP College of Medicine is the only medical school in the Philippines and Southeast Asia which includes in its medical curriculum courses in Lifestyle Medicine, Religion, and Whole Person Care, because of its main thrust to produce physician-missionaries for Christ.<br><br>
 
-//             The medical school accepts baccalaureate allied health degree holders, to begin at the first-year level, with an NMAT score 60 and above, an above average GPA, an outstanding Christian character, and with good English communication skills. Freshmen Medicine students are welcomed in a White Coat Ceremony at the beginning of the year, with the donning of the white coat signifying the purity of the medical profession, and the giving out of the Holy Bible – the most important book above all books, and the Ministry of Healing. These medical students will be trained to become Five-Star Plus Physicians, namely, as mandated by CHED:  Clinician, Teacher, Researcher, Manager, and Social Mobilizer, and additionally the unique AUPCOM Plus – to become a Physician Missionary.<br><br>
+            The medical school accepts baccalaureate allied health degree holders, to begin at the first-year level, with an NMAT score 60 and above, an above average GPA, an outstanding Christian character, and with good English communication skills. Freshmen Medicine students are welcomed in a White Coat Ceremony at the beginning of the year, with the donning of the white coat signifying the purity of the medical profession, and the giving out of the Holy Bible – the most important book above all books, and the Ministry of Healing. These medical students will be trained to become Five-Star Plus Physicians, namely, as mandated by CHED:  Clinician, Teacher, Researcher, Manager, and Social Mobilizer, and additionally the unique AUPCOM Plus – to become a Physician Missionary.<br><br>
 
-//             At the fourth-year level, selected outstanding medical students are given the opportunity to go on clinical clerkship rotation for six weeks at our sister institution – the Loma Linda University School of Medicine – Medical Center in Loma Linda, California.`;  
+            At the fourth-year level, selected outstanding medical students are given the opportunity to go on clinical clerkship rotation for six weeks at our sister institution – the Loma Linda University School of Medicine – Medical Center in Loma Linda, California.`;  
 
-//             mouseEvents.selectBuildingByName('Mesh_69_14');
+            mouseEvents.selectBuildingByName('Mesh_69_14');
 
-//             if (!buildingsGroup) return;
-//             const buildingMeshes = buildingsGroup.children.filter(child => child.isMesh || child.isGroup);
-//             const targetMesh = buildingMeshes.find(b => b.name === 'Mesh_69_14');
-//             if (!targetMesh) return;
+            if (!buildingsGroup) return;
+            const buildingMeshes = buildingsGroup.children.filter(child => child.isMesh || child.isGroup);
+            const targetMesh = buildingMeshes.find(b => b.name === 'Mesh_69_14');
+            if (!targetMesh) return;
 
-//             const bbox = new THREE.Box3().setFromObject(targetMesh);
-//             const center = bbox.getCenter(new THREE.Vector3());
+            const bbox = new THREE.Box3().setFromObject(targetMesh);
+            const center = bbox.getCenter(new THREE.Vector3());
 
-//             const offset = new THREE.Vector3(0, 10, 15);
-//             const newCameraPos = center.clone().add(offset);
+            const offset = new THREE.Vector3(0, 10, 15);
+            const newCameraPos = center.clone().add(offset);
 
-//             camera.position.copy(newCameraPos);
-//             controls.target.copy(center);
-//             controls.update();
-//         });
-//     }
-// }, 1000);
+            camera.position.copy(newCameraPos);
+            controls.target.copy(center);
+            controls.update();
+        });
+    }
+}, 1000);
+
+const arrow = new Arrow();
+scene.add(arrow);
+
+arrow.clear = function() {
+    while(this.children.length > 0) {
+        this.remove(this.children[0]);
+    }
+};
+
+document.getElementById("locate")?.addEventListener("click", () => {
+    arrow.clear();
+    arrow.loadArrow();
+});
+document.getElementById("cahli")?.addEventListener("click", () => {
+    arrow.clear();
+    arrow.loadArrow();
+});
+document.getElementById("cobli")?.addEventListener("click", () => {
+    arrow.clear();
+    arrow.loadArrow();
+});
+document.getElementById("codli")?.addEventListener("click", () => {
+    arrow.clear();
+    arrow.loadArrow();
+});
+
+document.getElementById("coeli")?.addEventListener("click", () => {
+    arrow.clear();
+    arrow.loadArrow();
+});
+
+document.getElementById("cohli")?.addEventListener("click", () => {
+    arrow.clear();
+    arrow.loadArrow();
+});
+
+document.getElementById("comli")?.addEventListener("click", () => {
+    arrow.clear();
+    arrow.loadArrow();
+});
+
+document.getElementById("conli")?.addEventListener("click", () => {
+    arrow.clear();
+    arrow.loadArrow();
+});
+
+document.getElementById("cstli")?.addEventListener("click", () => {
+    arrow.clear();
+    arrow.loadArrow();
+});
+
+document.getElementById("cotli")?.addEventListener("click", () => {
+    arrow.clear();
+    arrow.loadArrow();
+});
+document.getElementById("Library")?.addEventListener("click", () => {
+    arrow.clear();
+    arrow.loadArrow();
+});
+document.getElementById("pic")?.addEventListener("click", () => {
+    arrow.clear();
+    arrow.loadArrow();
+});
+document.getElementById("gym")?.addEventListener("click", () => {
+    arrow.clear();
+    arrow.loadArrow();
+});
+document.getElementById("cintenial")?.addEventListener("click", () => {
+    arrow.clear();
+    arrow.loadArrow();
+});
 
 // ---HANDLING RE-SIZE OF THE SCREEN
 function handleResize(){
@@ -529,7 +610,7 @@ function handleResize(){
     const newHeight = window.innerHeight;
 
     camera.aspect = newWidth / newHeight;
-    camera.updateProjectionMatrix();
+    camera.updateProjectionMatrix();    
 
     renderer.setSize(newWidth, newHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -539,7 +620,6 @@ function handleResize(){
 window.addEventListener("resize", handleResize);
 
 function animate() {
-    // console.log(camera.position);
     controls.update();
     renderer.render( scene, camera );
 }

@@ -41,32 +41,19 @@
 			<input type="text" id="searchBar" placeholder="Search dorms, colleges, or facilities...">
 		</div> 
 
-		
-		
-
-	<!-- Loading Screen -->
 	 <div id="loadingScreen">Loading, please wait...</div> 
 
-	<!-- Welcome Screen -->
 	 <div id="welcomeScreen">
 		<img src="img/icons/aup logo.png">
 		<p>WELCOME TO AUP 3D MAP:<br><br> ON EVER ONWARD!</p>
 		<button id="enterButton">Enter</button>
-	</div> 
+	</div>
 
-      <!-- This is the 3D Map -->
-      <div id="experience" style=" background-color: rgba(0, 0, 0, 0.5);">
-          <canvas id="experience-canvas"></canvas> 
-    </div>
-	<script type="importmap">
-		{
-		  "imports": {
-			"three": "https://cdn.jsdelivr.net/npm/three@v0.175.0/build/three.module.js",
-			"three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.175.0/examples/jsm/"
-		  }
-		}
-	  </script>
-		  <script type="module" src="./src/main.js"></script>
+     
+	<div id="experience" style=" background-color: rgba(0, 0, 0, 0.5);">
+		<canvas id="experience-canvas"></canvas> 
+    </div> 
+	
 
     
 
@@ -76,15 +63,18 @@
       <h1 id="buildingtitle"></h1>
       <div class="buildingSummary">
         <div class="buidlingImage"><img id="buildingImg" src="img/college_img/com.jpg"></div>
-        <p id="buildingSummary" style="height: 350px;"> 
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptatem dolor ratione quae aut, eveniet cum alias quibusdam natus quod recusandae eligendi consequatur doloribus laudantium dicta quo consequuntur itaque nostrum.
-        </p>
+        <p id="buildingSummary" style="height: 350px;"></p>
       </div>
     </div>
+	<div id="locate" style="display: none;">College Dean</div>
+	<div>
+
+	</div>
 
     <div id="building" style="display: none;">
       <canvas id="building-canva"></canvas>
     </div>
+	
 
 		<div id="dorm" style=" display: none; height: 450px; top: 21%; overflow-y: scroll;">
 		<h3>Men's Dorm</h3>
@@ -186,14 +176,24 @@
       }
     </script> -->
 
+	<script type="importmap">
+		{
+		  "imports": {
+			"three": "https://cdn.jsdelivr.net/npm/three@v0.175.0/build/three.module.js",
+			"three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.175.0/examples/jsm/"
+		  }
+		}
+	</script>
+	<script type="module" src="./src/main.js"></script>
+	<script type="module" src="./src/modelbuilding.js"></script>
+
+
 		<script>
-		// Simulate building rendering and hide the loading screen after rendering is complete
 		function renderBuildings() {
 			return new Promise((resolve) => {
-				// Simulate a delay for rendering buildings (e.g., 3 seconds)
 				setTimeout(() => {
 					resolve();
-				}, 3000); // Adjust this duration as needed
+				}, 3000); 
 			});
 		}
 
@@ -221,20 +221,20 @@
 			enterButton.addEventListener("click", () => {
 				welcomeScreen.style.display = "none";
 				instructionBox.style.display = "none";
-				infoButton.style.display = "flex"; // Show the info button
+				infoButton.style.display = "flex"; 
 			});
 
 			// Toggle the instruction box visibility when the info button is clicked
 			infoButton.addEventListener("click", () => {
 				instructionBox.style.display = "block";
-				infoButton.style.display = "none"; // Hide the info button
+				infoButton.style.display = "none";
 
 				// Add a click listener to hide the instruction box when clicking outside
 				document.addEventListener("click", function hideInstructionBox(event) {
 					if (!instructionBox.contains(event.target) && event.target !== infoButton) {
 						instructionBox.style.display = "none";
-						infoButton.style.display = "flex"; // Show the info button again
-						document.removeEventListener("click", hideInstructionBox); // Remove the listener
+						infoButton.style.display = "flex"; 
+						document.removeEventListener("click", hideInstructionBox); 
 					}
 				});
 			});
@@ -260,7 +260,6 @@
 				panel.classList.remove('fade-out');
 				panel.classList.add('fade-in');
 
-				// Add click listener to hide the panel when clicking outside
 				setTimeout(() => {
 					document.addEventListener('click', function hidePanel(event) {
 						if (!panel.contains(event.target) && event.target.id !== `${panelId}bar`) {
@@ -270,7 +269,7 @@
 							document.removeEventListener('clissck', hidePanel);
 						}
 					});
-				}, 0); // Delay to ensure the click event doesn't immediately trigger
+				}, 0); 
 			}
 		}
 

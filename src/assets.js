@@ -616,4 +616,15 @@ export class Asset extends THREE.Group {
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale, "Centenial");
     }
     
+    loadArrow() {
+        const codPath = './models/model/modell/road/direction_arrow.glb';
+        const codPosition = new THREE.Vector3(0, 5, 0);
+        const codRotation =  new THREE.Euler(0, 0, -Math.PI / 2); 
+        const codScale = 0.1;
+
+        const arrowPosition = position.clone();
+        arrowPosition.z += 5;
+
+        this.loadGLTFModel(codPath, codPosition, codRotation, codScale, "arrow");
+    }
 }

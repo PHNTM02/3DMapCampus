@@ -106,10 +106,13 @@ backbtn.addEventListener("click", () => {
     college.style.display = 'none';
     dorm.style.display = 'none';
     facility.style.display = 'none';
+    document.getElementById('building').style.display = 'none';
+    document.getElementById('locate').style.display = 'none';
 });
 
 cob.addEventListener("click", function () {
     modelBuilding.style.display = 'block';
+    document.getElementById('locate').style.display = 'block';
     college.style.display = 'none';
     buildingImg.src = "img/college_img/cob.jpg";
     buildingtitle.innerHTML = "COLLEGE OF BUSINESS";
@@ -179,7 +182,7 @@ com.addEventListener("click", function () {
         controls.target.copy(center);
         controls.update();
     }
-});
+    });
 });
 con.addEventListener("click", function () {
     modelBuilding.style.display = 'block';
@@ -433,6 +436,8 @@ pic.addEventListener("click", () => {
 });
 
 map.addEventListener("click", () => {
+    document.getElementById('building').style.display = 'none';
+    document.getElementById('locate').style.display = 'none';
     modelBuilding.style.display = 'none';
     dorm.style.display = 'none';
     college.style.display = 'none';

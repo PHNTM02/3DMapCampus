@@ -405,21 +405,30 @@ h1, h2, h3, h4, h5, h6, h7 {
 }
 
 #building {
+    z-index: 15;
+    background-color: #00000080;
     position: absolute;
-    top: 0;
-    bottom: 60px;
-    left: 525px;
+    top: 7%;
+    bottom: 10%;
+    left: 32.5%;
     right: 0;
+}
+#locate {
+    background-color: blue;
+    position: relative;
+    width: fit-content;
+    z-index: 20;
+    top: 78%;
+    left: 33%;
+    font-size: large;
+    cursor: pointer;
 }
 
 
 
 .college{
     Border-style: solid;
-    }
-
-
-
+}
         
 #modelBuildingNursing {
     z-index: 120;
@@ -753,7 +762,7 @@ h1, h2, h3, h4, h5, h6, h7 {
 
 #infoButton {
     position: absolute;
-    top: 10px;
+    top: 5%;
     right: 10px;
     width: 40px;
     height: 40px;

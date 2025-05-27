@@ -20,7 +20,6 @@ renderer.setClearColor(0x000000, 0);
 
 // --- CAMERA MAKER & POSITION
 const camera = new THREE.PerspectiveCamera(75, size.width / size.height, 0.1, 1000);
-// camera.position.set(1, 20, 10);
 camera.position.set(0, 5, 6); 
 scene.add(camera);
 
@@ -616,7 +615,6 @@ function handleResize(){
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 }
 
-// --- ADVENT LISTENER
 window.addEventListener("resize", handleResize);
 
 function animate() {

@@ -254,7 +254,7 @@ export class Asset extends THREE.Group {
     }
     
     loadRandomTrees() {
-        const count = 10; // Number of trees you want to randomly place
+        const count = 10;
         const area = {
             x: { min: -200, max: 200 },
             z: { min: -200, max: 200 },
@@ -479,17 +479,9 @@ export class Asset extends THREE.Group {
         const codScale = 1;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale, "caet");
     }
-    // loadCentinial(){
-    //     const codPath = '../FinalModel/CentinialPark.glb';
-    //     const codPosition = new THREE.Vector3(-150.5, 60.5, 0);
-    //     const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI, 0);
-    //     const codScale = 2;
-    //     this.loadGLTFModel(codPath, codPosition, codRotation, codScale, "centennial");
-    // }
     loadfactory(){
         const codPath = '../FinalModel/Factory.glb';
         const codPosition = new THREE.Vector3(-190.5, 140.5, 0);
-        // const codPosition = new THREE.Vector3(0, 0, 0);
         const codRotation = new THREE.Euler(Math.PI / 2, -Math.PI / -2, 0);
         const codScale = 3;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale, "factory");
@@ -540,9 +532,6 @@ export class Asset extends THREE.Group {
         const codScale = 1.5;
         this.loadGLTFModel(codPath, codPosition, codRotation, codScale, "cadena");
     }
-
-
-
     loadWaterLaundry() {
         const codPath = '../models/model/modell/Water&LaundryDep.glb';
         const codPosition = new THREE.Vector3(20, 75.5, 0.2);

@@ -175,7 +175,7 @@ com.addEventListener("click", function () {
 
         const bbox = new THREE.Box3().setFromObject(selectedBuilding);
         const center = bbox.getCenter(new THREE.Vector3());
-        const offset = new THREE.Vector3(0, 10, 15); // Adjust offset as needed
+        const offset = new THREE.Vector3(0, 10, 15);
         const newCameraPos = center.clone().add(offset);
 
         camera.position.copy(newCameraPos);
@@ -472,9 +472,9 @@ document.getElementById('searchBar').addEventListener('input', function () {
         const searchResultPanel = document.createElement('div');
         searchResultPanel.id = 'searchResultPanel';
         searchResultPanel.style.position = 'absolute';
-        searchResultPanel.style.top = `${searchBarRect.bottom + window.scrollY}px`; // Position below the search bar
-        searchResultPanel.style.left = `${searchBarRect.left + window.scrollX}px`; // Align with the search bar
-        searchResultPanel.style.width = `${searchBarRect.width}px`; // Match the width of the search bar
+        searchResultPanel.style.top = `${searchBarRect.bottom + window.scrollY}px`; 
+        searchResultPanel.style.left = `${searchBarRect.left + window.scrollX}px`; 
+        searchResultPanel.style.width = `${searchBarRect.width}px`; 
         searchResultPanel.style.maxHeight = '400px';
         searchResultPanel.style.overflowY = 'auto';
         searchResultPanel.style.backgroundColor = '#fff';
@@ -509,10 +509,10 @@ document.getElementById('searchBar').addEventListener('input', function () {
                     const section = item.closest('div[id]');
                     if (section) {
                         // Trigger the click event of the corresponding building
-                        const buildingId = item.id; // Assuming each item has a unique ID
+                        const buildingId = item.id; 
                         const buildingElement = document.getElementById(buildingId);
                         if (buildingElement) {
-                            buildingElement.click(); // Trigger the click event
+                            buildingElement.click(); 
                         }
 
                         // Hide all sections
@@ -554,7 +554,6 @@ document.getElementById('searchBar').addEventListener('input', function () {
         if (resultItems.length === 0) return;
 
         if (event.key === 'ArrowDown') {
-            // Move selection down
             if (currentIndex < resultItems.length - 1) {
                 if (currentIndex >= 0) {
                     resultItems[currentIndex].style.backgroundColor = '#fff';
@@ -565,7 +564,6 @@ document.getElementById('searchBar').addEventListener('input', function () {
             }
             event.preventDefault();
         } else if (event.key === 'ArrowUp') {
-            // Move selection up
             if (currentIndex > 0) {
                 resultItems[currentIndex].style.backgroundColor = '#fff';
                 currentIndex--;
@@ -574,20 +572,15 @@ document.getElementById('searchBar').addEventListener('input', function () {
             }
             event.preventDefault();
         } else if (event.key === 'Enter') {
-            // Trigger click on the selected item
             if (currentIndex >= 0 && currentIndex < resultItems.length) {
                 resultItems[currentIndex].click();
             }
             event.preventDefault();
         } else if (event.key === 'Escape') {
-            // Temporarily hide the search result panel
             existingPanel.style.display = 'none';
             document.removeEventListener('keydown', handleKeyNavigation);
-
-            // Hide all sections (exit the current view)
             document.querySelectorAll('#dorm, #college, #faci, #modelBuilding').forEach(sec => {
                 sec.style.display = 'none';
             });
         }
     });
-

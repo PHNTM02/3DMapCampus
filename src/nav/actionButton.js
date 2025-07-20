@@ -476,12 +476,14 @@ document.getElementById('searchBar').addEventListener('input', function () {
         searchResultPanel.style.left = `${searchBarRect.left + window.scrollX}px`; 
         searchResultPanel.style.width = `${searchBarRect.width}px`; 
         searchResultPanel.style.maxHeight = '400px';
+        searchResultPanel.style.overflow = 'hidden';
         searchResultPanel.style.overflowY = 'auto';
         searchResultPanel.style.backgroundColor = '#fff';
         searchResultPanel.style.border = '1px solid #ccc';
         searchResultPanel.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
         searchResultPanel.style.padding = '10px';
         searchResultPanel.style.zIndex = '1000';
+
 
         // Search through all items in dorm, college, and faci sections
         let resultsFound = false;
